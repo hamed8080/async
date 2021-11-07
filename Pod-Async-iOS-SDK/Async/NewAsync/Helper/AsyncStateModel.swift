@@ -15,6 +15,7 @@ struct AsyncStateModel{
     private (set) var peerId            : Int?                   = nil
     private (set) var socketState       : AsyncSocketState       = .CLOSED
     private (set) var deviceId          : String?                = nil
+    private (set) var lastMessageRCVDate: Date?                  = nil
     
     
     mutating func setSocketState(socketState:AsyncSocketState){
@@ -29,4 +30,7 @@ struct AsyncStateModel{
         self.peerId = peerId
     }
     
+    mutating func setLastMessageReceiveDate(){
+        self.lastMessageRCVDate = Date()
+    }
 }

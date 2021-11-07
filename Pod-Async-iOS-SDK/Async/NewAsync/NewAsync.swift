@@ -14,12 +14,14 @@ public final class NewAsync : WebSocketProviderDelegate{
     private (set) var asyncStateModel                 : AsyncStateModel        = AsyncStateModel()
     private var reconnectTimer                        : Timer?                 = nil
     private var pingTimer                             : Timer?                 = nil
+    private var connectionStatusTimer                 : Timer?                 = nil
     private var logger                                : Logger
     
     public init(config:AsyncConfig , delegate:NewAsyncDelegate? = nil){
         self.config   = config
         self.delegate = delegate
         self.logger   = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
+        checkConnectionTimer()
     }
     
     public func createSocket(){
@@ -44,7 +46,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     }
     
     func webSocketDidDisconnect(_ webSocket: WebSocketProvider, _ error:Error? ) {
-        logger.log("disconnected with error:\(String(describing: error))")
+        logger.log(title:"disconnected with error:\(String(describing: error))")
         setSocketState(socketState: .CLOSED , error: error)
         DispatchQueue.main.async {
             if self.config.reconnectOnClose == true{
@@ -54,7 +56,14 @@ public final class NewAsync : WebSocketProviderDelegate{
     }
     
     func webSocketReceiveError(_ error: Error?) {
-        print("received Error:\(String(describing: error))")
+        logger.log(title:"received Error:\(String(describing: error))")
+        if asyncStateModel.lastMessageRCVDate == nil{
+            //This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
+            DispatchQueue.main.async {
+                self.setSocketState(socketState: .CLOSED, error: error)
+                self.tryToReconnectToSocket()
+            }
+        }
     }
     
     func webSocketDidReciveData(_ webSocket: WebSocketProvider, didReceive data: Data) {
@@ -86,10 +95,10 @@ public final class NewAsync : WebSocketProviderDelegate{
                 }
                 if self.asyncStateModel.retryCount < self.config.reconnectCount{
                     self.asyncStateModel.retryCount += 1
-                    self.logger.log("try reconnect for \(self.asyncStateModel.retryCount) times")
+                    self.logger.log(title: "try reconnect for \(self.asyncStateModel.retryCount) times")
                     self.reconnect()
                 }else{
-                    self.logger.log("failed to reconnect after \(self.config.reconnectCount) tries")
+                    self.logger.log(title: "failed to reconnect after \(self.config.reconnectCount) tries")
                     timer.invalidate()
                 }
             }
@@ -100,7 +109,7 @@ public final class NewAsync : WebSocketProviderDelegate{
         let asyncSendMessage = NewAsyncMessage(content: data?.string() , type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
         if asyncStateModel.socketState == .ASYNC_READY{
-            logger.log("send Message:\n\(asyncSendMessage.string ?? "")\n")
+            logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")
             guard let asyncMessageData = asyncMessageData , let string = String(data:asyncMessageData, encoding: .utf8) else{return}
             socket?.send(text: string)
             delegate?.asyncMessageSent(message: asyncMessageData)
@@ -111,7 +120,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     
     private func addToQueue(asyncMessageData:Data?){
         if let asyncMessageData = asyncMessageData{
-            logger.log("message added to queue :\n\(asyncMessageData.string ?? "")\n")
+            logger.log(title: "message added to queue", jsonString: asyncMessageData.string ?? "")
             asyncStateModel.messageQueue.append(asyncMessageData)
         }
     }
@@ -141,7 +150,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     private func sendQueueMessages(){
         asyncStateModel.messageQueue.forEach { asyncMessageData in
             if asyncStateModel.socketState == .CONNECTED{
-                logger.log("pop and sending message from queue\(asyncMessageData.string() ?? "")")
+                logger.log(title: "pop and sending message from queue", jsonString: asyncMessageData.string() ?? "")
                 socket?.send(data: asyncMessageData)
                 DispatchQueue.main.async {
                     self.delegate?.asyncMessageSent(message: asyncMessageData)
@@ -166,11 +175,31 @@ public final class NewAsync : WebSocketProviderDelegate{
     private func sendConnectionData(type:AsyncMessageTypes, data:Data?){
         let asyncSendMessage = NewAsyncMessage(content: data?.string() , type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
-        logger.log("send Message:\n\(asyncSendMessage.string ?? "")\n")
+        logger.log(title:"send Message", jsonString: asyncSendMessage.string ?? "")
         guard let asyncMessageData = asyncMessageData , let string = String(data:asyncMessageData, encoding: .utf8) else{return}
         socket?.send(text: string)
     }
     
+    private func checkConnectionTimer(){
+        connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] timer in
+            guard let self = self else {return}
+            if let lastMSG = self.asyncStateModel.lastMessageRCVDate , lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970{
+                self.setSocketState(socketState: .CLOSED, error: nil)
+                self.tryToReconnectToSocket()
+            }
+        })
+    }
+    
+    public func disposeObject(){
+        connectionStatusTimer?.invalidate()
+        pingTimer?.invalidate()
+        reconnectTimer?.invalidate()
+        connectionStatusTimer = nil
+        pingTimer = nil
+        reconnectTimer = nil
+        socket = nil
+        delegate = nil
+    }
 }
 
 //async on Message Received Handler
@@ -178,11 +207,12 @@ extension NewAsync{
     
     private func messageReceived(data:Data){
         guard let asyncMessage = try? JSONDecoder().decode(NewAsyncMessage.self, from: data) else{
-            logger.log("can't decode data")
+            logger.log(title:"can't decode data")
             return
         }
-        logger.log("on message:\n\(asyncMessage.string ?? "" )\n")
+        logger.log(title:"on message", jsonString: asyncMessage.string ?? "")
         prepareTimerForNextPing()
+        asyncStateModel.setLastMessageReceiveDate()
         switch  asyncMessage.type{
         case .PING:
             onPingMessage(asyncMessage: asyncMessage)
@@ -214,7 +244,7 @@ extension NewAsync{
         case .ERROR_MESSAGE:
             break
         case .none:
-            logger.log("can't decode data")
+            logger.log(title: "can't decode data")
         }
     }
     
@@ -254,13 +284,10 @@ extension NewAsync{
     
     private func setSocketState(socketState:AsyncSocketState,error:Error? = nil){
         asyncStateModel.setSocketState(socketState: socketState)
-        logger.log("async state changed to:\(socketState)\n")
+        logger.log(title: "async state changed to:\(socketState)")
         DispatchQueue.main.async {
             self.delegate?.asyncStateChanged(asyncState: socketState, error: .init(rawError: error))
         }
     }
-    
-    public func disposeObject(){
         
-    }
 }

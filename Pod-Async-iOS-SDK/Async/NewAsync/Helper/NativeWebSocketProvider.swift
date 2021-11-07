@@ -62,7 +62,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
                 case .string(let string):
                     self.delegate?.webSocketDidReciveData(self, didReceive: string.data(using: .utf8)!)
                 @unknown default:
-                    self.logger.log("un implemented case found in NativeWebSocketProvider")
+                    self.logger.log(title:"un implemented case found in NativeWebSocketProvider")
                 }
                 self.readMessage()
             }
@@ -76,7 +76,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         if let reason = reason {
-            logger.log(String(data: reason, encoding: .utf8) ?? "")
+            logger.log(title: String(data: reason, encoding: .utf8) ?? "")
         }
         isConnected = false
     }

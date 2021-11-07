@@ -14,9 +14,15 @@ class Logger{
         self.isDebuggingLogEnabled = isDebuggingLogEnabled
     }
     
-    func log(_ message:String){        
+    func log(title:String? = nil ,jsonString:String? = nil){
         if  isDebuggingLogEnabled{
-            print("\(message)")
+            if let title = title{
+                print(title)
+            }
+            if let jsonString = jsonString {
+                print("\(jsonString.preetyJsonString())")
+            }
+            print("\n")
         }
     }
 }

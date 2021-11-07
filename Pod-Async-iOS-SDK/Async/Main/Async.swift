@@ -17,6 +17,7 @@ import Sentry
 public var log = LogWithSwiftyBeaver(withLevel: nil).log
 
 // this is the Async class that will handles Asynchronous messaging
+@available(*,deprecated , message:"Removed in 0.10.5.0 version.")
 public class Async {
     
     public weak var delegate: AsyncDelegates?

@@ -13,4 +13,5 @@ public struct NewAsyncMessage : Codable{
     public var id             : Int64?
     public var type           : AsyncMessageTypes?
     public var senderId       : Int64?
+    public var peerName       : String?
 }

@@ -16,6 +16,7 @@ public struct AsyncConfig{
     var peerId                     : Int?
     var messageTtl                 : Int?
     var connectionRetryInterval    : TimeInterval       = 5
+    var connectionCheckTimeout     : TimeInterval       = 20
     var reconnectCount             : Int                = 5
     var reconnectOnClose           : Bool               = false
     var isDebuggingLogEnabled      : Bool               = false
@@ -27,6 +28,7 @@ public struct AsyncConfig{
                   peerId                    : Int?                  = nil,
                   messageTtl                : Int?                  = nil,
                   connectionRetryInterval   : TimeInterval          = 5,
+                  connectionCheckTimeout    : TimeInterval          = 20,
                   reconnectCount            : Int                   = 5,
                   reconnectOnClose          : Bool                  = false,
                   isDebuggingLogEnabled     : Bool                  = false
@@ -39,6 +41,7 @@ public struct AsyncConfig{
         self.peerId                     = peerId
         self.messageTtl                 = messageTtl
         self.connectionRetryInterval    = connectionRetryInterval
+        self.connectionCheckTimeout     = connectionCheckTimeout
         self.reconnectCount             = reconnectCount
         self.reconnectOnClose           = reconnectOnClose
         self.isDebuggingLogEnabled      = isDebuggingLogEnabled

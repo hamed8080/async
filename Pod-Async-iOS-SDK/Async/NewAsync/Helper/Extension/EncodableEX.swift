@@ -14,7 +14,7 @@ extension Encodable{
         return data
     }
     
-    var string:String?{
+    public var string:String?{
         guard let data = data else {
             return nil
         }
