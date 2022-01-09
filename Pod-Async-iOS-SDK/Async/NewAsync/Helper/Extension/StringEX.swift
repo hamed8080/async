@@ -26,9 +26,19 @@ extension String{
     public func preetyJsonString()->String{
         let string = self.removeBackSlashes()
         let stringData = string.data(using: .utf8) ?? Data()
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: stringData, options: .mutableContainers),
-              let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {return ""}
-        let prettyString = String(data: prettyJsonData, encoding: .utf8) ?? ""
-        return prettyString
+        if let jsonObject = try? JSONSerialization.jsonObject(with: stringData, options: .mutableContainers),
+           let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        {
+            let prettyString = String(data: prettyJsonData, encoding: .utf8) ?? ""
+            return prettyString
+        }else if let data = self.data(using: .utf8),
+                 let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
+                 let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        {
+            let prettyString = String(data: prettyJsonData, encoding: .utf8) ?? ""
+            return prettyString.removeBackSlashes()
+        }else{
+            return ""
+        }
     }
 }
