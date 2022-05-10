@@ -1,14 +1,15 @@
 //
-//  NewAsync.swift
+//  Async.swift
 //  Alamofire
 //
 //  Created by Hamed Hosseini on 10/20/21.
 //
 
 import Foundation
-public final class NewAsync : WebSocketProviderDelegate{
+
+public final class Async : WebSocketProviderDelegate{
   
-    public var delegate                               : NewAsyncDelegate?
+    public var delegate                               : AsyncDelegate?
     private (set) var config                          : AsyncConfig
     private (set) var socket                          : WebSocketProvider?
     private (set) var asyncStateModel                 : AsyncStateModel        = AsyncStateModel()
@@ -17,7 +18,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     private var connectionStatusTimer                 : Timer?                 = nil
     private var logger                                : Logger
     
-    public init(config:AsyncConfig , delegate:NewAsyncDelegate? = nil){
+    public init(config:AsyncConfig , delegate:AsyncDelegate? = nil){
         self.config   = config
         self.delegate = delegate
         self.logger   = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
@@ -106,7 +107,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     }
         
     public func sendData(type:AsyncMessageTypes, data:Data?){
-        let asyncSendMessage = NewAsyncMessage(content: data?.string() , type: type)
+        let asyncSendMessage = AsyncMessage(content: data?.string() , type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
         if asyncStateModel.socketState == .ASYNC_READY{
             logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")
@@ -159,7 +160,7 @@ public final class NewAsync : WebSocketProviderDelegate{
         }
     }
     
-    private func sendACK(asyncMessage: NewAsyncMessage) {
+    private func sendACK(asyncMessage: AsyncMessage) {
         if let id = asyncMessage.id{
             let messageACK = MessageACK(messageId: id)
             if let data = try? JSONEncoder().encode(messageACK){
@@ -173,7 +174,7 @@ public final class NewAsync : WebSocketProviderDelegate{
     }
     
     private func sendConnectionData(type:AsyncMessageTypes, data:Data?){
-        let asyncSendMessage = NewAsyncMessage(content: data?.string() , type: type)
+        let asyncSendMessage = AsyncMessage(content: data?.string() , type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
         logger.log(title:"send Message", jsonString: asyncSendMessage.string ?? "")
         guard let asyncMessageData = asyncMessageData , let string = String(data:asyncMessageData, encoding: .utf8) else{return}
@@ -203,10 +204,10 @@ public final class NewAsync : WebSocketProviderDelegate{
 }
 
 //async on Message Received Handler
-extension NewAsync{
+extension Async{
     
     private func messageReceived(data:Data){
-        guard let asyncMessage = try? JSONDecoder().decode(NewAsyncMessage.self, from: data) else{
+        guard let asyncMessage = try? JSONDecoder().decode(AsyncMessage.self, from: data) else{
             logger.log(title:"can't decode data")
             return
         }
@@ -248,7 +249,7 @@ extension NewAsync{
         }
     }
     
-    private func onPingMessage(asyncMessage:NewAsyncMessage){
+    private func onPingMessage(asyncMessage:AsyncMessage){
         if asyncMessage.content != nil{
             if asyncStateModel.deviceId == nil{
                 asyncStateModel.setDeviceId(deviceId: asyncMessage.content)
@@ -257,7 +258,7 @@ extension NewAsync{
         }
     }
     
-    private func onDeviceRegisteredMessage(asyncMessage:NewAsyncMessage) {
+    private func onDeviceRegisteredMessage(asyncMessage:AsyncMessage) {
         asyncStateModel.isDeviceRegistered = true
         let oldPeerId = asyncStateModel.peerId
         if let peerIdString = asyncMessage.content{
@@ -272,7 +273,7 @@ extension NewAsync{
         }
     }
     
-    private func onServerRegisteredMessage(asyncMessage:NewAsyncMessage) {
+    private func onServerRegisteredMessage(asyncMessage:AsyncMessage) {
         if asyncMessage.senderName == config.serverName {
             asyncStateModel.isServerRegistered = true
             setSocketState(socketState: .ASYNC_READY)

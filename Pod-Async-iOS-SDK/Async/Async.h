@@ -2,8 +2,7 @@
 //  Async.h
 //  Async
 //
-//  Created by Mahyar Zhiani on 5/9/1397 AP.
-//  Copyright © 1397 Mahyar Zhiani. All rights reserved.
+//  Created by Hamed Hosseini on 11/1/21.
 //
 
 #import <UIKit/UIKit.h>

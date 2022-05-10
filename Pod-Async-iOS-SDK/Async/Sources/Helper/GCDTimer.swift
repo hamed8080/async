@@ -1,13 +1,11 @@
 //
-//  GCDTimer.swift
-//  Async
+//  RepeatingTimer.swift
+//  Alamofire
 //
-//  Created by Mahyar Zhiani on 5/17/1397 AP.
-//  Copyright © 1397 Mahyar Zhiani. All rights reserved.
-//G
+//  Created by Hamed Hosseini on 10/20/21.
+//
 
 import Foundation
-
 
 // this is the timer class, that will handle the complexity of timer functionality
 // it will uses many times on Async and also on Chat maybe
