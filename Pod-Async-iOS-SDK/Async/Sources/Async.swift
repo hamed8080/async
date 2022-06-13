@@ -9,7 +9,7 @@ import Foundation
 
 public final class Async : WebSocketProviderDelegate{
   
-    public var delegate                               : AsyncDelegate?
+    public weak var delegate                          : AsyncDelegate?
     private (set) var config                          : AsyncConfig
     private (set) var socket                          : WebSocketProvider?
     private (set) var asyncStateModel                 : AsyncStateModel        = AsyncStateModel()
@@ -49,9 +49,9 @@ public final class Async : WebSocketProviderDelegate{
     func webSocketDidDisconnect(_ webSocket: WebSocketProvider, _ error:Error? ) {
         logger.log(title:"disconnected with error:\(String(describing: error))")
         setSocketState(socketState: .CLOSED , error: error)
-        DispatchQueue.main.async {
-            if self.config.reconnectOnClose == true{
-                self.tryToReconnectToSocket()
+        DispatchQueue.main.async { [weak self] in
+            if self?.config.reconnectOnClose == true{
+                self?.tryToReconnectToSocket()
             }
         }
     }
@@ -60,9 +60,9 @@ public final class Async : WebSocketProviderDelegate{
         logger.log(title:"received Error:\(String(describing: error))")
         if asyncStateModel.lastMessageRCVDate == nil{
             //This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
-            DispatchQueue.main.async {
-                self.setSocketState(socketState: .CLOSED, error: error)
-                self.tryToReconnectToSocket()
+            DispatchQueue.main.async { [weak self] in
+                self?.setSocketState(socketState: .CLOSED, error: error)
+                self?.tryToReconnectToSocket()
             }
         }
     }
@@ -89,7 +89,8 @@ public final class Async : WebSocketProviderDelegate{
     
     private func tryToReconnectToSocket(){
         if config.reconnectOnClose == true && reconnectTimer == nil{
-            reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { timer in
+            reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) {[weak self] timer in
+                guard let self = self else {return}
                 if self.asyncStateModel.socketState == .CONNECTED || self.asyncStateModel.socketState == .ASYNC_READY {
                     timer.invalidate()
                     return
@@ -153,8 +154,8 @@ public final class Async : WebSocketProviderDelegate{
             if asyncStateModel.socketState == .CONNECTED{
                 logger.log(title: "pop and sending message from queue", jsonString: asyncMessageData.string() ?? "")
                 socket?.send(data: asyncMessageData)
-                DispatchQueue.main.async {
-                    self.delegate?.asyncMessageSent(message: asyncMessageData)
+                DispatchQueue.main.async { [weak self] in
+                    self?.delegate?.asyncMessageSent(message: asyncMessageData)
                 }
             }
         }
@@ -286,8 +287,8 @@ extension Async{
     private func setSocketState(socketState:AsyncSocketState,error:Error? = nil){
         asyncStateModel.setSocketState(socketState: socketState)
         logger.log(title: "async state changed to:\(socketState)")
-        DispatchQueue.main.async {
-            self.delegate?.asyncStateChanged(asyncState: socketState, error: .init(rawError: error))
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.asyncStateChanged(asyncState: socketState, error: error == nil ? nil : .init(rawError: error))
         }
     }
         

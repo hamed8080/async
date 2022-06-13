@@ -10,7 +10,7 @@ import Foundation
 @available(iOS 13.0, *)
 class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegate , URLSessionWebSocketDelegate{
     
-    var delegate                            : WebSocketProviderDelegate?
+    weak var delegate                       : WebSocketProviderDelegate?
     private var socket                      : URLSessionWebSocketTask!
     private var timeout                     : TimeInterval!
     private var url                         : URL!
@@ -28,7 +28,8 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     public func connect() {
         let configuration                        = URLSessionConfiguration.default
         let urlSession                           = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue())
-        let urlRequest                           = URLRequest(url: url,timeoutInterval: timeout)
+        var urlRequest                           = URLRequest(url: url,timeoutInterval: timeout)
+        urlRequest.networkServiceType            = .responsiveData
         socket                                   = urlSession.webSocketTask(with: urlRequest)
         socket.resume()
         readMessage()
@@ -36,22 +37,25 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     
     func send(data: Data) {
         if isConnected{
-            socket.send(.data(data)) { error in
-                self.handleError(error)
+            socket.send(.data(data)) { [weak self] error in
+                self?.handleError(error)
             }
+            sendPing()
         }
     }
     
     func send(text: String) {
         if isConnected{
-            socket.send(.string(text)) { error in
-                self.handleError(error)
+            socket.send(.string(text)) { [weak self] error in
+                self?.handleError(error)
             }
+            sendPing()
         }
     }
     
     private func readMessage() {
-        socket.receive { result in
+        socket.receive { [weak self] result in
+            guard let self = self else{return}
             switch result {
             case .failure(_):
                 break
@@ -91,6 +95,22 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
             handleError(error)
         }
     }
+    
+    func sendPing() {
+        self.socket.sendPing { (error) in
+            if let error = error {
+                print("Sending PING failed: \(error)")
+            }
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) {[weak self] timer in
+                if let self = self{
+                    self.sendPing()
+                }else{
+                    timer.invalidate()
+                }
+            }
+        }
+    }
+    
     
     /// Force to close conection by Client
     func closeConnection() {

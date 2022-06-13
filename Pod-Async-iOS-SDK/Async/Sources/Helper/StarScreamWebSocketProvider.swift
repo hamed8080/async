@@ -10,7 +10,7 @@ import Starscream
 
 class StarScreamWebSocketProvider :WebSocketProvider {
 
-    var delegate: WebSocketProviderDelegate?
+    weak var delegate: WebSocketProviderDelegate?
     private let socket: WebSocket
     private var timeout:TimeInterval
     private var logger                      : Logger
