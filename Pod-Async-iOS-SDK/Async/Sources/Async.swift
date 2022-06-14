@@ -76,6 +76,7 @@ public final class Async : WebSocketProviderDelegate{
     
     private func prepareTimerForNextPing(){
         self.pingTimer?.invalidate()
+        self.pingTimer = nil
         self.pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) {[weak self] timer in
             guard let self = self else{return}
             self.sendPing()
@@ -89,6 +90,8 @@ public final class Async : WebSocketProviderDelegate{
     
     private func tryToReconnectToSocket(){
         if config.reconnectOnClose == true && reconnectTimer == nil{
+            reconnectTimer?.invalidate()
+            reconnectTimer = nil
             reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) {[weak self] timer in
                 guard let self = self else {return}
                 if self.asyncStateModel.socketState == .CONNECTED || self.asyncStateModel.socketState == .ASYNC_READY {
@@ -183,6 +186,8 @@ public final class Async : WebSocketProviderDelegate{
     }
     
     private func checkConnectionTimer(){
+        connectionStatusTimer?.invalidate()
+        connectionStatusTimer = nil
         connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] timer in
             guard let self = self else {return}
             if let lastMSG = self.asyncStateModel.lastMessageRCVDate , lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970{

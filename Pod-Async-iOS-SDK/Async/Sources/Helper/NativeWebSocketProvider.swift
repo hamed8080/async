@@ -11,7 +11,7 @@ import Foundation
 class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegate , URLSessionWebSocketDelegate{
     
     weak var delegate                       : WebSocketProviderDelegate?
-    private var socket                      : URLSessionWebSocketTask!
+    private weak var socket                 : URLSessionWebSocketTask?  = nil
     private var timeout                     : TimeInterval!
     private var url                         : URL!
     private(set) var isConnected            : Bool                      = false
@@ -31,13 +31,13 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
         var urlRequest                           = URLRequest(url: url,timeoutInterval: timeout)
         urlRequest.networkServiceType            = .responsiveData
         socket                                   = urlSession.webSocketTask(with: urlRequest)
-        socket.resume()
+        socket?.resume()
         readMessage()
     }
     
     func send(data: Data) {
         if isConnected{
-            socket.send(.data(data)) { [weak self] error in
+            socket?.send(.data(data)) { [weak self] error in
                 self?.handleError(error)
             }
             sendPing()
@@ -46,7 +46,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     
     func send(text: String) {
         if isConnected{
-            socket.send(.string(text)) { [weak self] error in
+            socket?.send(.string(text)) { [weak self] error in
                 self?.handleError(error)
             }
             sendPing()
@@ -54,7 +54,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     }
     
     private func readMessage() {
-        socket.receive { [weak self] result in
+        socket?.receive { [weak self] result in
             guard let self = self else{return}
             switch result {
             case .failure(_):
@@ -97,7 +97,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     }
     
     func sendPing() {
-        self.socket.sendPing { (error) in
+        socket?.sendPing {[weak self] (error) in
             if let error = error {
                 print("Sending PING failed: \(error)")
             }
@@ -114,7 +114,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     
     /// Force to close conection by Client
     func closeConnection() {
-        socket.cancel(with: .goingAway, reason: nil)
+        socket?.cancel(with: .goingAway, reason: nil)
     }
     
     /// we need to check if error code is one of the 57 , 60 , 54 timeout no network and internet offline to notify delegate we disconnected from internet
