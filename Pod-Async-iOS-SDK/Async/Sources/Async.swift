@@ -9,7 +9,7 @@ import Foundation
 
 public final class Async : WebSocketProviderDelegate{
   
-    public weak var delegate                          : AsyncDelegate?
+    private weak var delegate                         : AsyncDelegate?
     private (set) var config                          : AsyncConfig
     private (set) var socket                          : WebSocketProvider?
     private (set) var asyncStateModel                 : AsyncStateModel        = AsyncStateModel()
@@ -17,14 +17,23 @@ public final class Async : WebSocketProviderDelegate{
     private var pingTimer                             : Timer?                 = nil
     private var connectionStatusTimer                 : Timer?                 = nil
     private var logger                                : Logger
-    
+
+    /// The initializer of async.
+    ///
+    /// After creating this object you should call ``Async/createSocket()`` to start connecting to the server unless it's not connected automatically.
+    /// - Parameters:
+    ///   - config: Configuration of async ``AsyncConfig``.
+    ///   - delegate: Delegate to notify events.
     public init(config:AsyncConfig , delegate:AsyncDelegate? = nil){
         self.config   = config
         self.delegate = delegate
         self.logger   = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
         checkConnectionTimer()
     }
-    
+
+    /// Create and connect to the socket for the first tiem and notify the connection state if delegate is setted.
+    ///
+    /// It'll connect through Apple native socket in iOS 13 and above, on the other hand, it'll connect through StarScream in older devices.
     public func createSocket(){
         setSocketState(socketState: .CONNECTING)
         if #available(iOS 13.0, *) {
@@ -35,7 +44,8 @@ public final class Async : WebSocketProviderDelegate{
         socket?.delegate = self
         socket?.connect()
     }
-    
+
+    /// Reconnect when you want to connect again.
     public func reconnect(){
         setSocketState(socketState: .CONNECTING)
         socket?.connect()
@@ -109,7 +119,14 @@ public final class Async : WebSocketProviderDelegate{
             }
         }
     }
-        
+
+
+    /// Send data to serevr.
+    ///
+    ///  The message will send only if the socket state is in ``AsyncSocketState/ASYNC_READY`` mode unless the message will be queued and after connecting to the server it sends those messages.
+    /// - Parameters:
+    ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/MESSAGE``.
+    ///   - data: If you pass nil nothing happend here.
     public func sendData(type:AsyncMessageTypes, data:Data?){
         let asyncSendMessage = AsyncMessage(content: data?.string() , type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
@@ -129,7 +146,8 @@ public final class Async : WebSocketProviderDelegate{
             asyncStateModel.messageQueue.append(asyncMessageData)
         }
     }
-    
+
+    /// Notify and close the current connection.
     public func closeConnection(){
         setSocketState(socketState: .CLOSED)
         socket?.closeConnection()
@@ -196,7 +214,8 @@ public final class Async : WebSocketProviderDelegate{
             }
         })
     }
-    
+
+    /// Dispose and try to disconnect immediately and release all related objects.
     public func disposeObject(){
         connectionStatusTimer?.invalidate()
         pingTimer?.invalidate()
