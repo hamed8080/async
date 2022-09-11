@@ -8,7 +8,8 @@
 import Foundation
 
 extension String{
-    
+
+    /// Remove backslashes for pretty print.
     public func removeBackSlashes()->String{
         return self.replacingOccurrences(of: "\\\\\"", with: "\"")
         .replacingOccurrences(of: "\\\"", with: "\"")
@@ -22,7 +23,9 @@ extension String{
         .replacingOccurrences(of: "\"[", with: "\n[")
         .replacingOccurrences(of: "]\"", with: "]\n")
     }
-    
+
+
+    /// Pretty print of a JSON.
     public func preetyJsonString()->String{
         let string = self.removeBackSlashes()
         let stringData = string.data(using: .utf8) ?? Data()

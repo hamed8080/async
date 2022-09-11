@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// When a message receive from the server you will receive it.
+/// When a message received from the server you will receive it.
 ///
 /// Behind the scene whenever you send a message a wrapper will create a message of this class and then send it to the socket. So it is two direction type of message.
 public struct AsyncMessage : Codable{
@@ -24,7 +24,7 @@ public struct AsyncMessage : Codable{
     /// The type of message.
     public var type           : AsyncMessageTypes?
 
-    ///  The sender Id.
+    /// The sender Id.
     public var senderId       : Int64?
 
     /// The peer name.
