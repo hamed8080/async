@@ -11,9 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
   s.swift_versions = "4.0"
   s.source       = { :git => "https://github.com/FanapSoft/pod-async-ios-sdk.git", :tag => s.version }
-  s.source_files = "Pod-Async-iOS-SDK/Async/**/*.{h,swift,m}"
+  s.source_files = "Sources/FanapPodAsyncSDK/**/*.{h,swift,m}"
   s.framework  = "Foundation"
   s.dependency "Starscream" , '~> 3.0.5'
-  s.dependency "Sentry" , '~> 4.3.1'
-
 end

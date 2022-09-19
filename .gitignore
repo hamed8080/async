@@ -1,10 +1,11 @@
-Pod-Async-iOS-SDK/Starscream-3.0.6/
-Pod-Async-iOS-SDK/SwiftyBeaver-master/
-Pod-Async-iOS-SDK/SwiftyJSON-3.1.1/
-Pod-Async-iOS-SDK/sentry-cocoa-4.3.1
-Pod-Async-iOS-SDK/.DS_Store
 .DS_Store
 **/.DS_Store
 
-**/xcuserdata/
-**/xcschemes/
+### SwiftPM ###
+.build/
+.swiftpm/
+Packages
+xcuserdata
+*.xcodeproj
+swift-format.xcodeproj/
+Package.resolved
