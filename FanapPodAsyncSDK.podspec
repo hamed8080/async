@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FanapPodAsyncSDK"
-  s.version      = "0.10.5.1"
+  s.version      = "1.1.0"
   s.summary      = "Fanap's POD Asyn SDK"
   s.description  = "This Package will use to connect the client to the Fanap's async service (DIRANA), and it will live the connection (with socket) to send and recieve messages..."
   s.homepage     = "https://pubgi.fanapsoft.ir/chat/ios/fanappodasyncsdk"

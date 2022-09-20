@@ -16,7 +16,7 @@ let package = Package(
         .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
     ],
     targets: [
-        .target(name: "FanapPodAsyncSDK", dependencies: ["Starscream"], swiftSettings: [.unsafeFlags(["-suppress-warnings"])]),
+        .target(name: "FanapPodAsyncSDK", dependencies: ["Starscream"]),
         .testTarget(name: "FanapPodAsyncSDKTests", dependencies: ["FanapPodAsyncSDK"]),
     ]
 )
