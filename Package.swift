@@ -9,14 +9,15 @@ let package = Package(
         .macOS(.v12),
         .macCatalyst(.v13),
     ],
-    products : [
+    products: [
         .library(name: "FanapPodAsyncSDK", targets: ["FanapPodAsyncSDK"]),
     ],
     dependencies: [
         .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
+        .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
     ],
     targets: [
         .target(name: "FanapPodAsyncSDK", dependencies: ["Starscream"]),
-        .testTarget(name: "FanapPodAsyncSDKTests", dependencies: ["FanapPodAsyncSDK"]),
+        .testTarget(name: "FanapPodAsyncSDKTests", dependencies: ["FanapPodAsyncSDK"], path: "Tests"),
     ]
 )

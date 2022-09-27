@@ -8,7 +8,7 @@
 import Foundation
 
 /// Delegate to notify events that occur on an async object.
-public protocol AsyncDelegate:class{
+public protocol AsyncDelegate: AnyObject{
 
     /// When a new message arrive it called.
     /// - Parameter asyncMessage: An async message that contains content and type of message and e.g.

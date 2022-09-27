@@ -1,5 +1,5 @@
 # Pod-Async-iOS-SDK
-<img src="https://fanap.ir/images/fanap-logo.png" width="64" height="64" />
+<img src="https://gitlab.com/hamed8080/fanappodasyncsdk/-/raw/gl-pages/.docs/favicon.svg"  width="64" height="64">
 <br />
 <br />
 
