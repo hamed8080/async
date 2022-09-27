@@ -3,7 +3,7 @@
 TARGET_NAME="FanapPodAsyncSDK"
 BUNDLE_ID="ir.fanap.${TARGET_NAME}"
 BUNDLE_VERSION="1.0.0"
-DOCC_FILE_PATH="${pwd}/Sources/FanapPodAsyncSDK/FanapPodAsyncSDK.docc"
+DOCC_FILE_PATH="${pwd}/Sources/${TARGET_NAME}/${TARGET_NAME}.docc"
 DOCC_HOST_BASE_PATH="fanappodasyncsdk"
 DOCC_OUTPUT_FOLDER="./.docs"
 DOCC_SYMBOL_GRAPHS=".build/symbol-graphs/"
@@ -20,21 +20,23 @@ function makeSymbolGraphs() {
             -Xswiftc -emit-symbol-graph \
             -Xswiftc -emit-symbol-graph-dir -Xswiftc $DOCC_SYMBOL_GRAPHS
 
-    mkdir $DOCC_SYMBOL_GRAPHS_OUTPUT &&
-        mv "${DOCC_SYMBOL_GRAPHS}${TARGET_NAME}"* $DOCC_SYMBOL_GRAPHS_OUTPUT
+    rm -rf $DOCC_SYMBOL_GRAPHS_OUTPUT
+    mkdir $DOCC_SYMBOL_GRAPHS_OUTPUT
+    mv "${DOCC_SYMBOL_GRAPHS}${TARGET_NAME}"* $DOCC_SYMBOL_GRAPHS_OUTPUT
 }
-
-#Use git worktree to checkout the $BRANCH_NAME branch of this repository in a $BRANCH_NAME sub-directory
-git worktree add --checkout $BRANCH_NAME
-
-# # Pretty print DocC JSON output so that it can be consistently diffed between commits
-export DOCC_JSON_PRETTYPRINT="YES"
 
 if isSymbolGraphDirectoryExist; then
     echo "Symbol directory graph is exist"
 else
+    echo "Making Symbol graphs..."
     makeSymbolGraphs
 fi
+
+#Use git worktree to checkout the $BRANCH_NAME branch of this repository in a $BRANCH_NAME sub-directory
+git worktree add -f --checkout $BRANCH_NAME
+
+# # Pretty print DocC JSON output so that it can be consistently diffed between commits
+export DOCC_JSON_PRETTYPRINT="YES"
 
 ## Create docc files and folders
 swift package --allow-writing-to-directory $DOCC_OUTPUT_FOLDER \
@@ -50,6 +52,7 @@ swift package --allow-writing-to-directory $DOCC_OUTPUT_FOLDER \
 CURRENT_COMMIT_HASH=$(git rev-parse --short HEAD)
 
 ## Commit our changes to the $BRANCH_NAME branch
+rm -rf "$BRANCH_NAME/.docs"
 mv $DOCC_OUTPUT_FOLDER "$BRANCH_NAME/"
 cd $BRANCH_NAME #move to worktree directory
 echo "worktree documentation path: ${PWD}/$DOCC_OUTPUT_FOLDER"
