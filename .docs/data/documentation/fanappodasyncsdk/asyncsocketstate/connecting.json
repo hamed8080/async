@@ -1,0 +1,175 @@
+{
+  "abstract" : [
+    {
+      "text" : "The socket is trying to connect again.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTING"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:16FanapPodAsyncSDK0C11SocketStateO10CONNECTINGyA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "CONNECTING"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FanapPodAsyncSDK"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "AsyncSocketState.CONNECTING"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "CONNECTING"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connecting"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK": {
+  "abstract" : [
+    {
+      "text" : "With Fanap Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FanapPodAsyncSDK",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState": {
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncSocketState",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/CONNECTING": {
+  "abstract" : [
+    {
+      "text" : "The socket is trying to connect again.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CONNECTING"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTING",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.CONNECTING",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connecting"
+}
+}
+}

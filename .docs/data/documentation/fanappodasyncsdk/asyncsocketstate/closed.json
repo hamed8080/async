@@ -1,0 +1,175 @@
+{
+  "abstract" : [
+    {
+      "text" : "The socket closed due to weak internet connectivity or an error that had happened on the server.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CLOSED"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:16FanapPodAsyncSDK0C11SocketStateO6CLOSEDyA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "CLOSED"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FanapPodAsyncSDK"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "AsyncSocketState.CLOSED"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "CLOSED"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/closed"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK": {
+  "abstract" : [
+    {
+      "text" : "With Fanap Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FanapPodAsyncSDK",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState": {
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncSocketState",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/CLOSED": {
+  "abstract" : [
+    {
+      "text" : "The socket closed due to weak internet connectivity or an error that had happened on the server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CLOSED"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CLOSED",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.CLOSED",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/closed"
+}
+}
+}

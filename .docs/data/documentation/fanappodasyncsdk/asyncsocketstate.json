@@ -1,0 +1,559 @@
+{
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:16FanapPodAsyncSDK0C11SocketStateO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AsyncSocketState"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FanapPodAsyncSDK"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AsyncSocketState"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "AsyncSocketState"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AsyncSocketState"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/SQ",
+        "doc:\/\/FanapPodAsyncSDK\/SH",
+        "doc:\/\/FanapPodAsyncSDK\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncDelegate",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncConfig",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessage",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncError"
+      ],
+      "title" : "Essentials"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/ASYNC_READY",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CLOSED",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTED",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTING"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/Equatable-Implementations",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fanappodasyncsdk\/asyncsocketstate"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FanapPodAsyncSDK/SH": {
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://FanapPodAsyncSDK/SQ": {
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://FanapPodAsyncSDK/SY": {
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK": {
+  "abstract" : [
+    {
+      "text" : "With Fanap Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FanapPodAsyncSDK",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncConfig": {
+  "abstract" : [
+    {
+      "text" : "Configuration data that needs to prepare to use SDK.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncConfig",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncConfig",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncconfig"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncDelegate": {
+  "abstract" : [
+    {
+      "text" : "Delegate to notify events that occur on an async object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncdelegate"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncError": {
+  "abstract" : [
+    {
+      "text" : "When an error happen in the server or in your request you will receive an error this type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncerror"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncMessage": {
+  "abstract" : [
+    {
+      "text" : "When a message received from the server you will receive it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessage"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncMessage",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncmessage"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncMessageTypes": {
+  "abstract" : [
+    {
+      "text" : "Whenever an event occurs in the server or you want to send a message, a type of message will tell you what’s happening right now.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState": {
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncSocketState",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/ASYNC_READY": {
+  "abstract" : [
+    {
+      "text" : "Async is ready to use.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ASYNC_READY"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/ASYNC_READY",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.ASYNC_READY",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/async_ready"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/CLOSED": {
+  "abstract" : [
+    {
+      "text" : "The socket closed due to weak internet connectivity or an error that had happened on the server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CLOSED"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CLOSED",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.CLOSED",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/closed"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/CONNECTED": {
+  "abstract" : [
+    {
+      "text" : "The socket is already connected.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CONNECTED"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTED",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.CONNECTED",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connected"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/CONNECTING": {
+  "abstract" : [
+    {
+      "text" : "The socket is trying to connect again.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CONNECTING"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/CONNECTING",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncSocketState.CONNECTING",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connecting"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/equatable-implementations"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/rawrepresentable-implementations"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncSocketState/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncSocketState\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/init(rawvalue:)"
+}
+}
+}

@@ -1,6 +1,612 @@
 {
   "interfaceLanguages" : {
-
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Essentials",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/fanappodasyncsdk\/gettingstarted",
+            "title" : "Getting Started",
+            "type" : "article"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/init(config:delegate:)",
+                "title" : "init(config: AsyncConfig, delegate: AsyncDelegate?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/closeconnection()",
+                "title" : "func closeConnection()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/createsocket()",
+                "title" : "func createSocket()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/disposeobject()",
+                "title" : "func disposeObject()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/reconnect()",
+                "title" : "func reconnect()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/async\/senddata(type:data:)",
+                "title" : "func sendData(type: AsyncMessageTypes, data: Data?)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/async",
+            "title" : "Async",
+            "type" : "class"
+          },
+          {
+            "title" : "Essentials",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncdelegate\/asyncerror(error:)",
+                "title" : "func asyncError(error: AsyncError)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncdelegate\/asyncmessage(asyncmessage:)",
+                "title" : "func asyncMessage(asyncMessage: AsyncMessage)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncdelegate\/asyncmessagesent(message:)",
+                "title" : "func asyncMessageSent(message: Data)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncdelegate\/asyncstatechanged(asyncstate:error:)",
+                "title" : "func asyncStateChanged(asyncState: AsyncSocketState, error: AsyncError?)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncdelegate",
+            "title" : "AsyncDelegate",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/init(socketaddress:servername:appid:)",
+                "title" : "init(socketAddress: String, serverName: String, appId: String)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/init(socketaddress:servername:deviceid:appid:peerid:messagettl:connectionretryinterval:connectionchecktimeout:reconnectcount:reconnectonclose:isdebugginglogenabled:)",
+                "title" : "init(socketAddress: String, serverName: String, deviceId: String, appId: String, peerId: Int?, messageTtl: Int, connectionRetryInterval: TimeInterval, connectionCheckTimeout: TimeInterval, reconnectCount: Int, reconnectOnClose: Bool, isDebuggingLogEnabled: Bool)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/appid",
+                "title" : "var appId: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/connectionchecktimeout",
+                "title" : "var connectionCheckTimeout: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/connectionretryinterval",
+                "title" : "var connectionRetryInterval: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/deviceid",
+                "title" : "var deviceId: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/isdebugginglogenabled",
+                "title" : "var isDebuggingLogEnabled: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/messagettl",
+                "title" : "var messageTtl: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/peerid",
+                "title" : "var peerId: Int?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/reconnectcount",
+                "title" : "var reconnectCount: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/reconnectonclose",
+                "title" : "var reconnectOnClose: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/servername",
+                "title" : "var serverName: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig\/socketaddress",
+                "title" : "var socketAddress: String",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncconfig",
+            "title" : "AsyncConfig",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/ack",
+                "title" : "case ACK",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/device_register",
+                "title" : "case DEVICE_REGISTER",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/error_message",
+                "title" : "case ERROR_MESSAGE",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/get_registered_peers",
+                "title" : "case GET_REGISTERED_PEERS",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/message",
+                "title" : "case MESSAGE",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/message_ack_needed",
+                "title" : "case MESSAGE_ACK_NEEDED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/message_sender_ack_needed",
+                "title" : "case MESSAGE_SENDER_ACK_NEEDED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/not_registered",
+                "title" : "case NOT_REGISTERED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/peer_removed",
+                "title" : "case PEER_REMOVED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/ping",
+                "title" : "case PING",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/register_queue",
+                "title" : "case REGISTER_QUEUE",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/server_register",
+                "title" : "case SERVER_REGISTER",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/encode(to:)",
+                    "title" : "func encode(to: Encoder) throws",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes",
+            "title" : "AsyncMessageTypes",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/async_ready",
+                "title" : "case ASYNC_READY",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/closed",
+                "title" : "case CLOSED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connected",
+                "title" : "case CONNECTED",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/connecting",
+                "title" : "case CONNECTING",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/init(rawvalue:)",
+                "title" : "init?(rawValue: String)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncsocketstate",
+            "title" : "AsyncSocketState",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/content",
+                "title" : "var content: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/id",
+                "title" : "var id: Int64?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/peername",
+                "title" : "var peerName: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/senderid",
+                "title" : "var senderId: Int64?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/sendername",
+                "title" : "var senderName: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/type",
+                "title" : "var type: AsyncMessageTypes?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncmessage",
+            "title" : "AsyncMessage",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerror\/init(code:message:userinfo:rawerror:)",
+                "title" : "init(code: AsyncErrorCodes, message: String?, userInfo: [String : Any]?, rawError: Error?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerror\/code",
+                "title" : "var code: AsyncErrorCodes",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerror\/message",
+                "title" : "var message: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerror\/rawerror",
+                "title" : "var rawError: Error?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerror\/userinfo",
+                "title" : "var userInfo: [String : Any]?",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncerror",
+            "title" : "AsyncError",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/error_ping",
+                "title" : "case ERROR_PING",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/undefined",
+                "title" : "case UNDEFINED",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fanappodasyncsdk\/asyncerrorcodes",
+            "title" : "AsyncErrorCodes",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/fanappodasyncsdk",
+        "title" : "FanapPodAsyncSDK",
+        "type" : "module"
+      }
+    ]
   },
   "schemaVersion" : {
     "major" : 0,

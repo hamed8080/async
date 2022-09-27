@@ -1,0 +1,145 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes\/Encodable-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "FanapPodAsyncSDK"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "Encodable Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes\/string"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/encodable-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK": {
+  "abstract" : [
+    {
+      "text" : "With Fanap Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FanapPodAsyncSDK",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncMessageTypes": {
+  "abstract" : [
+    {
+      "text" : "Whenever an event occurs in the server or you want to send a message, a type of message will tell you what’s happening right now.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes"
+},
+"doc://FanapPodAsyncSDK/documentation/FanapPodAsyncSDK/AsyncMessageTypes/string": {
+  "abstract" : [
+    {
+      "text" : "A string value of encodable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "string"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FanapPodAsyncSDK\/documentation\/FanapPodAsyncSDK\/AsyncMessageTypes\/string",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "string",
+  "type" : "topic",
+  "url" : "\/documentation\/fanappodasyncsdk\/asyncmessagetypes\/string"
+}
+}
+}
