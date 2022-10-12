@@ -3,10 +3,6 @@
 <br />
 <br />
 
-[![Swift](https://img.shields.io/badge/Swift-5+-orange?style=flat-square)](https://img.shields.io/badge/-Orange?style=flat-square)
-[![Platforms](https://img.shields.io/badge/Platforms-iOS-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_Linux_Windows-Green?style=flat-square)
-[![CocoaPods Compatible](https://img.shields.io/badge/Pod-v0.10-blue)](https://img.shields.io/badge/Pod-v0.10-blue)
-
 Fanap's POD Async iOS SDK
 ## Features
 
@@ -57,6 +53,11 @@ public func asyncStateChanged(asyncState: AsyncSocketState, error: AsyncError?) 
 ```swift
 asyncClient?.sendData(type: type, data: data)
 ```
+<br/>
+<br/>
+
+## Documentation
+For more information about how to use Async SDK visit [Documentation](https://hamed8080.gitlab.io/fanappodasyncsdk/documentation/fanappodasyncsdk/) 
 <br/>
 <br/>
 
