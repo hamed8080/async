@@ -7,6 +7,30 @@
 
 import Foundation
 
+protocol LoggerProtocol {
+    init(logger: LoggerProtocol)
+    func log()
+}
+
+protocol ConsoleLogger: LoggerProtocol {
+
+}
+
+protocol FileLogger: LoggerProtocol {
+
+}
+
+class NewLogger: LoggerProtocol {
+
+    required init(logger: LoggerProtocol) {
+
+    }
+
+    func log() {
+
+    }
+}
+
 class Logger{
     private var isDebuggingLogEnabled:Bool
     

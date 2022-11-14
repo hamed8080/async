@@ -28,7 +28,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     private(set) var isConnected            : Bool                      = false
 
     /// The logger class for logging events and exceptions if it's not a runtime exception.
-    private var logger                      : Logger
+    private weak var logger                      : Logger?
 
     /// The socket initializer.
     /// - Parameters:
@@ -89,7 +89,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
                 case .string(let string):
                     self.delegate?.webSocketDidReciveData(self, didReceive: string.data(using: .utf8)!)
                 @unknown default:
-                    self.logger.log(title:"un implemented case found in NativeWebSocketProvider")
+                    self.logger?.log(title:"un implemented case found in NativeWebSocketProvider")
                 }
                 self.readMessage()
             }
@@ -105,7 +105,7 @@ class NativeWebSocketProvider : NSObject , WebSocketProvider , URLSessionDelegat
     /// It'll be called by the os whenever a connection dropped.
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         if let reason = reason {
-            logger.log(title: String(data: reason, encoding: .utf8) ?? "")
+            logger?.log(title: String(data: reason, encoding: .utf8) ?? "")
         }
         isConnected = false
     }
