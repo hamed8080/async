@@ -1,48 +1,46 @@
 //
-//  AsyncMessageTypes.swift
-//  FanapPodChatSDK
+// AsyncMessageTypes.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/20/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
 /// Whenever an event occurs in the server or you want to send a message, a type of message will tell you what's happening right now.
-public enum AsyncMessageTypes : Int , Codable{
-
+public enum AsyncMessageTypes: Int, Codable {
     /// Ping every 20 seonds to keep socket alive.
-    case PING                       = 0
+    case ping = 0
 
     /// Register with server.
-    case SERVER_REGISTER            = 1
+    case serverRegister = 1
 
     /// Registered with server.
-    case DEVICE_REGISTER            = 2
+    case deviceRegister = 2
 
     /// A message  was received.
-    case MESSAGE                    = 3
+    case message = 3
 
     /// A message that needs acknowledgment to tell the server Hey I received the message. It's two-directional.
-    case MESSAGE_ACK_NEEDED         = 4
+    case messageAckNeeded = 4
 
     /// The server needs to know if you receiving this message you should tell us.
-    case MESSAGE_SENDER_ACK_NEEDED  = 5
+    case messageSenderAckNeeded = 5
 
     /// An acknowledgment of a message.
-    case ACK                        = 6
+    case ack = 6
 
     /// Not implemended.
-    case GET_REGISTERED_PEERS       = 7
+    case getRegisteredPeers = 7
 
     /// Not implemended.
-    case PEER_REMOVED               = -3
+    case peerRemoved = -3
 
     /// Not implemended.
-    case REGISTER_QUEUE             = -2
+    case registerQueue = -2
 
     /// Not implemended.
-    case NOT_REGISTERED             = -1
+    case notRegistered = -1
 
     /// Not implemended.
-    case ERROR_MESSAGE              = -99
+    case errorMessage = -99
 }

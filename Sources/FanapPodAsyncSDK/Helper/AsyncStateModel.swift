@@ -1,56 +1,51 @@
 //
-//  AsyncStateModel.swift
-//  FanapPodAsyncSDK
+// AsyncStateModel.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/23/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
 /// This struct only manages the state of the connection and persists all values that need for the async state.
-struct AsyncStateModel{
-
+struct AsyncStateModel {
     /// A boolean that indicates the device is successfully registered with the async server.
-    var isServerRegistered              : Bool                   = false
+    var isServerRegistered: Bool = false
 
     /// A boolean that indicates the device is successfully registered.
-    var isDeviceRegistered              : Bool                   = false
-
-    /// A queue that contains a list of messages that need to be sent in the order of the date they have been added.
-    var messageQueue                    : [Data]                 = []
+    var isDeviceRegistered: Bool = false
 
     /// The number of retries that have happened to connect to the async server.
-    var retryCount                      : Int                    = 0
+    var retryCount: Int = 0
 
     /// The peerId of, which will be filled after the device is registered.
-    private (set) var peerId            : Int?                   = nil
+    private(set) var peerId: Int?
 
     /// The state of the current socket.
-    private (set) var socketState       : AsyncSocketState       = .CLOSED
+    private(set) var socketState: AsyncSocketState = .closed
 
     /// The device id, it'll be set after the device is registered.
-    private (set) var deviceId          : String?                = nil
+    private(set) var deviceId: String?
 
     /// The last message receive-date to track ping intervals.
-    private (set) var lastMessageRCVDate: Date?                  = nil
-    
+    private(set) var lastMessageRCVDate: Date?
+
     /// Setter for the state of the connection.
-    mutating func setSocketState(socketState:AsyncSocketState){
+    mutating func setSocketState(socketState: AsyncSocketState) {
         self.socketState = socketState
     }
 
     /// Setter for the deviceId.
-    mutating func setDeviceId(deviceId:String?){
+    mutating func setDeviceId(deviceId: String?) {
         self.deviceId = deviceId
     }
 
     /// Setter for the peerId.
-    mutating func setPeerId(peerId:Int?){
+    mutating func setPeerId(peerId: Int?) {
         self.peerId = peerId
     }
 
     /// Updater for the last message date received.
-    mutating func setLastMessageReceiveDate(){
-        self.lastMessageRCVDate = Date()
+    mutating func setLastMessageReceiveDate() {
+        lastMessageRCVDate = Date()
     }
 }

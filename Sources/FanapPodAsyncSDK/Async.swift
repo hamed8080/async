@@ -1,13 +1,10 @@
 //
-//  Async.swift
-//  FanapPodChatSDK
+// Async.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/20/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
-
-
 
 public final class Async: WebSocketProviderDelegate {
     private weak var delegate: AsyncDelegate?
@@ -28,7 +25,7 @@ public final class Async: WebSocketProviderDelegate {
     public init(config: AsyncConfig, delegate: AsyncDelegate? = nil) {
         self.config = config
         self.delegate = delegate
-        self.logger = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
+        logger = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
         checkConnectionTimer()
     }
 
@@ -36,7 +33,7 @@ public final class Async: WebSocketProviderDelegate {
     ///
     /// It'll connect through Apple native socket in iOS 13 and above, on the other hand, it'll connect through StarScream in older devices.
     public func createSocket() {
-        setSocketState(socketState: .CONNECTING)
+        setSocketState(socketState: .connecting)
         if #available(iOS 13.0, *) {
             socket = NativeWebSocketProvider(url: URL(string: config.socketAddress)!, timeout: config.connectionRetryInterval, logger: logger)
         } else {
@@ -48,18 +45,18 @@ public final class Async: WebSocketProviderDelegate {
 
     /// Reconnect when you want to connect again.
     public func reconnect() {
-        setSocketState(socketState: .CONNECTING)
+        setSocketState(socketState: .connecting)
         socket?.connect()
     }
 
-    func webSocketDidConnect(_ webSocket: WebSocketProvider) {
-        setSocketState(socketState: .CONNECTED)
+    func webSocketDidConnect(_: WebSocketProvider) {
+        setSocketState(socketState: .connected)
         socketConnected()
     }
 
-    func webSocketDidDisconnect(_ webSocket: WebSocketProvider, _ error: Error?) {
+    func webSocketDidDisconnect(_: WebSocketProvider, _ error: Error?) {
         logger.log(title: "disconnected with error:\(String(describing: error))")
-        setSocketState(socketState: .CLOSED, error: error)
+        setSocketState(socketState: .closed, error: error)
         DispatchQueue.main.async { [weak self] in
             if self?.config.reconnectOnClose == true {
                 self?.tryToReconnectToSocket()
@@ -72,13 +69,13 @@ public final class Async: WebSocketProviderDelegate {
         if asyncStateModel.lastMessageRCVDate == nil {
             // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
             DispatchQueue.main.async { [weak self] in
-                self?.setSocketState(socketState: .CLOSED, error: error)
+                self?.setSocketState(socketState: .closed, error: error)
                 self?.tryToReconnectToSocket()
             }
         }
     }
 
-    func webSocketDidReciveData(_ webSocket: WebSocketProvider, didReceive data: Data) {
+    func webSocketDidReciveData(_: WebSocketProvider, didReceive data: Data) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.messageReceived(data: data)
@@ -105,7 +102,7 @@ public final class Async: WebSocketProviderDelegate {
             reconnectTimer = nil
             reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] timer in
                 guard let self = self else { return }
-                if self.asyncStateModel.socketState == .CONNECTED || self.asyncStateModel.socketState == .ASYNC_READY {
+                if self.asyncStateModel.socketState == .connected || self.asyncStateModel.socketState == .asyncReady {
                     timer.invalidate()
                     return
                 }
@@ -123,33 +120,26 @@ public final class Async: WebSocketProviderDelegate {
 
     /// Send data to serevr.
     ///
-    ///  The message will send only if the socket state is in ``AsyncSocketState/ASYNC_READY`` mode unless the message will be queued and after connecting to the server it sends those messages.
+    ///  The message will send only if the socket state is in ``AsyncSocketState/asyncReady`` mode unless the message will be queued and after connecting to the server it sends those messages.
     /// - Parameters:
-    ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/MESSAGE``.
+    ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/message``.
     ///   - data: If you pass nil nothing happend here.
     public func sendData(type: AsyncMessageTypes, data: Data?) {
         let asyncSendMessage = AsyncMessage(content: data?.string(), type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
-        if asyncStateModel.socketState == .ASYNC_READY {
+        if asyncStateModel.socketState == .asyncReady {
             logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")
             guard let asyncMessageData = asyncMessageData, let string = String(data: asyncMessageData, encoding: .utf8) else { return }
             socket?.send(text: string)
-            delegate?.asyncMessageSent(message: asyncMessageData)
+            delegate?.asyncMessageSent(message: asyncMessageData, error: nil)
         } else {
-            addToQueue(asyncMessageData: asyncMessageData)
-        }
-    }
-
-    private func addToQueue(asyncMessageData: Data?) {
-        if let asyncMessageData = asyncMessageData {
-            logger.log(title: "message added to queue", jsonString: asyncMessageData.string ?? "")
-            asyncStateModel.messageQueue.append(asyncMessageData)
+            delegate?.asyncMessageSent(message: nil, error: AsyncError(code: .socketIsNotConnected))
         }
     }
 
     /// Notify and close the current connection.
     public func closeConnection() {
-        setSocketState(socketState: .CLOSED)
+        setSocketState(socketState: .closed)
         socket?.closeConnection()
     }
 
@@ -159,26 +149,14 @@ public final class Async: WebSocketProviderDelegate {
             .init(refresh: true, appId: config.appId, deviceId: asyncStateModel.deviceId ?? "")
 
         if let data = try? JSONEncoder().encode(register) {
-            sendConnectionData(type: .DEVICE_REGISTER, data: data)
+            sendConnectionData(type: .deviceRegister, data: data)
         }
     }
 
     private func registerServer() {
         let register = RegisterServer(name: config.serverName)
         if let data = try? JSONEncoder().encode(register) {
-            sendConnectionData(type: .SERVER_REGISTER, data: data)
-        }
-    }
-
-    private func sendQueueMessages() {
-        asyncStateModel.messageQueue.forEach { asyncMessageData in
-            if asyncStateModel.socketState == .CONNECTED {
-                logger.log(title: "pop and sending message from queue", jsonString: asyncMessageData.string() ?? "")
-                socket?.send(data: asyncMessageData)
-                DispatchQueue.main.async { [weak self] in
-                    self?.delegate?.asyncMessageSent(message: asyncMessageData)
-                }
-            }
+            sendConnectionData(type: .serverRegister, data: data)
         }
     }
 
@@ -186,13 +164,13 @@ public final class Async: WebSocketProviderDelegate {
         if let id = asyncMessage.id {
             let messageACK = MessageACK(messageId: id)
             if let data = try? JSONEncoder().encode(messageACK) {
-                sendConnectionData(type: .ACK, data: data)
+                sendConnectionData(type: .ack, data: data)
             }
         }
     }
 
     private func sendPing() {
-        sendConnectionData(type: .PING, data: nil)
+        sendConnectionData(type: .ping, data: nil)
     }
 
     private func sendConnectionData(type: AsyncMessageTypes, data: Data?) {
@@ -209,7 +187,7 @@ public final class Async: WebSocketProviderDelegate {
         connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] _ in
             guard let self = self else { return }
             if let lastMSG = self.asyncStateModel.lastMessageRCVDate, lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970 {
-                self.setSocketState(socketState: .CLOSED, error: nil)
+                self.setSocketState(socketState: .closed, error: nil)
                 self.tryToReconnectToSocket()
             }
         })
@@ -239,28 +217,28 @@ extension Async {
         prepareTimerForNextPing()
         asyncStateModel.setLastMessageReceiveDate()
         switch asyncMessage.type {
-        case .PING:
+        case .ping:
             onPingMessage(asyncMessage: asyncMessage)
-        case .SERVER_REGISTER:
+        case .serverRegister:
             onServerRegisteredMessage(asyncMessage: asyncMessage)
-        case .DEVICE_REGISTER:
+        case .deviceRegister:
             onDeviceRegisteredMessage(asyncMessage: asyncMessage)
-        case .MESSAGE:
+        case .message:
             delegate?.asyncMessage(asyncMessage: asyncMessage)
-        case .MESSAGE_ACK_NEEDED, .MESSAGE_SENDER_ACK_NEEDED:
+        case .messageAckNeeded, .messageSenderAckNeeded:
             sendACK(asyncMessage: asyncMessage)
             delegate?.asyncMessage(asyncMessage: asyncMessage)
-        case .ACK:
+        case .ack:
             delegate?.asyncMessage(asyncMessage: asyncMessage)
-        case .GET_REGISTERED_PEERS:
+        case .getRegisteredPeers:
             break
-        case .PEER_REMOVED:
+        case .peerRemoved:
             break
-        case .REGISTER_QUEUE:
+        case .registerQueue:
             break
-        case .NOT_REGISTERED:
+        case .notRegistered:
             break
-        case .ERROR_MESSAGE:
+        case .errorMessage:
             break
         case .none:
             logger.log(title: "can't decode data")
@@ -284,8 +262,7 @@ extension Async {
         }
 
         if asyncStateModel.isServerRegistered == true, asyncStateModel.peerId == oldPeerId {
-            setSocketState(socketState: .ASYNC_READY)
-            sendQueueMessages()
+            setSocketState(socketState: .asyncReady)
         } else {
             registerServer()
         }
@@ -294,8 +271,7 @@ extension Async {
     private func onServerRegisteredMessage(asyncMessage: AsyncMessage) {
         if asyncMessage.senderName == config.serverName {
             asyncStateModel.isServerRegistered = true
-            setSocketState(socketState: .ASYNC_READY)
-            sendQueueMessages()
+            setSocketState(socketState: .asyncReady)
         } else {
             registerServer()
         }

@@ -1,9 +1,8 @@
 //
-//  CustomLog.swift
-//  FanapPodAsyncSDK
+// CustomLog.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/20/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
@@ -12,35 +11,26 @@ protocol LoggerProtocol {
     func log()
 }
 
-protocol ConsoleLogger: LoggerProtocol {
+protocol ConsoleLogger: LoggerProtocol {}
 
-}
-
-protocol FileLogger: LoggerProtocol {
-
-}
+protocol FileLogger: LoggerProtocol {}
 
 class NewLogger: LoggerProtocol {
+    required init(logger _: LoggerProtocol) {}
 
-    required init(logger: LoggerProtocol) {
-
-    }
-
-    func log() {
-
-    }
+    func log() {}
 }
 
-class Logger{
-    private var isDebuggingLogEnabled:Bool
-    
-    init(isDebuggingLogEnabled:Bool){
+class Logger {
+    private var isDebuggingLogEnabled: Bool
+
+    init(isDebuggingLogEnabled: Bool) {
         self.isDebuggingLogEnabled = isDebuggingLogEnabled
     }
-    
-    func log(title:String? = nil ,jsonString:String? = nil){
-        if  isDebuggingLogEnabled{
-            if let title = title{
+
+    func log(title: String? = nil, jsonString: String? = nil) {
+        if isDebuggingLogEnabled {
+            if let title = title {
                 print(title)
             }
             if let jsonString = jsonString {
@@ -50,4 +40,3 @@ class Logger{
         }
     }
 }
-

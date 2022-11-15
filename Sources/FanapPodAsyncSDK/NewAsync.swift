@@ -1,9 +1,8 @@
 //
-//  Async.swift
-//  FanapPodChatSDK
+// NewAsync.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/20/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
@@ -56,10 +55,10 @@ private protocol AsyncProtocol {
     func sendQueues()
 }
 
-//class NewAsync: AsyncProtocol {
+// class NewAsync: AsyncProtocol {
 //
-//}
+// }
 //
-//extension NewAsync: WebSocketProviderDelegate {
+// extension NewAsync: WebSocketProviderDelegate {
 //
-//}
+// }

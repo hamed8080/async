@@ -1,15 +1,13 @@
 //
-//  EncodableEX.swift
-//  FanapPodAsyncSDK
+// EncodableEX.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/27/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
-extension Encodable{
-
+extension Encodable {
     /// Convert the encodable to the data.
-    var data:Data?{
+    var data: Data? {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try? encoder.encode(self)
@@ -17,7 +15,7 @@ extension Encodable{
     }
 
     /// A string value of encodable.
-    public var string:String?{
+    public var string: String? {
         guard let data = data else {
             return nil
         }

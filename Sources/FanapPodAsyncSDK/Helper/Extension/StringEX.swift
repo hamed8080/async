@@ -1,46 +1,43 @@
 //
-//  StringEX.swift
-//  FanapPodAsyncSDK
+// StringEX.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 11/7/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
-extension String{
-
+public extension String {
     /// Remove backslashes for pretty print.
-    public func removeBackSlashes()->String{
-        return self.replacingOccurrences(of: "\\\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\"", with: "\"")
-        .replacingOccurrences(of: "\\\"", with: "\"")
-        .replacingOccurrences(of: "\"{", with: "\n{")
-        .replacingOccurrences(of: "}\"", with: "}\n")
-        .replacingOccurrences(of: "\"[", with: "\n[")
-        .replacingOccurrences(of: "]\"", with: "]\n")
+    func removeBackSlashes() -> String {
+        replacingOccurrences(of: "\\\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .replacingOccurrences(of: "\\\"", with: "\"")
+            .replacingOccurrences(of: "\"{", with: "\n{")
+            .replacingOccurrences(of: "}\"", with: "}\n")
+            .replacingOccurrences(of: "\"[", with: "\n[")
+            .replacingOccurrences(of: "]\"", with: "]\n")
     }
 
-
     /// Pretty print of a JSON.
-    public func preetyJsonString()->String{
-        let string = self.removeBackSlashes()
+    func preetyJsonString() -> String {
+        let string = removeBackSlashes()
         let stringData = string.data(using: .utf8) ?? Data()
         if let jsonObject = try? JSONSerialization.jsonObject(with: stringData, options: .mutableContainers),
            let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
         {
             let prettyString = String(data: prettyJsonData, encoding: .utf8) ?? ""
             return prettyString
-        }else if let data = self.data(using: .utf8),
-                 let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
-                 let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        } else if let data = data(using: .utf8),
+                  let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
+                  let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
         {
             let prettyString = String(data: prettyJsonData, encoding: .utf8) ?? ""
             return prettyString.removeBackSlashes()
-        }else{
+        } else {
             return ""
         }
     }

@@ -1,24 +1,22 @@
 //
-//  AsyncSocketState.swift
-//  FanapPodAsyncSDK
+// AsyncSocketState.swift
+// Copyright (c) 2022 FanapPodAsyncSDK
 //
-//  Created by Hamed Hosseini on 10/20/21.
-//
+// Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
 
 /// The current state of the socket.
-public enum AsyncSocketState:String{
-
+public enum AsyncSocketState: String {
     /// The socket is trying to connect again.
-    case CONNECTING  = "CONNECTING"
+    case connecting
 
     /// The socket is already connected.
-    case CONNECTED   = "CONNECTED"
+    case connected
 
     /// The socket closed due to weak internet connectivity or an error that had happened on the server.
-    case CLOSED      = "CLOSED"
+    case closed
 
     /// Async is ready to use.
-    case ASYNC_READY = "ASYNC_READY"
+    case asyncReady
 }
