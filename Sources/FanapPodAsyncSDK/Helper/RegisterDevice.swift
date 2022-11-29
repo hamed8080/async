@@ -30,7 +30,8 @@ struct RegisterDevice: Codable {
 
     /// A boolean is set to true if the peerId has been set before and has a value, otherwise, the other initializer will be used with renewing.
     public init(refresh: Bool, appId: String, deviceId: String) {
-        renew = nil
+        // We should set renew to false to retrieve old messages from.
+        renew = false
         self.refresh = refresh
         self.appId = appId
         self.deviceId = deviceId
