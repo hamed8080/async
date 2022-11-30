@@ -26,7 +26,7 @@ asyncClient.createSocket()
 
 ### Connecting successfully
 
-If everything goes well you should receive a ``AsyncSocketState/ASYNC_READY`` state in the ``AsyncDelegate/asyncStateChanged(asyncState:error:)`` protocol.
+If everything goes well you should receive a ``AsyncSocketState/asyncReady`` state in the ``AsyncDelegate/asyncStateChanged(asyncState:error:)`` protocol.
 ```swift
 public func asyncStateChanged(asyncState: AsyncSocketState, error: AsyncError?) {
     if asyncState == .ASYNC_READY{
@@ -46,7 +46,7 @@ public func asyncMessage(asyncMessage: AsyncMessage){
 
 ### Send a message
 
-For sending a message make sure the async state is in ``AsyncSocketState/ASYNC_READY`` state unless it async will queued the message and after connecting to the server it will send automatically.
+For sending a message make sure the async state is in ``AsyncSocketState/asyncReady`` state unless it async will queued the message and after connecting to the server it will send automatically.
 ```swift
 if asyncClient.asyncSateModel == AsyncSocketState.ASYNC_READY{
     asyncClient.send(type: AsyncMessageTypes.MESSAGE, data: "Hello World!".data(using:.utf8)!)
