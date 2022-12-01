@@ -1,4 +1,4 @@
-# Pod-Async-iOS-SDK
+# FanapPodAsyncSDK
 <img src="https://gitlab.com/hamed8080/fanappodasyncsdk/-/raw/gl-pages/.docs/favicon.svg"  width="64" height="64">
 <br />
 <br />
