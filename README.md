@@ -63,3 +63,7 @@ For more information about how to use Async SDK visit [Documentation](https://ha
 
 ## Developer Application 
 For more example and usage you can use [developer implementation app](https://github.com/hamed8080/ChatImplementation)
+
+## Contributing to FanapPodAsyncSDK
+
+Please see the [contributing guide](/CONTRIBUTING.md) for more information.

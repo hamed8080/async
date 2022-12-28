@@ -77,3 +77,98 @@ public struct AsyncConfig {
         self.appId = appId
     }
 }
+
+public class AsyncConfigBuilder {
+    private(set) var socketAddress: String = ""
+    private(set) var serverName: String = ""
+    private(set) var deviceId: String = UUID().uuidString
+    private(set) var appId: String = "POD-Chat"
+    private(set) var peerId: Int?
+    private(set) var messageTtl: Int = 10000
+    private(set) var connectionRetryInterval: TimeInterval = 5
+    private(set) var connectionCheckTimeout: TimeInterval = 20
+    private(set) var reconnectCount: Int = 5
+    private(set) var reconnectOnClose: Bool = false
+    private(set) var isDebuggingLogEnabled: Bool = false
+    public init() {}
+
+    @discardableResult
+    public func socketAddress(_ socketAddress: String) -> AsyncConfigBuilder {
+        self.socketAddress = socketAddress
+        return self
+    }
+
+    @discardableResult
+    public func serverName(_ serverName: String) -> AsyncConfigBuilder {
+        self.serverName = serverName
+        return self
+    }
+
+    @discardableResult
+    public func deviceId(_ deviceId: String) -> AsyncConfigBuilder {
+        self.deviceId = deviceId
+        return self
+    }
+
+    @discardableResult
+    public func appId(_ appId: String) -> AsyncConfigBuilder {
+        self.appId = appId
+        return self
+    }
+
+    @discardableResult
+    public func peerId(_ peerId: Int?) -> AsyncConfigBuilder {
+        self.peerId = peerId
+        return self
+    }
+
+    @discardableResult
+    public func messageTtl(_ messageTtl: Int) -> AsyncConfigBuilder {
+        self.messageTtl = messageTtl
+        return self
+    }
+
+    @discardableResult
+    public func connectionRetryInterval(_ connectionRetryInterval: TimeInterval) -> AsyncConfigBuilder {
+        self.connectionRetryInterval = connectionRetryInterval
+        return self
+    }
+
+    @discardableResult
+    public func connectionCheckTimeout(_ connectionCheckTimeout: TimeInterval) -> AsyncConfigBuilder {
+        self.connectionCheckTimeout = connectionCheckTimeout
+        return self
+    }
+
+    @discardableResult
+    public func reconnectCount(_ reconnectCount: Int) -> AsyncConfigBuilder {
+        self.reconnectCount = reconnectCount
+        return self
+    }
+
+    @discardableResult
+    public func reconnectOnClose(_ reconnectOnClose: Bool) -> AsyncConfigBuilder {
+        self.reconnectOnClose = reconnectOnClose
+        return self
+    }
+
+    @discardableResult
+    public func isDebuggingLogEnabled(_ isDebuggingLogEnabled: Bool) -> AsyncConfigBuilder {
+        self.isDebuggingLogEnabled = isDebuggingLogEnabled
+        return self
+    }
+
+    public func build() -> AsyncConfig {
+        AsyncConfig(socketAddress: socketAddress,
+                    serverName: serverName,
+                    deviceId: deviceId,
+                    appId: appId,
+                    peerId: peerId,
+                    messageTtl: messageTtl,
+                    connectionRetryInterval: connectionRetryInterval,
+                    connectionCheckTimeout: connectionCheckTimeout,
+                    reconnectCount: reconnectCount,
+                    reconnectOnClose: reconnectOnClose,
+                    isDebuggingLogEnabled: isDebuggingLogEnabled)
+    }
+}
