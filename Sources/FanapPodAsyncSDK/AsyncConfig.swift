@@ -14,17 +14,17 @@ import Foundation
 ///  let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "Chat")
 /// ```
 public struct AsyncConfig {
-    public var socketAddress: String
-    public var serverName: String
-    public var deviceId: String = UUID().uuidString
-    public var appId: String = "POD-Chat"
-    public var peerId: Int?
-    public var messageTtl: Int = 10000
-    public var connectionRetryInterval: TimeInterval = 5
-    public var connectionCheckTimeout: TimeInterval = 20
-    public var reconnectCount: Int = 5
-    public var reconnectOnClose: Bool = false
-    public var isDebuggingLogEnabled: Bool = false
+    public private(set) var socketAddress: String
+    public private(set) var serverName: String
+    public private(set) var deviceId: String = UUID().uuidString
+    public private(set) var appId: String = "POD-Chat"
+    public private(set) var peerId: Int?
+    public private(set) var messageTtl: Int = 10000
+    public private(set) var connectionRetryInterval: TimeInterval = 5
+    public private(set) var connectionCheckTimeout: TimeInterval = 20
+    public private(set) var reconnectCount: Int = 5
+    public private(set) var reconnectOnClose: Bool = false
+    public private(set) var isDebuggingLogEnabled: Bool = false
 
     /// Configuration data that needs to prepare to use SDK.
     ///
@@ -75,6 +75,10 @@ public struct AsyncConfig {
         self.socketAddress = socketAddress
         self.serverName = serverName
         self.appId = appId
+    }
+
+    public mutating func updateDeviceId(_ deviceId: String) {
+        self.deviceId = deviceId
     }
 }
 
