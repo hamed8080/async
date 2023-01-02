@@ -13,7 +13,7 @@ import Foundation
 /// ```swift
 ///  let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "Chat")
 /// ```
-public struct AsyncConfig {
+public struct AsyncConfig: Codable {
     public var socketAddress: String
     public var serverName: String
     public var deviceId: String = UUID().uuidString
