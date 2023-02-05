@@ -7,7 +7,8 @@
 import Foundation
 
 /// The current state of the socket.
-public enum AsyncSocketState: String {
+public enum AsyncSocketState: String, Identifiable, CaseIterable {
+    public var id: Self { self }
     /// The socket is trying to connect again.
     case connecting
 
