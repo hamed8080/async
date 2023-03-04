@@ -14,17 +14,17 @@ import Foundation
 ///  let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "Chat")
 /// ```
 public struct AsyncConfig: Codable {
-    public var socketAddress: String
-    public var serverName: String
-    public var deviceId: String = UUID().uuidString
-    public var appId: String = "POD-Chat"
-    public var peerId: Int?
-    public var messageTtl: Int = 10000
-    public var connectionRetryInterval: TimeInterval = 5
-    public var connectionCheckTimeout: TimeInterval = 20
-    public var reconnectCount: Int = 5
-    public var reconnectOnClose: Bool = false
-    public var isDebuggingLogEnabled: Bool = false
+    public private(set) var socketAddress: String
+    public private(set) var serverName: String
+    public private(set) var deviceId: String = UUID().uuidString
+    public private(set) var appId: String = "POD-Chat"
+    public private(set) var peerId: Int?
+    public private(set) var messageTtl: Int = 10000
+    public private(set) var connectionRetryInterval: TimeInterval = 5
+    public private(set) var connectionCheckTimeout: TimeInterval = 20
+    public private(set) var reconnectCount: Int = 5
+    public private(set) var reconnectOnClose: Bool = false
+    public private(set) var isDebuggingLogEnabled: Bool = false
 
     /// Configuration data that needs to prepare to use SDK.
     ///
@@ -75,5 +75,104 @@ public struct AsyncConfig: Codable {
         self.socketAddress = socketAddress
         self.serverName = serverName
         self.appId = appId
+    }
+
+    public mutating func updateDeviceId(_ deviceId: String) {
+        self.deviceId = deviceId
+    }
+}
+
+public class AsyncConfigBuilder {
+    private(set) var socketAddress: String = ""
+    private(set) var serverName: String = ""
+    private(set) var deviceId: String = UUID().uuidString
+    private(set) var appId: String = "POD-Chat"
+    private(set) var peerId: Int?
+    private(set) var messageTtl: Int = 10000
+    private(set) var connectionRetryInterval: TimeInterval = 5
+    private(set) var connectionCheckTimeout: TimeInterval = 20
+    private(set) var reconnectCount: Int = 5
+    private(set) var reconnectOnClose: Bool = false
+    private(set) var isDebuggingLogEnabled: Bool = false
+    public init() {}
+
+    @discardableResult
+    public func socketAddress(_ socketAddress: String) -> AsyncConfigBuilder {
+        self.socketAddress = socketAddress
+        return self
+    }
+
+    @discardableResult
+    public func serverName(_ serverName: String) -> AsyncConfigBuilder {
+        self.serverName = serverName
+        return self
+    }
+
+    @discardableResult
+    public func deviceId(_ deviceId: String) -> AsyncConfigBuilder {
+        self.deviceId = deviceId
+        return self
+    }
+
+    @discardableResult
+    public func appId(_ appId: String) -> AsyncConfigBuilder {
+        self.appId = appId
+        return self
+    }
+
+    @discardableResult
+    public func peerId(_ peerId: Int?) -> AsyncConfigBuilder {
+        self.peerId = peerId
+        return self
+    }
+
+    @discardableResult
+    public func messageTtl(_ messageTtl: Int) -> AsyncConfigBuilder {
+        self.messageTtl = messageTtl
+        return self
+    }
+
+    @discardableResult
+    public func connectionRetryInterval(_ connectionRetryInterval: TimeInterval) -> AsyncConfigBuilder {
+        self.connectionRetryInterval = connectionRetryInterval
+        return self
+    }
+
+    @discardableResult
+    public func connectionCheckTimeout(_ connectionCheckTimeout: TimeInterval) -> AsyncConfigBuilder {
+        self.connectionCheckTimeout = connectionCheckTimeout
+        return self
+    }
+
+    @discardableResult
+    public func reconnectCount(_ reconnectCount: Int) -> AsyncConfigBuilder {
+        self.reconnectCount = reconnectCount
+        return self
+    }
+
+    @discardableResult
+    public func reconnectOnClose(_ reconnectOnClose: Bool) -> AsyncConfigBuilder {
+        self.reconnectOnClose = reconnectOnClose
+        return self
+    }
+
+    @discardableResult
+    public func isDebuggingLogEnabled(_ isDebuggingLogEnabled: Bool) -> AsyncConfigBuilder {
+        self.isDebuggingLogEnabled = isDebuggingLogEnabled
+        return self
+    }
+
+    public func build() -> AsyncConfig {
+        AsyncConfig(socketAddress: socketAddress,
+                    serverName: serverName,
+                    deviceId: deviceId,
+                    appId: appId,
+                    peerId: peerId,
+                    messageTtl: messageTtl,
+                    connectionRetryInterval: connectionRetryInterval,
+                    connectionCheckTimeout: connectionCheckTimeout,
+                    reconnectCount: reconnectCount,
+                    reconnectOnClose: reconnectOnClose,
+                    isDebuggingLogEnabled: isDebuggingLogEnabled)
     }
 }

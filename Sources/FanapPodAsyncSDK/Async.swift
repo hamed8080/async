@@ -124,8 +124,9 @@ public final class Async: WebSocketProviderDelegate {
     /// - Parameters:
     ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/message``.
     ///   - data: If you pass nil nothing happend here.
-    public func sendData(type: AsyncMessageTypes, data: Data?) {
-        let asyncSendMessage = AsyncMessage(content: data?.string(), type: type)
+    public func sendData(type: AsyncMessageTypes, message: SendAsyncMessageVO?) {
+        guard let data = try? JSONEncoder().encode(message) else { return }
+        let asyncSendMessage = AsyncMessage(content: data.string(), type: type)
         let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
         if asyncStateModel.socketState == .asyncReady {
             logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")

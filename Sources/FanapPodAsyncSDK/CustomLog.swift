@@ -17,11 +17,11 @@ protocol FileLogger: LoggerProtocol {}
 
 class NewLogger: LoggerProtocol {
     required init(logger _: LoggerProtocol) {}
-
     func log() {}
 }
 
 class Logger {
+    private let sdkName = "ASYNC_SDK: "
     private var isDebuggingLogEnabled: Bool
 
     init(isDebuggingLogEnabled: Bool) {
@@ -31,7 +31,7 @@ class Logger {
     func log(title: String? = nil, jsonString: String? = nil) {
         if isDebuggingLogEnabled {
             if let title = title {
-                print(title)
+                print(sdkName + title)
             }
             if let jsonString = jsonString {
                 print("\(jsonString.preetyJsonString())")

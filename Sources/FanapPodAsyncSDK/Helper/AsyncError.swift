@@ -6,7 +6,8 @@
 
 import Foundation
 
-public enum AsyncErrorCodes: Int {
+public enum AsyncErrorCodes: Int, Identifiable, CaseIterable {
+    public var id: Self { self }
     case errorPing = 4000
     case socketIsNotConnected = 4001
     case undefined
