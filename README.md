@@ -28,7 +28,7 @@ Add in `Podfile`:
 pod 'FanapPodAsyncSDK'
 ```
 
-## Intit 
+## How to use? 
 
 ```swift
 let asyncConfig = AsyncConfigBuilder()
@@ -68,7 +68,7 @@ For more information about how to use Async SDK visit [Documentation](https://ha
 <br/>
 <br/>
 
-## [Developer Application](https://github.com/hamed8080/ChatImplementation)
+## [Developer Application](https://github.com/hamed8080/ChatApplication)
 For more example and usage you can use [developer implementation app](https://github.com/hamed8080/ChatImplementation)
 
 ## Contributing to FanapPodAsyncSDK
