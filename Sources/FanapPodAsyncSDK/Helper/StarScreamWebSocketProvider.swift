@@ -8,7 +8,7 @@ import Foundation
 import Starscream
 
 /// Starscream websocket provider. It'll be chosen automatically if the device is running iOS 12 and older.
-class StarScreamWebSocketProvider: WebSocketProvider {
+final class StarScreamWebSocketProvider: WebSocketProvider {
     /// A delegation provider to inform events.
     weak var delegate: WebSocketProviderDelegate?
 

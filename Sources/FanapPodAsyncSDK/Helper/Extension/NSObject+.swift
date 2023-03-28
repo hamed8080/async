@@ -1,5 +1,5 @@
 //
-// NSObjectEX.swift
+// NSObject+.swift
 // Copyright (c) 2022 FanapPodAsyncSDK
 //
 // Created by Hamed Hosseini on 9/27/22.

@@ -82,7 +82,7 @@ public struct AsyncConfig: Codable {
     }
 }
 
-public class AsyncConfigBuilder {
+public final class AsyncConfigBuilder {
     private(set) var socketAddress: String = ""
     private(set) var serverName: String = ""
     private(set) var deviceId: String = UUID().uuidString

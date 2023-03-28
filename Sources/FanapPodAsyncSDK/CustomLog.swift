@@ -15,12 +15,12 @@ protocol ConsoleLogger: LoggerProtocol {}
 
 protocol FileLogger: LoggerProtocol {}
 
-class NewLogger: LoggerProtocol {
+final class NewLogger: LoggerProtocol {
     required init(logger _: LoggerProtocol) {}
     func log() {}
 }
 
-class Logger {
+final class Logger {
     private let sdkName = "ASYNC_SDK: "
     private var isDebuggingLogEnabled: Bool
 
