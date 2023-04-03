@@ -3,19 +3,19 @@
     {
       "identity" : "additive",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hamed8080/additive.git",
+      "location" : "http://pubgi.fanapsoft.ir/chat/ios/additive.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "cd4bb0cdd1de3d216142ecfa8bdb3456cf923f9c"
+        "revision" : "f0de5c01974c32f80930516763e65b0e332ce8d4",
+        "version" : "1.0.0"
       }
     },
     {
       "identity" : "logger",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hamed8080/logger.git",
+      "location" : "http://pubgi.fanapsoft.ir/chat/ios/logger.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "d50ca9a12ebc27282e1012158e2d36d56ffd157a"
+        "revision" : "25ae1b72541902d60b4869d224c9781fb41758be",
+        "version" : "1.0.1"
       }
     },
     {

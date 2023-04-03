@@ -15,8 +15,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
         .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
-        .package(url: "https://github.com/hamed8080/logger.git", branch: "main"),
-        .package(url: "https://github.com/hamed8080/additive.git", branch: "main"),
+        .package(url: "http://pubgi.fanapsoft.ir/chat/ios/logger.git", exact: "1.0.1"),
+        .package(url: "http://pubgi.fanapsoft.ir/chat/ios/additive.git", exact: "1.0.0"),
     ],
     targets: [
         .target(name: "Async", dependencies: [
