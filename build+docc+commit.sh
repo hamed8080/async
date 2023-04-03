@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TARGET_NAME="FanapPodAsyncSDK"
+TARGET_NAME="Async"
 BUNDLE_ID="ir.fanap.${TARGET_NAME}"
 BUNDLE_VERSION="1.0.0"
 DOCC_FILE_PATH="${pwd}/Sources/${TARGET_NAME}/${TARGET_NAME}.docc"
-DOCC_HOST_BASE_PATH="fanappodasyncsdk"
+DOCC_HOST_BASE_PATH="async"
 DOCC_OUTPUT_FOLDER="./.docs"
 DOCC_SYMBOL_GRAPHS=".build/symbol-graphs/"
 DOCC_SYMBOL_GRAPHS_OUTPUT=".build/swift-docc-symbol-graphs"

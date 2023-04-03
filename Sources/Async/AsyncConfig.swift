@@ -1,10 +1,11 @@
 //
 // AsyncConfig.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
+import Logger
 
 /// Configuration data that needs to prepare to use SDK.
 ///
@@ -24,7 +25,7 @@ public struct AsyncConfig: Codable {
     public private(set) var connectionCheckTimeout: TimeInterval = 20
     public private(set) var reconnectCount: Int = 5
     public private(set) var reconnectOnClose: Bool = false
-    public private(set) var isDebuggingLogEnabled: Bool = false
+    public private(set) var loggerConfig: LoggerConfig
 
     /// Configuration data that needs to prepare to use SDK.
     ///
@@ -39,30 +40,29 @@ public struct AsyncConfig: Codable {
     ///   - connectionCheckTimeout: Time in seconds for checking connection status and try if disconnected or informing you through the delegate.
     ///   - reconnectCount: The amount of times when socket fail or disconnect if reconnectOnClose is enabled
     ///   - reconnectOnClose: If it is true it tries to connect again depending on how many times you've set reconnectCount.
-    ///   - isDebuggingLogEnabled: If debugging is set true in the console you'll see logs for messages that send and receive and also what's happening when the socket state changes.
     public init(socketAddress: String,
                 serverName: String,
                 deviceId: String = UUID().uuidString,
                 appId: String = "POD-Chat",
+                loggerConfig: LoggerConfig = LoggerConfig(prefix: "ASYNC_SDK"),
                 peerId: Int? = nil,
                 messageTtl: Int = 10000,
                 connectionRetryInterval: TimeInterval = 5,
                 connectionCheckTimeout: TimeInterval = 20,
                 reconnectCount: Int = 5,
-                reconnectOnClose: Bool = false,
-                isDebuggingLogEnabled: Bool = false)
+                reconnectOnClose: Bool = false)
     {
         self.socketAddress = socketAddress
         self.serverName = serverName
         self.deviceId = deviceId
         self.appId = appId
+        self.loggerConfig = loggerConfig
         self.peerId = peerId
         self.messageTtl = messageTtl
         self.connectionRetryInterval = connectionRetryInterval
         self.connectionCheckTimeout = connectionCheckTimeout
         self.reconnectCount = reconnectCount
         self.reconnectOnClose = reconnectOnClose
-        self.isDebuggingLogEnabled = isDebuggingLogEnabled
     }
 
     /// Configuration data that needs to prepare to use SDK.
@@ -71,10 +71,12 @@ public struct AsyncConfig: Codable {
     ///   - socketAddress: The server address of socket.
     ///   - serverName: Server name of Async Server.
     ///   - appId: The id of application that registered in server.
-    public init(socketAddress: String, serverName: String, appId: String) {
+    ///   - loggerConfig: The id of application that registered in server.
+    public init(socketAddress: String, serverName: String, appId: String, loggerConfig: LoggerConfig) {
         self.socketAddress = socketAddress
         self.serverName = serverName
         self.appId = appId
+        self.loggerConfig = loggerConfig
     }
 
     public mutating func updateDeviceId(_ deviceId: String) {
@@ -93,7 +95,7 @@ public final class AsyncConfigBuilder {
     private(set) var connectionCheckTimeout: TimeInterval = 20
     private(set) var reconnectCount: Int = 5
     private(set) var reconnectOnClose: Bool = false
-    private(set) var isDebuggingLogEnabled: Bool = false
+    private(set) var loggerConfig: LoggerConfig = .init(prefix: "ASYNC_SDK")
     public init() {}
 
     @discardableResult
@@ -157,8 +159,8 @@ public final class AsyncConfigBuilder {
     }
 
     @discardableResult
-    public func isDebuggingLogEnabled(_ isDebuggingLogEnabled: Bool) -> AsyncConfigBuilder {
-        self.isDebuggingLogEnabled = isDebuggingLogEnabled
+    public func loggerConfig(_ loggerConfig: LoggerConfig) -> AsyncConfigBuilder {
+        self.loggerConfig = loggerConfig
         return self
     }
 
@@ -167,12 +169,12 @@ public final class AsyncConfigBuilder {
                     serverName: serverName,
                     deviceId: deviceId,
                     appId: appId,
+                    loggerConfig: loggerConfig,
                     peerId: peerId,
                     messageTtl: messageTtl,
                     connectionRetryInterval: connectionRetryInterval,
                     connectionCheckTimeout: connectionCheckTimeout,
                     reconnectCount: reconnectCount,
-                    reconnectOnClose: reconnectOnClose,
-                    isDebuggingLogEnabled: isDebuggingLogEnabled)
+                    reconnectOnClose: reconnectOnClose)
     }
 }

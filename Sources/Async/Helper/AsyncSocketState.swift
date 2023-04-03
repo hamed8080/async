@@ -1,6 +1,6 @@
 //
 // AsyncSocketState.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 

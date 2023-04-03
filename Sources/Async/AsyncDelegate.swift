@@ -1,13 +1,14 @@
 //
 // AsyncDelegate.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
+import Logger
 
 /// Delegate to notify events that occur on an async object.
-public protocol AsyncDelegate: AnyObject {
+public protocol AsyncDelegate: AnyObject, LogDelegate {
     /// When a new message arrive it called.
     /// - Parameter asyncMessage: An async message that contains content and type of message and e.g.
     func asyncMessage(asyncMessage: AsyncMessage)

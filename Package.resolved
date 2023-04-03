@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "additive",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hamed8080/additive.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cd4bb0cdd1de3d216142ecfa8bdb3456cf923f9c"
+      }
+    },
+    {
+      "identity" : "logger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hamed8080/logger.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d50ca9a12ebc27282e1012158e2d36d56ffd157a"
+      }
+    },
+    {
       "identity" : "starscream",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/daltoniam/Starscream.git",

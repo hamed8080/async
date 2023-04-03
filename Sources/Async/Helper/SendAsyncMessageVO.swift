@@ -1,6 +1,6 @@
 //
 // SendAsyncMessageVO.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 11/16/22
 

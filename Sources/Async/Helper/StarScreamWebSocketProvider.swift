@@ -1,10 +1,11 @@
 //
 // StarScreamWebSocketProvider.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
+import Logger
 import Starscream
 
 /// Starscream websocket provider. It'll be chosen automatically if the device is running iOS 12 and older.

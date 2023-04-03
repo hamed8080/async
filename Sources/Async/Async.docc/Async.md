@@ -1,5 +1,5 @@
-# ``FanapPodAsyncSDK``
-With Fanap Async SDK you could connect to the async server without managing the socket state.
+# ``Async``
+With Async SDK you could connect to the async server without managing the socket state.
 
 ## Overview
 Async SDK provides the ability to connect easily to the async server and manage the connection and reconnect whenever reconnecting is needed.

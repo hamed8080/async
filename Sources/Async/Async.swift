@@ -1,10 +1,12 @@
 //
 // Async.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 
+import Additive
 import Foundation
+import Logger
 
 public final class Async: WebSocketProviderDelegate {
     private weak var delegate: AsyncDelegate?
@@ -23,9 +25,10 @@ public final class Async: WebSocketProviderDelegate {
     ///   - config: Configuration of async ``AsyncConfig``.
     ///   - delegate: Delegate to notify events.
     public init(config: AsyncConfig, delegate: AsyncDelegate? = nil) {
+        logger = Logger(config: config.loggerConfig)
         self.config = config
         self.delegate = delegate
-        logger = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
+        logger.delegate = delegate
         checkConnectionTimer()
     }
 
@@ -55,7 +58,7 @@ public final class Async: WebSocketProviderDelegate {
     }
 
     func webSocketDidDisconnect(_: WebSocketProvider, _ error: Error?) {
-        logger.log(title: "disconnected with error:\(String(describing: error))")
+        logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
         setSocketState(socketState: .closed, error: error)
         DispatchQueue.main.async { [weak self] in
             if self?.config.reconnectOnClose == true {
@@ -65,7 +68,7 @@ public final class Async: WebSocketProviderDelegate {
     }
 
     func webSocketReceiveError(_ error: Error?) {
-        logger.log(title: "received Error:\(String(describing: error))")
+        logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: loggerUserInfo)
         if asyncStateModel.lastMessageRCVDate == nil {
             // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
             DispatchQueue.main.async { [weak self] in
@@ -108,10 +111,10 @@ public final class Async: WebSocketProviderDelegate {
                 }
                 if self.asyncStateModel.retryCount < self.config.reconnectCount {
                     self.asyncStateModel.retryCount += 1
-                    self.logger.log(title: "try reconnect for \(self.asyncStateModel.retryCount) times")
+                    self.logger.log(message: "Try reconnect for \(self.asyncStateModel.retryCount) times", persist: false, type: .internalLog)
                     self.reconnect()
                 } else {
-                    self.logger.log(title: "failed to reconnect after \(self.config.reconnectCount) tries")
+                    self.logger.log(message: "Failed to reconnect after \(self.config.reconnectCount) tries", persist: false, type: .internalLog)
                     timer.invalidate()
                 }
             }
@@ -125,11 +128,11 @@ public final class Async: WebSocketProviderDelegate {
     ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/message``.
     ///   - data: If you pass nil nothing happend here.
     public func sendData(type: AsyncMessageTypes, message: SendAsyncMessageVO?) {
-        guard let data = try? JSONEncoder().encode(message) else { return }
-        let asyncSendMessage = AsyncMessage(content: data.string(), type: type)
-        let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
+        guard let data = try? JSONEncoder.instance.encode(message) else { return }
+        let asyncSendMessage = AsyncMessage(content: data.utf8String, type: type)
+        let asyncMessageData = try? JSONEncoder.instance.encode(asyncSendMessage)
         if asyncStateModel.socketState == .asyncReady {
-            logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")
+            logger.logJSON(title: "Send message", jsonString: asyncSendMessage.string ?? "", persist: false, type: .sent)
             guard let asyncMessageData = asyncMessageData, let string = String(data: asyncMessageData, encoding: .utf8) else { return }
             socket?.send(text: string)
             delegate?.asyncMessageSent(message: asyncMessageData, error: nil)
@@ -149,14 +152,14 @@ public final class Async: WebSocketProviderDelegate {
             .init(renew: true, appId: config.appId, deviceId: asyncStateModel.deviceId ?? "") :
             .init(refresh: true, appId: config.appId, deviceId: asyncStateModel.deviceId ?? "")
 
-        if let data = try? JSONEncoder().encode(register) {
+        if let data = try? JSONEncoder.instance.encode(register) {
             sendConnectionData(type: .deviceRegister, data: data)
         }
     }
 
     private func registerServer() {
         let register = RegisterServer(name: config.serverName)
-        if let data = try? JSONEncoder().encode(register) {
+        if let data = try? JSONEncoder.instance.encode(register) {
             sendConnectionData(type: .serverRegister, data: data)
         }
     }
@@ -164,7 +167,7 @@ public final class Async: WebSocketProviderDelegate {
     private func sendACK(asyncMessage: AsyncMessage) {
         if let id = asyncMessage.id {
             let messageACK = MessageACK(messageId: id)
-            if let data = try? JSONEncoder().encode(messageACK) {
+            if let data = try? JSONEncoder.instance.encode(messageACK) {
                 sendConnectionData(type: .ack, data: data)
             }
         }
@@ -175,9 +178,9 @@ public final class Async: WebSocketProviderDelegate {
     }
 
     private func sendConnectionData(type: AsyncMessageTypes, data: Data?) {
-        let asyncSendMessage = AsyncMessage(content: data?.string(), type: type)
-        let asyncMessageData = try? JSONEncoder().encode(asyncSendMessage)
-        logger.log(title: "send Message", jsonString: asyncSendMessage.string ?? "")
+        let asyncSendMessage = AsyncMessage(content: data?.utf8String, type: type)
+        let asyncMessageData = try? JSONEncoder.instance.encode(asyncSendMessage)
+        logger.logJSON(title: "Send an internal message", jsonString: asyncSendMessage.string ?? "", persist: false, type: .sent)
         guard let asyncMessageData = asyncMessageData, let string = String(data: asyncMessageData, encoding: .utf8) else { return }
         socket?.send(text: string)
     }
@@ -185,13 +188,13 @@ public final class Async: WebSocketProviderDelegate {
     private func checkConnectionTimer() {
         connectionStatusTimer?.invalidate()
         connectionStatusTimer = nil
-        connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] _ in
+        connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             if let lastMSG = self.asyncStateModel.lastMessageRCVDate, lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970 {
                 self.setSocketState(socketState: .closed, error: nil)
                 self.tryToReconnectToSocket()
             }
-        })
+        }
     }
 
     /// Dispose and try to disconnect immediately and release all related objects.
@@ -210,11 +213,11 @@ public final class Async: WebSocketProviderDelegate {
 // async on Message Received Handler
 extension Async {
     private func messageReceived(data: Data) {
-        guard let asyncMessage = try? JSONDecoder().decode(AsyncMessage.self, from: data) else {
-            logger.log(title: "can't decode data")
+        guard let asyncMessage = try? JSONDecoder.instance.decode(AsyncMessage.self, from: data) else {
+            logger.log(message: "Can not decode data", persist: false, type: .internalLog)
             return
         }
-        logger.log(title: "on message", jsonString: asyncMessage.string ?? "")
+        logger.logJSON(title: "On Receive Message", jsonString: asyncMessage.string ?? "", persist: false, type: .received)
         prepareTimerForNextPing()
         asyncStateModel.setLastMessageReceiveDate()
         switch asyncMessage.type {
@@ -242,7 +245,7 @@ extension Async {
         case .errorMessage:
             break
         case .none:
-            logger.log(title: "can't decode data")
+            logger.log(message: "UNKOWN type received", persist: true, level: .error, type: .internalLog, userInfo: loggerUserInfo)
         }
     }
 
@@ -280,7 +283,7 @@ extension Async {
 
     private func setSocketState(socketState: AsyncSocketState, error: Error? = nil) {
         asyncStateModel.setSocketState(socketState: socketState)
-        logger.log(title: "async state changed to:\(socketState)")
+        logger.log(message: "Connection State Changed to: \(socketState)", persist: false, type: .internalLog)
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.asyncStateChanged(asyncState: socketState, error: error == nil ? nil : .init(rawError: error))
         }

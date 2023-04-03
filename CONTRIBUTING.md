@@ -1,12 +1,12 @@
-# Contributing to FanapPodAsyncSDK
+# Contributing to Async
 
 ## Introduction
 
 ### Welcome
 
-Thank you for considering contributing to FanapPodAsyncSDK.
+Thank you for considering contributing to Async.
 
-Please know that everyone is welcome to contribute to FanapPodAsyncSDK.
+Please know that everyone is welcome to contribute to Async.
 Contributing doesn’t just mean submitting pull requests—there are 
 many different ways for you to get involved,
 including answering questions on the github issues and
@@ -23,29 +23,29 @@ contributions are licensed under the Apache 2.0 license (see [`LICENSE.txt`](/LI
 
 ## Contributions Overview
 
-FanapPodAsyncSDK is an open source project and we encourage contributions
+Async is an open source project and we encourage contributions
 from the community.
 
 ### Contributing Code and Documentation
 
-Before contributing code or documentation to FanapPodAsyncSDK,
+Before contributing code or documentation to Async,
 we encourage you to first open a 
-[GitHub issue](https://github.com/hamed8080/FanapPodAsyncSDK/issues/new/choose) 
+[GitHub issue](https://github.com/hamed8080/async/issues/new/choose) 
 for a bug report or feature request.
 This will allow us to provide feedback on the proposed change.
 However, this is not a requirement. If your contribution is small in scope,
 feel free to open a PR without first creating an issue.
 
-All changes to FanapPodAsyncSDK source must go through the PR review process before
+All changes to Async source must go through the PR review process before
 being merged into the `main` branch.
 See the [Code Contribution Guidelines](#code-contribution-guidelines) below for
 more details.
 
-## Building FanapPodAsyncSDK
+## Building Async
 
 ### Prerequisites
 
-FanapPodAsyncSDK is a Swift package. If you're new to Swift package manager,
+Async is a Swift package. If you're new to Swift package manager,
 the [documentation here](https://swift.org/getting-started#using-the-package-manager)
 provides an explanation of how to get started and the software you'll need
 installed.
@@ -55,13 +55,13 @@ installed.
 1. Checkout this repository using:
 
     ```bash
-    git clone git@github.com:hamed8080/FanapPodAsyncSDK.git
+    git clone git@github.com:hamed8080/async.git
     ```
 
 2. Navigate to the root of your cloned repository with:
 
     ```bash
-    cd FanapPodAsyncSDK
+    cd Async
     ```
 
 3. Create a new branch off of `master` for your change using:
@@ -75,7 +75,7 @@ installed.
     starting your work and open a PR against `master` when you're ready to merge
     that work.
 
-4. Build FanapPodAsyncSDK from the command line by running:
+4. Build Async from the command line by running:
 
     ```bash
     swift build

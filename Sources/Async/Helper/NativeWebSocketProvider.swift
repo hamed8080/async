@@ -1,10 +1,11 @@
 //
 // NativeWebSocketProvider.swift
-// Copyright (c) 2022 FanapPodAsyncSDK
+// Copyright (c) 2022 Async
 //
 // Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
+import Logger
 
 @available(iOS 13.0, *)
 
@@ -87,7 +88,7 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 case let .string(string):
                     self.delegate?.webSocketDidReciveData(self, didReceive: string.data(using: .utf8)!)
                 @unknown default:
-                    self.logger?.log(title: "un implemented case found in NativeWebSocketProvider")
+                    self.logger?.log(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
                 }
                 self.readMessage()
             }
@@ -103,7 +104,7 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// It'll be called by the os whenever a connection dropped.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didCloseWith _: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         if let reason = reason {
-            logger?.log(title: String(data: reason, encoding: .utf8) ?? "")
+            logger?.log(message: String(data: reason, encoding: .utf8) ?? "", persist: false, type: .internalLog)
         }
         isConnected = false
     }
@@ -129,9 +130,9 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
         pingTimer = nil
         socket?.sendPing { [weak self] error in
             if let error = error {
-                print("Sending ping failed: \(error)")
+                self?.logger?.log(message: "Sending ping failed: \(error)", persist: false, type: .internalLog)
             } else {
-                print("Async Ping called successfully ")
+                self?.logger?.log(message: "Ping called successfully", persist: false, type: .internalLog)
             }
             self?.pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
                 if let self = self {

@@ -1,9 +1,9 @@
-# FanapPodAsyncSDK
-<img src="https://gitlab.com/hamed8080/fanappodasyncsdk/-/raw/gl-pages/.docs/favicon.svg"  width="64" height="64">
+# Async
+### A Swift Async SDK which handle all backend communication with Async Server.
+<img src="https://github.com/hamed8080/async/raw/main/images/icon.png" width="64" height="64">
 <br />
 <br />
 
-Fanap's POD Async iOS SDK
 ## Features
 
 - [x] Simplify Socket connection to Async server
@@ -17,7 +17,7 @@ Fanap's POD Async iOS SDK
 Add in `Package.swift` or directly in `Xcode Project dependencies` section:
 
 ```swift
-.package(url: "https://pubgi.fanapsoft.ir/chat/ios/fanappodasyncsdk.git", .upToNextMinor(from: "1.2.0")),
+.package(url: "https://pubgi.fanapsoft.ir/chat/ios/async.git", .upToNextMinor(from: "1.2.0")),
 ```
 
 #### [CocoaPods](https://cocoapods.org) 
@@ -25,7 +25,7 @@ Add in `Package.swift` or directly in `Xcode Project dependencies` section:
 Add in `Podfile`:
 
 ```ruby
-pod 'FanapPodAsyncSDK'
+pod 'Async'
 ```
 
 ## How to use? 
@@ -63,14 +63,14 @@ async.sendData(type: .message, message: message)
 <br/>
 <br/>
 
-## [Documentation](https://hamed8080.gitlab.io/fanappodasyncsdk/documentation/fanappodasyncsdk/)
-For more information about how to use Async SDK visit [Documentation](https://hamed8080.gitlab.io/fanappodasyncsdk/documentation/fanappodasyncsdk/) 
+## [Documentation](https://hamed8080.gitlab.io/async/documentation/async/)
+For more information about how to use Async SDK visit [Documentation](https://hamed8080.gitlab.io/async/documentation/async/) 
 <br/>
 <br/>
 
 ## [Developer Application](https://github.com/hamed8080/ChatApplication)
 For more example and usage you can use [developer implementation app](https://github.com/hamed8080/ChatImplementation)
 
-## Contributing to FanapPodAsyncSDK
+## Contributing to Async
 
 Please see the [contributing guide](/CONTRIBUTING.md) for more information.
