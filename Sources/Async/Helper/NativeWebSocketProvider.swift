@@ -88,7 +88,7 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 case let .string(string):
                     self.delegate?.webSocketDidReciveData(self, didReceive: string.data(using: .utf8)!)
                 @unknown default:
-                    self.logger?.log(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
+                    self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
                 }
                 self.readMessage()
             }

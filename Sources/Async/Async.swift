@@ -121,7 +121,7 @@ public final class Async: WebSocketProviderDelegate {
         }
     }
 
-    /// Send data to serevr.
+    /// Send data to server.
     ///
     ///  The message will send only if the socket state is in ``AsyncSocketState/asyncReady`` mode unless the message will be queued and after connecting to the server it sends those messages.
     /// - Parameters:
@@ -245,7 +245,7 @@ extension Async {
         case .errorMessage:
             break
         case .none:
-            logger.log(message: "UNKOWN type received", persist: true, level: .error, type: .internalLog, userInfo: loggerUserInfo)
+            logger.createLog(message: "UNKOWN type received", persist: true, level: .error, type: .internalLog, userInfo: loggerUserInfo)
         }
     }
 
