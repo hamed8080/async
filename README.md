@@ -1,14 +1,9 @@
 # Async
-### A Swift Async SDK which handle all backend communication with Async Server.
-<img src="https://github.com/hamed8080/async/raw/main/images/icon.png" width="64" height="64">
-<br />
-<br />
+A Swift Async SDK which handle all backend communication with Async Server.
+<img src="https://github.com/hamed8080/async/raw/main/images/icon.png" width="164" height="164">
 
 ## Features
-
 - [x] Simplify Socket connection to Async server
-
-<br />
 
 ## Installation
 
@@ -26,10 +21,10 @@ Because it has conflict with other Pods' names in cocoapods you have to use dire
 Add in `Podfile`:
 
 ```ruby
-    pod 'Additive', '1.0.0'
     pod 'Starscream', :git => 'https://github.com/daltoniam/Starscream.git', :tag => '3.0.5'
-    pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.1'
-    pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.0'
+    pod 'Additive', :git => 'http://pubgi.fanapsoft.ir/chat/ios/additive.git', :tag => '1.0.1'
+    pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.2'
+    pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.1'
 ```
 
 ## How to use? 
@@ -58,17 +53,15 @@ public func asyncStateChanged(asyncState: AsyncSocketState, error: AsyncError?) 
 }
 ```
 <br/>
-<br/>
 
 ## Send data 
 ```swift
 async.sendData(type: .message, message: message)
 ```
 <br/>
-<br/>
 
-## [Documentation](https://hamed8080.gitlab.io/async/documentation/async/)
-For more information about how to use Async SDK visit [Documentation](https://hamed8080.gitlab.io/async/documentation/async/) 
+## [Documentation](https://hamed8080.github.io/async/async/documentation/async/)
+For more information about how to use Async SDK visit [Documentation](https://hamed8080.github.io/async/async/documentation/async/) 
 <br/>
 <br/>
 

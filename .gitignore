@@ -3,7 +3,6 @@
 
 ### SwiftPM ###
 .build/
-.swiftpm/
 Packages
 xcuserdata
 *.xcodeproj

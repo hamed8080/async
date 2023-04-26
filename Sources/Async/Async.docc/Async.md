@@ -1,6 +1,9 @@
 # ``Async``
 With Async SDK you could connect to the async server without managing the socket state.
 
+
+![icon](icon.png)
+
 ## Overview
 Async SDK provides the ability to connect easily to the async server and manage the connection and reconnect whenever reconnecting is needed.
 
@@ -18,7 +21,7 @@ After handshaking with the async server you could send or receive messages.
 ### Essentials
 
 - <doc:GettingStarted>
-- ``Async``
+- ``Async/Async``
 
 ### Essentials
 

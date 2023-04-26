@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8F0CE4FD-F50D-47C1-9528-9CA708D36529",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AsyncTests",
+        "name" : "AsyncTests"
+      }
+    }
+  ],
+  "version" : 1
+}
