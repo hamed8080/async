@@ -1,0 +1,243 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Starscream\/documentation\/Starscream"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10Starscream25SSLClientCertificateErrorV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SSLClientCertificateError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Starscream"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SSLClientCertificateError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "SSLClientCertificateError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SSLClientCertificateError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/10Foundation14LocalizedErrorP",
+        "doc:\/\/Starscream\/s5ErrorP",
+        "doc:\/\/Starscream\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/errorDescription-66u5g"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/Error-Implementations",
+        "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/LocalizedError-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/starscream\/sslclientcertificateerror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Starscream/10Foundation14LocalizedErrorP": {
+  "identifier" : "doc:\/\/Starscream\/10Foundation14LocalizedErrorP",
+  "title" : "Foundation.LocalizedError",
+  "type" : "unresolvable"
+},
+"doc://Starscream/documentation/Starscream": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Starscream",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream"
+},
+"doc://Starscream/documentation/Starscream/SSLClientCertificateError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SSLClientCertificateError"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SSLClientCertificateError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SSLClientCertificateError",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/sslclientcertificateerror"
+},
+"doc://Starscream/documentation/Starscream/SSLClientCertificateError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/sslclientcertificateerror\/error-implementations"
+},
+"doc://Starscream/documentation/Starscream/SSLClientCertificateError/LocalizedError-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/LocalizedError-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "LocalizedError Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/sslclientcertificateerror\/localizederror-implementations"
+},
+"doc://Starscream/documentation/Starscream/SSLClientCertificateError/errorDescription-66u5g": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errorDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/SSLClientCertificateError\/errorDescription-66u5g",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "errorDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/sslclientcertificateerror\/errordescription-66u5g"
+},
+"doc://Starscream/s5ErrorP": {
+  "identifier" : "doc:\/\/Starscream\/s5ErrorP",
+  "title" : "Swift.Error",
+  "type" : "unresolvable"
+},
+"doc://Starscream/s8SendableP": {
+  "identifier" : "doc:\/\/Starscream\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

@@ -1,0 +1,1094 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Essentials",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/async\/gettingstarted",
+            "title" : "Getting Started",
+            "type" : "article"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/init(config:delegate:)",
+                "title" : "init(config: AsyncConfig, delegate: AsyncDelegate?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/closeconnection()",
+                "title" : "func closeConnection()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/createsocket()",
+                "title" : "func createSocket()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/disposeobject()",
+                "title" : "func disposeObject()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/reconnect()",
+                "title" : "func reconnect()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/async\/senddata(type:message:)",
+                "title" : "func sendData(type: AsyncMessageTypes, message: SendAsyncMessageVO?)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/async\/async",
+            "title" : "Async",
+            "type" : "class"
+          },
+          {
+            "title" : "Essentials",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncdelegate\/asyncerror(error:)",
+                "title" : "func asyncError(error: AsyncError)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncdelegate\/asyncmessage(asyncmessage:)",
+                "title" : "func asyncMessage(asyncMessage: AsyncMessage)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncdelegate\/asyncmessagesent(message:error:)",
+                "title" : "func asyncMessageSent(message: Data?, error: AsyncError?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncdelegate\/asyncstatechanged(asyncstate:error:)",
+                "title" : "func asyncStateChanged(asyncState: AsyncSocketState, error: AsyncError?)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncdelegate",
+            "title" : "AsyncDelegate",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/init(socketaddress:servername:appid:loggerconfig:)",
+                "title" : "init(socketAddress: String, serverName: String, appId: String, loggerConfig: LoggerConfig)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/init(socketaddress:servername:deviceid:appid:loggerconfig:peerid:messagettl:connectionretryinterval:connectionchecktimeout:reconnectcount:reconnectonclose:)",
+                "title" : "init(socketAddress: String, serverName: String, deviceId: String, appId: String, loggerConfig: LoggerConfig, peerId: Int?, messageTtl: Int, connectionRetryInterval: TimeInterval, connectionCheckTimeout: TimeInterval, reconnectCount: Int, reconnectOnClose: Bool)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/appid",
+                "title" : "var appId: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/connectionchecktimeout",
+                "title" : "var connectionCheckTimeout: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/connectionretryinterval",
+                "title" : "var connectionRetryInterval: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/deviceid",
+                "title" : "var deviceId: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/loggerconfig",
+                "title" : "var loggerConfig: LoggerConfig",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/messagettl",
+                "title" : "var messageTtl: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/peerid",
+                "title" : "var peerId: Int?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/reconnectcount",
+                "title" : "var reconnectCount: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/reconnectonclose",
+                "title" : "var reconnectOnClose: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/servername",
+                "title" : "var serverName: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/socketaddress",
+                "title" : "var socketAddress: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfig\/updatedeviceid(_:)",
+                "title" : "func updateDeviceId(String)",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncconfig\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncconfig\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncconfig",
+            "title" : "AsyncConfig",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/ack",
+                "title" : "case ack",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/deviceregister",
+                "title" : "case deviceRegister",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/errormessage",
+                "title" : "case errorMessage",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/getregisteredpeers",
+                "title" : "case getRegisteredPeers",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/message",
+                "title" : "case message",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/messageackneeded",
+                "title" : "case messageAckNeeded",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/messagesenderackneeded",
+                "title" : "case messageSenderAckNeeded",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/notregistered",
+                "title" : "case notRegistered",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/peerremoved",
+                "title" : "case peerRemoved",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/ping",
+                "title" : "case ping",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/registerqueue",
+                "title" : "case registerQueue",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/serverregister",
+                "title" : "case serverRegister",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessagetypes\/id-3t7an",
+                "title" : "var id: `Self`",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncmessagetypes\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncmessagetypes\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/id-41zq9",
+                    "title" : "var id: ObjectIdentifier",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncmessagetypes\/identifiable-implementations",
+                "title" : "Identifiable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/encode(to:)",
+                    "title" : "func encode(to: Encoder) throws",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessagetypes\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncmessagetypes\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncmessagetypes",
+            "title" : "AsyncMessageTypes",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/asyncready",
+                "title" : "case asyncReady",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/closed",
+                "title" : "case closed",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/connected",
+                "title" : "case connected",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/connecting",
+                "title" : "case connecting",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/init(rawvalue:)",
+                "title" : "init?(rawValue: String)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncsocketstate\/id-78bug",
+                "title" : "var id: `Self`",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncsocketstate\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncsocketstate\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncsocketstate\/id-7lh9y",
+                    "title" : "var id: ObjectIdentifier",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncsocketstate\/identifiable-implementations",
+                "title" : "Identifiable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncsocketstate\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncsocketstate\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncsocketstate\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncsocketstate",
+            "title" : "AsyncSocketState",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/content",
+                "title" : "var content: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/id",
+                "title" : "var id: Int64?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/peername",
+                "title" : "var peerName: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/senderid",
+                "title" : "var senderId: Int64?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/sendername",
+                "title" : "var senderName: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncmessage\/type",
+                "title" : "var type: AsyncMessageTypes?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncmessage\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncmessage\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncmessage",
+            "title" : "AsyncMessage",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerror\/init(code:message:userinfo:rawerror:)",
+                "title" : "init(code: AsyncErrorCodes, message: String?, userInfo: [String : Any]?, rawError: Error?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerror\/code",
+                "title" : "var code: AsyncErrorCodes",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerror\/message",
+                "title" : "var message: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerror\/rawerror",
+                "title" : "var rawError: Error?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerror\/userinfo",
+                "title" : "var userInfo: [String : Any]?",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncerror",
+            "title" : "AsyncError",
+            "type" : "struct"
+          },
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/appid(_:)",
+                "title" : "func appId(String) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/build()",
+                "title" : "func build() -> AsyncConfig",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/connectionchecktimeout(_:)",
+                "title" : "func connectionCheckTimeout(TimeInterval) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/connectionretryinterval(_:)",
+                "title" : "func connectionRetryInterval(TimeInterval) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/deviceid(_:)",
+                "title" : "func deviceId(String) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/loggerconfig(_:)",
+                "title" : "func loggerConfig(LoggerConfig) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/messagettl(_:)",
+                "title" : "func messageTtl(Int) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/peerid(_:)",
+                "title" : "func peerId(Int?) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/reconnectcount(_:)",
+                "title" : "func reconnectCount(Int) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/reconnectonclose(_:)",
+                "title" : "func reconnectOnClose(Bool) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/servername(_:)",
+                "title" : "func serverName(String) -> AsyncConfigBuilder",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncconfigbuilder\/socketaddress(_:)",
+                "title" : "func socketAddress(String) -> AsyncConfigBuilder",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncconfigbuilder",
+            "title" : "AsyncConfigBuilder",
+            "type" : "class"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/deviceinfo\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/deviceinfo\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/deviceinfo\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/deviceinfo",
+            "title" : "DeviceInfo",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/init(content:ttl:peername:priority:uniqueid:)",
+                "title" : "init(content: String, ttl: Int, peerName: String, priority: Int, uniqueId: String?)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/content",
+                "title" : "let content: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/peername",
+                "title" : "let peerName: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/priority",
+                "title" : "var priority: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/ttl",
+                "title" : "let ttl: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/uniqueid",
+                "title" : "let uniqueId: String?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/sendasyncmessagevo\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/sendasyncmessagevo\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/sendasyncmessagevo",
+            "title" : "SendAsyncMessageVO",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerrorcodes\/errorping",
+                "title" : "case errorPing",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerrorcodes\/socketisnotconnected",
+                "title" : "case socketIsNotConnected",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerrorcodes\/undefined",
+                "title" : "case undefined",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerrorcodes\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/async\/asyncerrorcodes\/id-5fbno",
+                "title" : "var id: `Self`",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncerrorcodes\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncerrorcodes\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncerrorcodes\/id-4yqg6",
+                    "title" : "var id: ObjectIdentifier",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncerrorcodes\/identifiable-implementations",
+                "title" : "Identifiable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncerrorcodes\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/async\/asyncerrorcodes\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/async\/asyncerrorcodes\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/async\/asyncerrorcodes",
+            "title" : "AsyncErrorCodes",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/async",
+        "title" : "Async",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 1
+  }
+}

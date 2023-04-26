@@ -1,0 +1,174 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Starscream\/documentation\/Starscream",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WSStream"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Starscream\/documentation\/Starscream\/WSStream\/cleanup()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10Starscream8WSStreamP7cleanupyyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "cleanup"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Starscream"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "cleanup()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "cleanup"
+            },
+            {
+              "kind" : "text",
+              "text" : "()"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/starscream\/wsstream\/cleanup()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Starscream/documentation/Starscream": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Starscream",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream"
+},
+"doc://Starscream/documentation/Starscream/WSStream": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WSStream"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WSStream",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WSStream"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WSStream",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/wsstream"
+},
+"doc://Starscream/documentation/Starscream/WSStream/cleanup()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cleanup"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WSStream\/cleanup()",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "cleanup()",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/wsstream\/cleanup()"
+}
+}
+}

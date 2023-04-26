@@ -1,0 +1,456 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Starscream\/documentation\/Starscream"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10Starscream9CloseCodeO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "CloseCode"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Starscream"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "CloseCode"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "CloseCode"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "CloseCode"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/SQ",
+        "doc:\/\/Starscream\/SH",
+        "doc:\/\/Starscream\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/encoding",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/goingAway",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/messageTooBig",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/noStatusReceived",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/normal",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/policyViolated",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/protocolError",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/protocolUnhandledType"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/Equatable-Implementations",
+        "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/starscream\/closecode"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Starscream/SH": {
+  "identifier" : "doc:\/\/Starscream\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://Starscream/SQ": {
+  "identifier" : "doc:\/\/Starscream\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://Starscream/SY": {
+  "identifier" : "doc:\/\/Starscream\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://Starscream/documentation/Starscream": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Starscream",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream"
+},
+"doc://Starscream/documentation/Starscream/CloseCode": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CloseCode"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CloseCode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CloseCode",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/equatable-implementations"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/rawrepresentable-implementations"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/encoding": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encoding"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/encoding",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.encoding",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/encoding"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/goingAway": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "goingAway"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/goingAway",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.goingAway",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/goingaway"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt16V",
+      "text" : "UInt16"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/init(rawvalue:)"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/messageTooBig": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "messageTooBig"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/messageTooBig",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.messageTooBig",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/messagetoobig"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/noStatusReceived": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "noStatusReceived"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/noStatusReceived",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.noStatusReceived",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/nostatusreceived"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/normal": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "normal"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/normal",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.normal",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/normal"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/policyViolated": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "policyViolated"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/policyViolated",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.policyViolated",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/policyviolated"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/protocolError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "protocolError"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/protocolError",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.protocolError",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/protocolerror"
+},
+"doc://Starscream/documentation/Starscream/CloseCode/protocolUnhandledType": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "protocolUnhandledType"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/CloseCode\/protocolUnhandledType",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "CloseCode.protocolUnhandledType",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/closecode\/protocolunhandledtype"
+}
+}
+}

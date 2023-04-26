@@ -1,0 +1,215 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Logger\/documentation\/Logger",
+        "doc:\/\/Logger\/documentation\/Logger\/CDLog"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Logger\/documentation\/Logger\/CDLog\/decoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Logger",
+    "externalID" : "s:6Logger5CDLogC7decoder10Foundation11JSONDecoderCvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "decoder"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+        "text" : "JSONDecoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Logger"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "decoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "decoder"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+              "text" : "JSONDecoder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/logger\/cdlog\/decoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Logger/documentation/Logger": {
+  "abstract" : [
+    {
+      "text" : "Log all errors, warnings, and more in the local cache and then sync with your log server.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Logger\/documentation\/Logger",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Logger",
+  "type" : "topic",
+  "url" : "\/documentation\/logger"
+},
+"doc://Logger/documentation/Logger/CDLog": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CDLog"
+    }
+  ],
+  "identifier" : "doc:\/\/Logger\/documentation\/Logger\/CDLog",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CDLog"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CDLog",
+  "type" : "topic",
+  "url" : "\/documentation\/logger\/cdlog"
+},
+"doc://Logger/documentation/Logger/CDLog/decoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decoder"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation11JSONDecoderC",
+      "text" : "JSONDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/Logger\/documentation\/Logger\/CDLog\/decoder",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "decoder",
+  "type" : "topic",
+  "url" : "\/documentation\/logger\/cdlog\/decoder"
+}
+}
+}

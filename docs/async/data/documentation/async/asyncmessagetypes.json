@@ -1,0 +1,874 @@
+{
+  "abstract" : [
+    {
+      "text" : "Whenever an event occurs in the server or you want to send a message, a type of message will tell you what’s happening right now.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A12MessageTypesO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AsyncMessageTypes"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AsyncMessageTypes"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "AsyncMessageTypes"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AsyncMessageTypes"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/s12CaseIterableP",
+        "doc:\/\/Async\/Se",
+        "doc:\/\/Async\/SE",
+        "doc:\/\/Async\/SQ",
+        "doc:\/\/Async\/SH",
+        "doc:\/\/Async\/s12IdentifiableP",
+        "doc:\/\/Async\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncDelegate",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfig",
+        "doc:\/\/Async\/documentation\/Async\/AsyncSocketState",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessage",
+        "doc:\/\/Async\/documentation\/Async\/AsyncError"
+      ],
+      "title" : "Essentials"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/ack",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/deviceRegister",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/errorMessage",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/getRegisteredPeers",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/message",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/messageAckNeeded",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/messageSenderAckNeeded",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/notRegistered",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/peerRemoved",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/ping",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/registerQueue",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/serverRegister"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/id-3t7an"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Encodable-Implementations",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Equatable-Implementations",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Identifiable-Implementations",
+        "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncmessagetypes"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/SE": {
+  "identifier" : "doc:\/\/Async\/SE",
+  "title" : "Swift.Encodable",
+  "type" : "unresolvable"
+},
+"doc://Async/SH": {
+  "identifier" : "doc:\/\/Async\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://Async/SQ": {
+  "identifier" : "doc:\/\/Async\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://Async/SY": {
+  "identifier" : "doc:\/\/Async\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://Async/Se": {
+  "identifier" : "doc:\/\/Async\/Se",
+  "title" : "Swift.Decodable",
+  "type" : "unresolvable"
+},
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncConfig": {
+  "abstract" : [
+    {
+      "text" : "Configuration data that needs to prepare to use SDK.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfig",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncConfig",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfig"
+},
+"doc://Async/documentation/Async/AsyncDelegate": {
+  "abstract" : [
+    {
+      "text" : "Delegate to notify events that occur on an async object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncdelegate"
+},
+"doc://Async/documentation/Async/AsyncError": {
+  "abstract" : [
+    {
+      "text" : "When an error happen in the server or in your request you will receive an error this type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerror"
+},
+"doc://Async/documentation/Async/AsyncMessage": {
+  "abstract" : [
+    {
+      "text" : "When a message received from the server you will receive it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessage"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncMessage",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessage"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes": {
+  "abstract" : [
+    {
+      "text" : "Whenever an event occurs in the server or you want to send a message, a type of message will tell you what’s happening right now.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncMessageTypes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/Encodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Encodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Encodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/encodable-implementations"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/equatable-implementations"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/Identifiable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/Identifiable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Identifiable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/identifiable-implementations"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/rawrepresentable-implementations"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/ack": {
+  "abstract" : [
+    {
+      "text" : "An acknowledgment of a message.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ack"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/ack",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.ack",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/ack"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/deviceRegister": {
+  "abstract" : [
+    {
+      "text" : "Registered with server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deviceRegister"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/deviceRegister",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.deviceRegister",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/deviceregister"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/errorMessage": {
+  "abstract" : [
+    {
+      "text" : "Not implemended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errorMessage"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/errorMessage",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.errorMessage",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/errormessage"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/getRegisteredPeers": {
+  "abstract" : [
+    {
+      "text" : "Not implemended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getRegisteredPeers"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/getRegisteredPeers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.getRegisteredPeers",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/getregisteredpeers"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/id-3t7an": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": `Self`"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/id-3t7an",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/id-3t7an"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/init(rawvalue:)"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/message": {
+  "abstract" : [
+    {
+      "text" : "A message  was received.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "message"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/message",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.message",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/message"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/messageAckNeeded": {
+  "abstract" : [
+    {
+      "text" : "A message that needs acknowledgment to tell the server Hey I received the message. It’s two-directional.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "messageAckNeeded"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/messageAckNeeded",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.messageAckNeeded",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/messageackneeded"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/messageSenderAckNeeded": {
+  "abstract" : [
+    {
+      "text" : "The server needs to know if you receiving this message you should tell us.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "messageSenderAckNeeded"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/messageSenderAckNeeded",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.messageSenderAckNeeded",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/messagesenderackneeded"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/notRegistered": {
+  "abstract" : [
+    {
+      "text" : "Not implemended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "notRegistered"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/notRegistered",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.notRegistered",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/notregistered"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/peerRemoved": {
+  "abstract" : [
+    {
+      "text" : "Not implemended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "peerRemoved"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/peerRemoved",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.peerRemoved",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/peerremoved"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/ping": {
+  "abstract" : [
+    {
+      "text" : "Ping every 20 seonds to keep socket alive.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ping"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/ping",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.ping",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/ping"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/registerQueue": {
+  "abstract" : [
+    {
+      "text" : "Not implemended.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "registerQueue"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/registerQueue",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.registerQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/registerqueue"
+},
+"doc://Async/documentation/Async/AsyncMessageTypes/serverRegister": {
+  "abstract" : [
+    {
+      "text" : "Register with server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "serverRegister"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncMessageTypes\/serverRegister",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncMessageTypes.serverRegister",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncmessagetypes\/serverregister"
+},
+"doc://Async/documentation/Async/AsyncSocketState": {
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncSocketState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncSocketState",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncsocketstate"
+},
+"doc://Async/s12CaseIterableP": {
+  "identifier" : "doc:\/\/Async\/s12CaseIterableP",
+  "title" : "Swift.CaseIterable",
+  "type" : "unresolvable"
+},
+"doc://Async/s12IdentifiableP": {
+  "identifier" : "doc:\/\/Async\/s12IdentifiableP",
+  "title" : "Swift.Identifiable",
+  "type" : "unresolvable"
+}
+}
+}

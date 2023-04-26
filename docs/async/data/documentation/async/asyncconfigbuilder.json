@@ -1,0 +1,704 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A13ConfigBuilderC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AsyncConfigBuilder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AsyncConfigBuilder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "AsyncConfigBuilder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AsyncConfigBuilder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/appId(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/build()",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/connectionCheckTimeout(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/connectionRetryInterval(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/deviceId(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/loggerConfig(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/messageTtl(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/peerId(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/reconnectCount(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/reconnectOnClose(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/serverName(_:)",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/socketAddress(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncconfigbuilder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncConfigBuilder",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/appId(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "appId"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/appId(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "appId(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/appid(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/build()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "build"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A6ConfigV",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/build()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "build()",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/build()"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/connectionCheckTimeout(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connectionCheckTimeout"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@NSTimeInterval",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/connectionCheckTimeout(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connectionCheckTimeout(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/connectionchecktimeout(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/connectionRetryInterval(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connectionRetryInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@NSTimeInterval",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/connectionRetryInterval(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connectionRetryInterval(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/connectionretryinterval(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/deviceId(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deviceId"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/deviceId(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "deviceId(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/deviceid(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/init()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/init()"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/loggerConfig(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "loggerConfig"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Logger0A6ConfigV",
+      "text" : "LoggerConfig"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/loggerConfig(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "loggerConfig(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/loggerconfig(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/messageTtl(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "messageTtl"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/messageTtl(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "messageTtl(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/messagettl(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/peerId(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "peerId"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/peerId(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "peerId(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/peerid(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/reconnectCount(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "reconnectCount"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/reconnectCount(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "reconnectCount(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/reconnectcount(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/reconnectOnClose(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "reconnectOnClose"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/reconnectOnClose(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "reconnectOnClose(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/reconnectonclose(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/serverName(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "serverName"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/serverName(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "serverName(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/servername(_:)"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/socketAddress(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "socketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A13ConfigBuilderC",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/socketAddress(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "socketAddress(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/socketaddress(_:)"
+}
+}
+}

@@ -1,0 +1,1916 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Starscream\/documentation\/Starscream"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "c:@M@Starscream@objc(cs)WebSocket",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "WebSocket"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Starscream"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "WebSocket"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "WebSocket"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "WebSocket"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/objc(cs)NSObject"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/objc(pl)NSStreamDelegate",
+        "doc:\/\/Starscream\/objc(pl)NSObject",
+        "doc:\/\/Starscream\/s7CVarArgP",
+        "doc:\/\/Starscream\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/Starscream\/s23CustomStringConvertibleP",
+        "doc:\/\/Starscream\/SQ",
+        "doc:\/\/Starscream\/SH",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WSStreamDelegate",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocketClient"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/WSResponse"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(request:protocols:stream:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(url:protocols:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(url:writeQueueQOS:protocols:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/advancedDelegate",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/callbackQueue",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/currentURL",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/delegate",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/desiredTrustHostname",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/disableSSLCertValidation",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/enableCompression",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/enabledSSLCipherSuites",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/isConnected",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onConnect",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onData",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onDisconnect",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onHttpResponseHeaders",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onPong",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onText",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/overrideTrustHostname",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/pongDelegate",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/request",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/respondToPingWithPong",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/security",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/sslClientCertificate"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/connect()",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/disconnect(forceTimeout:closeCode:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/newBytesInStream()",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/streamDidError(error:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(data:completion:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(ping:completion:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(pong:completion:)",
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(string:completion:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/ErrorDomain"
+      ],
+      "title" : "Type Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/OpCode"
+      ],
+      "title" : "Enumerations"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/WebSocketClient-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/starscream\/websocket"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Starscream/SH": {
+  "identifier" : "doc:\/\/Starscream\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://Starscream/SQ": {
+  "identifier" : "doc:\/\/Starscream\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://Starscream/documentation/Starscream": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Starscream",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream"
+},
+"doc://Starscream/documentation/Starscream/WSStreamDelegate": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WSStreamDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WSStreamDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WSStreamDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WSStreamDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/wsstreamdelegate"
+},
+"doc://Starscream/documentation/Starscream/WebSocket": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocket"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocket"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/ErrorDomain": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ErrorDomain"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/ErrorDomain",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ErrorDomain",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/errordomain"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/OpCode": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OpCode"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/OpCode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OpCode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocket.OpCode",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/opcode"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/WSResponse": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WSResponse"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/WSResponse",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WSResponse"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocket.WSResponse",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/wsresponse"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/WebSocketClient-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/WebSocketClient-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "WebSocketClient Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/websocketclient-implementations"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/advancedDelegate": {
+  "abstract" : [
+    {
+      "text" : "The optional advanced delegate can be used instead of of the delegate",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "advancedDelegate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream25WebSocketAdvancedDelegateP",
+      "text" : "WebSocketAdvancedDelegate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/advancedDelegate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "advancedDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/advanceddelegate"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/callbackQueue": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "callbackQueue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+      "text" : "DispatchQueue"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/callbackQueue",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "callbackQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/callbackqueue"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/connect()": {
+  "abstract" : [
+    {
+      "text" : "Connect to the WebSocket server on a background thread.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/connect()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect()",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/connect()"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/currentURL": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentURL"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/currentURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentURL",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/currenturl"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/delegate": {
+  "abstract" : [
+    {
+      "text" : "Responds to callback about new messages coming in over the WebSocket",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and also connection\/disconnect messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "delegate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream17WebSocketDelegateP",
+      "text" : "WebSocketDelegate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/delegate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "delegate",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/delegate"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/desiredTrustHostname": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "desiredTrustHostname"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/desiredTrustHostname",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "desiredTrustHostname",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/desiredtrusthostname"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/disableSSLCertValidation": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "disableSSLCertValidation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/disableSSLCertValidation",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "disableSSLCertValidation",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/disablesslcertvalidation"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/disconnect(forceTimeout:closeCode:)": {
+  "abstract" : [
+    {
+      "text" : "Disconnect from the server. I send a Close control frame to the server, then expect the server to respond with a Close control frame and close the socket from its end. I notify my delegate once the socket has been closed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "disconnect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "forceTimeout"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@NSTimeInterval",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "closeCode"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt16V",
+      "text" : "UInt16"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/disconnect(forceTimeout:closeCode:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "disconnect(forceTimeout:closeCode:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/disconnect(forcetimeout:closecode:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/enableCompression": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enableCompression"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/enableCompression",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enableCompression",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/enablecompression"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/enabledSSLCipherSuites": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enabledSSLCipherSuites"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@SSLCipherSuite",
+      "text" : "SSLCipherSuite"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/enabledSSLCipherSuites",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enabledSSLCipherSuites",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/enabledsslciphersuites"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/init(request:protocols:stream:)": {
+  "abstract" : [
+    {
+      "text" : "Used for setting protocols.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "request"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation10URLRequestV",
+      "text" : "URLRequest"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "protocols"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "stream"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream8WSStreamP",
+      "text" : "WSStream"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(request:protocols:stream:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(request:protocols:stream:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/init(request:protocols:stream:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/init(url:protocols:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "url"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "protocols"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(url:protocols:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(url:protocols:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/init(url:protocols:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/init(url:writeQueueQOS:protocols:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "url"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "writeQueueQOS"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@E@NSQualityOfService",
+      "text" : "QualityOfService"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "protocols"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/init(url:writeQueueQOS:protocols:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(url:writeQueueQOS:protocols:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/init(url:writequeueqos:protocols:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/isConnected": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isConnected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/isConnected",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isConnected",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/isconnected"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/newBytesInStream()": {
+  "abstract" : [
+    {
+      "text" : "Delegate for the stream methods. Processes incoming bytes",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "newBytesInStream"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/newBytesInStream()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "newBytesInStream()",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/newbytesinstream()"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onConnect": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onConnect"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onConnect",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onConnect",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/onconnect"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onData": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onData"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onData",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onData",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/ondata"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onDisconnect": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onDisconnect"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onDisconnect",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onDisconnect",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/ondisconnect"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onHttpResponseHeaders": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onHttpResponseHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ((["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onHttpResponseHeaders",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onHttpResponseHeaders",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/onhttpresponseheaders"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onPong": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onPong"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onPong",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onPong",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/onpong"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/onText": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "onText"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/onText",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "onText",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/ontext"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/overrideTrustHostname": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "overrideTrustHostname"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/overrideTrustHostname",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "overrideTrustHostname",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/overridetrusthostname"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/pongDelegate": {
+  "abstract" : [
+    {
+      "text" : "Receives a callback for each pong message recived.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pongDelegate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream21WebSocketPongDelegateP",
+      "text" : "WebSocketPongDelegate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/pongDelegate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pongDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/pongdelegate"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/request": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "request"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation10URLRequestV",
+      "text" : "URLRequest"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/request",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "request",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/request"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/respondToPingWithPong": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "respondToPingWithPong"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/respondToPingWithPong",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "respondToPingWithPong",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/respondtopingwithpong"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/security": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "security"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream17SSLTrustValidatorP",
+      "text" : "SSLTrustValidator"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/security",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "security",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/security"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/sslClientCertificate": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sslClientCertificate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Starscream20SSLClientCertificateC",
+      "text" : "SSLClientCertificate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/sslClientCertificate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sslClientCertificate",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/sslclientcertificate"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/streamDidError(error:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "streamDidError"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "error"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/streamDidError(error:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "streamDidError(error:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/streamdiderror(error:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/write(data:completion:)": {
+  "abstract" : [
+    {
+      "text" : "Write binary data to the websocket. This sends it as a binary frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (() -> ())?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(data:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(data:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/write(data:completion:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/write(ping:completion:)": {
+  "abstract" : [
+    {
+      "text" : "Write a ping to the websocket. This sends it as a control frame.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Yodel a   sound  to the planet.    This sends it as an astroid. http:\/\/youtu.be\/Eu5ZJELRiJ8?t=42s",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ping"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (() -> ())?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(ping:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(ping:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/write(ping:completion:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/write(pong:completion:)": {
+  "abstract" : [
+    {
+      "text" : "Write a pong to the websocket. This sends it as a control frame.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Respond to a Yodel.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "pong"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (() -> ())?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(pong:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(pong:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/write(pong:completion:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocket/write(string:completion:)": {
+  "abstract" : [
+    {
+      "text" : "Write a string to the websocket. This sends it as a text frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "string"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": (() -> ())?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocket\/write(string:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(string:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocket\/write(string:completion:)"
+},
+"doc://Starscream/documentation/Starscream/WebSocketClient": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketClient"
+    }
+  ],
+  "identifier" : "doc:\/\/Starscream\/documentation\/Starscream\/WebSocketClient",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketClient"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocketClient",
+  "type" : "topic",
+  "url" : "\/documentation\/starscream\/websocketclient"
+},
+"doc://Starscream/objc(cs)NSObject": {
+  "identifier" : "doc:\/\/Starscream\/objc(cs)NSObject",
+  "title" : "ObjectiveC.NSObject",
+  "type" : "unresolvable"
+},
+"doc://Starscream/objc(pl)NSObject": {
+  "identifier" : "doc:\/\/Starscream\/objc(pl)NSObject",
+  "title" : "ObjectiveC.NSObjectProtocol",
+  "type" : "unresolvable"
+},
+"doc://Starscream/objc(pl)NSStreamDelegate": {
+  "identifier" : "doc:\/\/Starscream\/objc(pl)NSStreamDelegate",
+  "title" : "Foundation.StreamDelegate",
+  "type" : "unresolvable"
+},
+"doc://Starscream/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/Starscream\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://Starscream/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/Starscream\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://Starscream/s7CVarArgP": {
+  "identifier" : "doc:\/\/Starscream\/s7CVarArgP",
+  "title" : "Swift.CVarArg",
+  "type" : "unresolvable"
+}
+}
+}

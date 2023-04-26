@@ -1,0 +1,388 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A10ErrorCodesO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "AsyncErrorCodes"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "AsyncErrorCodes"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "AsyncErrorCodes"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "iOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "AsyncErrorCodes"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/s12CaseIterableP",
+        "doc:\/\/Async\/SQ",
+        "doc:\/\/Async\/SH",
+        "doc:\/\/Async\/s12IdentifiableP",
+        "doc:\/\/Async\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/errorPing",
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/socketIsNotConnected",
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/undefined"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/id-5fbno"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/Equatable-Implementations",
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/Identifiable-Implementations",
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncerrorcodes"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/SH": {
+  "identifier" : "doc:\/\/Async\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://Async/SQ": {
+  "identifier" : "doc:\/\/Async\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://Async/SY": {
+  "identifier" : "doc:\/\/Async\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/equatable-implementations"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/Identifiable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/Identifiable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Identifiable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/identifiable-implementations"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/rawrepresentable-implementations"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/errorPing": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errorPing"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/errorPing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes.errorPing",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/errorping"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/id-5fbno": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": `Self`"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/id-5fbno",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/id-5fbno"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/init(rawvalue:)"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/socketIsNotConnected": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "socketIsNotConnected"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/socketIsNotConnected",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes.socketIsNotConnected",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/socketisnotconnected"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/undefined": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "undefined"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/undefined",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes.undefined",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/undefined"
+},
+"doc://Async/s12CaseIterableP": {
+  "identifier" : "doc:\/\/Async\/s12CaseIterableP",
+  "title" : "Swift.CaseIterable",
+  "type" : "unresolvable"
+},
+"doc://Async/s12IdentifiableP": {
+  "identifier" : "doc:\/\/Async\/s12IdentifiableP",
+  "title" : "Swift.Identifiable",
+  "type" : "unresolvable"
+}
+}
+}

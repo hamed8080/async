@@ -1,0 +1,788 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/codable",
+                "title" : "var codable: Log",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/id",
+                "title" : "var id: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/level",
+                "title" : "var level: NSNumber?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/message",
+                "title" : "var message: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/prefix",
+                "title" : "var prefix: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/time",
+                "title" : "var time: NSNumber?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/type",
+                "title" : "var type: NSNumber?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/userinfo",
+                "title" : "var userInfo: Data?",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/update(_:)",
+                "title" : "func update(Log)",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/decoder",
+                "title" : "static let decoder: JSONDecoder",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/encoder",
+                "title" : "static let encoder: JSONEncoder",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/entityname",
+                "title" : "static let entityName: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/delete(logger:context:logs:)",
+                "title" : "class func delete(logger: Logger, context: NSManagedObjectContext, logs: [CDLog])",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/entitydescription(_:)",
+                "title" : "static func entityDescription(NSManagedObjectContext) -> NSEntityDescription",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/fetchrequest()",
+                "title" : "class func fetchRequest() -> NSFetchRequest<CDLog>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/firstlog(_:_:_:)",
+                "title" : "class func firstLog(Logger, NSManagedObjectContext, (CDLog?) -> Void)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/insert(_:_:_:)",
+                "title" : "class func insert(Logger, NSManagedObjectContext, [Log])",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/cdlog\/insertentity(_:)",
+                "title" : "static func insertEntity(NSManagedObjectContext) -> CDLog",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/logger\/cdlog",
+            "title" : "CDLog",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Operators",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/==(_:_:)",
+                "title" : "static func == (Log, Log) -> Bool",
+                "type" : "op"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/init(prefix:time:message:level:id:type:userinfo:)",
+                "title" : "init(prefix: String?, time: Date, message: String?, level: LogLevel?, id: UUID, type: LogEmitter?, userInfo: [String : String]?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/id-5jre5",
+                "title" : "var id: UUID",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/level",
+                "title" : "var level: LogLevel?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/message",
+                "title" : "var message: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/prefix",
+                "title" : "var prefix: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/time",
+                "title" : "var time: Date?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/type",
+                "title" : "var type: LogEmitter?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/userinfo",
+                "title" : "var userInfo: [String : String]?",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/encode(to:)",
+                "title" : "func encode(to: Encoder) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/log\/hash(into:)",
+                "title" : "func hash(into: inout Hasher)",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/log\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/log\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/log\/id-2c4yw",
+                    "title" : "var id: ObjectIdentifier",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/log\/identifiable-implementations",
+                "title" : "Identifiable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/logger\/log",
+            "title" : "Log",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/init(config:delegate:timer:urlsession:)",
+                "title" : "init(config: LoggerConfig, delegate: LogDelegate?, timer: TimerProtocol, urlSession: URLSessionProtocol)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/delegate",
+                "title" : "var delegate: LogDelegate?",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/createlog(message:persist:level:type:userinfo:)",
+                "title" : "func createLog(message: String, persist: Bool, level: LogLevel, type: LogEmitter, userInfo: [String : String]?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/log(title:message:persist:type:userinfo:)",
+                "title" : "func log(title: String, message: String, persist: Bool, type: LogEmitter, userInfo: [String : String]?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/loghttprequest(_:_:persist:type:userinfo:)",
+                "title" : "func logHTTPRequest(URLRequest, String, persist: Bool, type: LogEmitter, userInfo: [String : String]?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/loghttpresponse(_:_:_:persist:type:userinfo:)",
+                "title" : "func logHTTPResponse(Data?, URLResponse?, Error?, persist: Bool, type: LogEmitter, userInfo: [String : String]?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/logjson(title:jsonstring:persist:type:userinfo:)",
+                "title" : "func logJSON(title: String, jsonString: String, persist: Bool, type: LogEmitter, userInfo: [String : String]?)",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logger\/clear(prefix:completion:)",
+                "title" : "class func clear(prefix: String, completion: (() -> Void)?)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/logger\/logger",
+            "title" : "Logger",
+            "type" : "class"
+          },
+          {
+            "path" : "\/documentation\/logger\/persistentmanager",
+            "title" : "PersistentManager",
+            "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logdelegate\/onlog(log:)",
+                "title" : "func onLog(log: Log)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/logger\/logdelegate",
+            "title" : "LogDelegate",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/loggerconfig\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/logger\/loggerconfig\/init(prefix:logserverurl:logservermethod:persistlogsonserver:isdebugginglogenabled:sendloginterval:logserverrequestheaders:)",
+                "title" : "init(prefix: String, logServerURL: String?, logServerMethod: String, persistLogsOnServer: Bool, isDebuggingLogEnabled: Bool, sendLogInterval: TimeInterval, logServerRequestheaders: [String : String])",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loggerconfig\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/loggerconfig\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/logger\/loggerconfig",
+            "title" : "LoggerConfig",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logemitter\/internallog",
+                "title" : "case internalLog",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/logger\/logemitter\/received",
+                "title" : "case received",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/logger\/logemitter\/sent",
+                "title" : "case sent",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logemitter\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/logemitter\/id-9s3ce",
+                "title" : "var id: `Self`",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/logemitter\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/logemitter\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/id-1c1xh",
+                    "title" : "var id: ObjectIdentifier",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/logemitter\/identifiable-implementations",
+                "title" : "Identifiable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/encode(to:)",
+                    "title" : "func encode(to: Encoder) throws",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/logemitter\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/logemitter\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/logger\/logemitter",
+            "title" : "LogEmitter",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/loglevel\/error",
+                "title" : "case error",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/logger\/loglevel\/verbose",
+                "title" : "case verbose",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/logger\/loglevel\/warning",
+                "title" : "case warning",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/logger\/loglevel\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/loglevel\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/loglevel\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/encode(to:)",
+                    "title" : "func encode(to: Encoder) throws",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/logger\/loglevel\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/logger\/loglevel\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/logger\/loglevel",
+            "title" : "LogLevel",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/logger",
+        "title" : "Logger",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 1
+  }
+}

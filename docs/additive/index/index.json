@@ -1,0 +1,339 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/additive\/arritmatic",
+            "title" : "Arritmatic",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/dispatchqueueprotocol\/async(execute:)",
+                "title" : "func async(execute: () -> Void)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/additive\/dispatchqueueprotocol",
+            "title" : "DispatchQueueProtocol",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/safedecodable\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  }
+                ],
+                "path" : "\/documentation\/additive\/safedecodable\/decodable-implementations",
+                "title" : "Decodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/additive\/safedecodable",
+            "title" : "SafeDecodable",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/timerprotocol\/isvalid",
+                "title" : "var isValid: Bool",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/timerprotocol\/fire()",
+                "title" : "func fire()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/additive\/timerprotocol\/invalidatetimer()",
+                "title" : "func invalidateTimer()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/additive\/timerprotocol\/scheduledtimer(interval:repeats:block:)",
+                "title" : "func scheduledTimer(interval: TimeInterval, repeats: Bool, block: (TimerProtocol) -> Void) -> TimerProtocol",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/additive\/timerprotocol",
+            "title" : "TimerProtocol",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/urlsessiondatataskprotocol\/cancel()",
+                "title" : "func cancel()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/additive\/urlsessiondatataskprotocol\/resume()",
+                "title" : "func resume()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/additive\/urlsessiondatataskprotocol",
+            "title" : "URLSessionDataTaskProtocol",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/urlsessionprotocol\/datatask(_:completionhandler:)",
+                "title" : "func dataTask(URLRequest, completionHandler: CompletionType) -> URLSessionDataTaskProtocol",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/urlsessionprotocol\/completiontype",
+                "title" : "URLSessionProtocol.CompletionType",
+                "type" : "typealias"
+              }
+            ],
+            "path" : "\/documentation\/additive\/urlsessionprotocol",
+            "title" : "URLSessionProtocol",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/voidcodable\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/data",
+                    "title" : "var data: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/dataprettyprint",
+                    "title" : "var dataPrettyPrint: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/jsonstring",
+                    "title" : "var jsonString: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/parameterdata",
+                    "title" : "var parameterData: Data?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/string",
+                    "title" : "var string: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/asdictionary()",
+                    "title" : "func asDictionary() throws -> [String : Any]",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/voidcodable\/asdictionarynuallable()",
+                    "title" : "func asDictionaryNuallable() throws -> [String : Any?]",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/additive\/voidcodable\/encodable-implementations",
+                "title" : "Encodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/additive\/voidcodable",
+            "title" : "Voidcodable",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/connect",
+                "title" : "case connect",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/delete",
+                "title" : "case delete",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/get",
+                "title" : "case get",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/head",
+                "title" : "case head",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/options",
+                "title" : "case options",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/patch",
+                "title" : "case patch",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/post",
+                "title" : "case post",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/put",
+                "title" : "case put",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/trace",
+                "title" : "case trace",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/additive\/httpmethod\/init(rawvalue:)",
+                "title" : "init?(rawValue: String)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/httpmethod\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/additive\/httpmethod\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/httpmethod\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/additive\/httpmethod\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/additive\/httpmethod\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/additive\/httpmethod",
+            "title" : "HTTPMethod",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/additive",
+        "title" : "Additive",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 1
+  }
+}
