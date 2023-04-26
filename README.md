@@ -1,5 +1,6 @@
 # Async
 A Swift Async SDK which handle all backend communication with Async Server.
+
 <img src="https://github.com/hamed8080/async/raw/main/images/icon.png" width="164" height="164">
 
 ## Features
@@ -12,7 +13,7 @@ A Swift Async SDK which handle all backend communication with Async Server.
 Add in `Package.swift` or directly in `Xcode Project dependencies` section:
 
 ```swift
-.package(url: "https://pubgi.fanapsoft.ir/chat/ios/async.git", .upToNextMinor(from: "1.3.0")),
+.package(url: "https://pubgi.fanapsoft.ir/chat/ios/async.git", .upToNextMinor(from: "1.3.1")),
 ```
 
 #### [CocoaPods](https://cocoapods.org) 
@@ -21,10 +22,10 @@ Because it has conflict with other Pods' names in cocoapods you have to use dire
 Add in `Podfile`:
 
 ```ruby
-    pod 'Starscream', :git => 'https://github.com/daltoniam/Starscream.git', :tag => '3.0.5'
-    pod 'Additive', :git => 'http://pubgi.fanapsoft.ir/chat/ios/additive.git', :tag => '1.0.1'
-    pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.2'
-    pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.1'
+ pod 'Starscream', :git => 'https://github.com/daltoniam/Starscream.git', :tag => '3.0.5'
+ pod 'Additive', :git => 'http://pubgi.fanapsoft.ir/chat/ios/additive.git', :tag => '1.0.1'
+ pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.2'
+ pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.1'
 ```
 
 ## How to use? 

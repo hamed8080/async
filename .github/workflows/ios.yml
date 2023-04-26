@@ -1,4 +1,4 @@
-name: Interview UnitTest
+name: UnitTest
 
 on:
   push:
