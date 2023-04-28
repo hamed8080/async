@@ -23,10 +23,10 @@ Because it has conflict with other Pods' names in cocoapods you have to use dire
 Add in `Podfile`:
 
 ```ruby
- pod 'Starscream', :git => 'https://github.com/daltoniam/Starscream.git', :tag => '3.0.5'
- pod 'Additive', :git => 'http://pubgi.fanapsoft.ir/chat/ios/additive.git', :tag => '1.0.1'
- pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.2'
- pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.1'
+pod 'Starscream', :git => 'https://github.com/daltoniam/Starscream.git', :tag => '3.0.5'
+pod 'Additive', :git => 'http://pubgi.fanapsoft.ir/chat/ios/additive.git', :tag => '1.0.1'
+pod 'Logger', :git => 'http://pubgi.fanapsoft.ir/chat/ios/logger.git', :tag => '1.0.2'
+pod "Async", :git => 'http://pubgi.fanapsoft.ir/chat/ios/async.git', :tag => '1.3.1'
 ```
 
 ## How to use? 

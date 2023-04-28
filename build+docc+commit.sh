@@ -14,7 +14,7 @@ swift package --allow-writing-to-directory $DOCC_OUTPUT_FOLDER \
     generate-documentation --target $TARGET_NAME \
     --disable-indexing \
     --transform-for-static-hosting \
-    --hosting-base-path $LOWERCASE_TARGET_NAME \
+    --hosting-base-path $HOST_BASE_PATH \
     --output-path $DOCC_OUTPUT_FOLDER
 
 cp images/icon.png $DOCC_OUTPUT_FOLDER/$TARGET_NAME/favicon.ico
@@ -31,7 +31,7 @@ if [ -n "$(git status --porcelain)" ]; then
     echo "Documentation changes found. Committing the changes to the '$DOCC_BRANCH_NAME' branch."
     echo "Please call push manually"
     git commit -m "Update Github Pages documentation site to $CURRENT_COMMIT_HASH"
-    open -n https://$GITHUB_USER_NAME.github.io/${LOWERCASE_TARGET_NAME}/documentation/${LOWERCASE_TARGET_NAME}/
+    open -n https://$GITHUB_USER_NAME.github.io/${HOST_BASE_PATH}/documentation/${LOWERCASE_TARGET_NAME}/
 else
     # No changes found, nothing to commit.
     echo "No documentation changes found."
