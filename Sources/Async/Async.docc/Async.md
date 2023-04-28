@@ -1,8 +1,13 @@
 # ``Async``
+
+@Metadata {
+   @PageImage(purpose: icon, source: "icon.png", alt: "App icon.")
+   @Available(iOS, introduced: "10.0")
+   @Available(macOS, introduced: "12")    
+}
+
 With Async SDK you could connect to the async server without managing the socket state.
 
-
-![icon](icon.png)
 
 ## Overview
 Async SDK provides the ability to connect easily to the async server and manage the connection and reconnect whenever reconnecting is needed.

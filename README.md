@@ -1,5 +1,6 @@
 # Async
-A Swift Async SDK which handle all backend communication with Async Server.
+
+<h5>A Swift Async SDK which handle all backend communication with Async Server.</h5>
 
 <img src="https://github.com/hamed8080/async/raw/main/images/icon.png" width="164" height="164">
 
@@ -61,9 +62,8 @@ async.sendData(type: .message, message: message)
 ```
 <br/>
 
-## [Documentation](https://hamed8080.github.io/async/async/documentation/async/)
-For more information about how to use Async SDK visit [Documentation](https://hamed8080.github.io/async/async/documentation/async/) 
-<br/>
+## [Documentation](https://hamed8080.github.io/async/documentation/async/)
+For more information about how to use Async SDK visit [Documentation](https://hamed8080.github.io/async/documentation/async/) 
 <br/>
 
 ## [Developer Application](https://github.com/hamed8080/ChatApplication)

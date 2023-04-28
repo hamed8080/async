@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name         = "Async"
   s.version      = "1.3.1"
-  s.summary      = "Swift Async SDK"
-  s.description  = "This Package will use to connect the client to the async server (DIRANA), and it will live the connection (with socket) to send and recieve messages..."
+  s.summary      = "Async"
+  s.description  = "Async SDk manage all communication with Chat Server."
   s.homepage     = "https://pubgi.fanapsoft.ir/chat/ios/async"
   s.license      = "MIT"
   s.author       = { "Hamed" => "hamed8080@gmail.com" }
