@@ -1,0 +1,245 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async",
+        "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/build()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A13ConfigBuilderC5buildAA0aB0VyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "build"
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Async0A6ConfigV",
+        "text" : "AsyncConfig"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "build()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "build"
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> "
+            },
+            {
+              "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfig",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Async0A6ConfigV",
+              "text" : "AsyncConfig"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncconfigbuilder\/build()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "images" : [
+    {
+      "identifier" : "icon.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncConfig": {
+  "abstract" : [
+    {
+      "text" : "Configuration data that needs to prepare to use SDK.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfig",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncConfig",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfig"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncConfigBuilder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncConfigBuilder",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder"
+},
+"doc://Async/documentation/Async/AsyncConfigBuilder/build()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "build"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A6ConfigV",
+      "text" : "AsyncConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncConfigBuilder\/build()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "build()",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncconfigbuilder\/build()"
+},
+"icon.png": {
+  "alt" : "App icon.",
+  "identifier" : "icon.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/icon.png"
+    }
+  ]
+}
+}
+}

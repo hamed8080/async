@@ -1,0 +1,314 @@
+{
+  "abstract" : [
+    {
+      "text" : "It will tell you a little bit of information about the error had happened.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async",
+        "doc:\/\/Async\/documentation\/Async\/AsyncDelegate"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate\/asyncError(error:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A8DelegateP10asyncError5erroryAA0aD0V_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "asyncError"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "error"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Async0A5ErrorV",
+        "text" : "AsyncError"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "asyncError(error:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "asyncError"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "error"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Async0A5ErrorV",
+              "text" : "AsyncError"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An error if something wrong occurs in the system.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "error"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncdelegate\/asyncerror(error:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "images" : [
+    {
+      "identifier" : "icon.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncDelegate": {
+  "abstract" : [
+    {
+      "text" : "Delegate to notify events that occur on an async object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncdelegate"
+},
+"doc://Async/documentation/Async/AsyncDelegate/asyncError(error:)": {
+  "abstract" : [
+    {
+      "text" : "It will tell you a little bit of information about the error had happened.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "asyncError"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "error"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A5ErrorV",
+      "text" : "AsyncError"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate\/asyncError(error:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "asyncError(error:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncdelegate\/asyncerror(error:)"
+},
+"doc://Async/documentation/Async/AsyncError": {
+  "abstract" : [
+    {
+      "text" : "When an error happen in the server or in your request you will receive an error this type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerror"
+},
+"icon.png": {
+  "alt" : "App icon.",
+  "identifier" : "icon.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/icon.png"
+    }
+  ]
+}
+}
+}

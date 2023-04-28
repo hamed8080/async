@@ -1,0 +1,414 @@
+{
+  "abstract" : [
+    {
+      "text" : "It will be called whenever the socket state change.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async",
+        "doc:\/\/Async\/documentation\/Async\/AsyncDelegate"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate\/asyncStateChanged(asyncState:error:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A8DelegateP17asyncStateChanged0cD05erroryAA0a6SocketD0O_AA0A5ErrorVSgtF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "asyncStateChanged"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "asyncState"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Async0A11SocketStateO",
+        "text" : "AsyncSocketState"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "error"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Async0A5ErrorV",
+        "text" : "AsyncError"
+      },
+      {
+        "kind" : "text",
+        "text" : "?)"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "asyncStateChanged(asyncState:error:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "asyncStateChanged"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "asyncState"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncSocketState",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Async0A11SocketStateO",
+              "text" : "AsyncSocketState"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "error"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Async0A5ErrorV",
+              "text" : "AsyncError"
+            },
+            {
+              "kind" : "text",
+              "text" : "?)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "State of current async object.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "asyncState"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An error if something wrong occurs in the system.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "error"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncdelegate\/asyncstatechanged(asyncstate:error:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "images" : [
+    {
+      "identifier" : "icon.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncDelegate": {
+  "abstract" : [
+    {
+      "text" : "Delegate to notify events that occur on an async object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncdelegate"
+},
+"doc://Async/documentation/Async/AsyncDelegate/asyncStateChanged(asyncState:error:)": {
+  "abstract" : [
+    {
+      "text" : "It will be called whenever the socket state change.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "asyncStateChanged"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "asyncState"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A11SocketStateO",
+      "text" : "AsyncSocketState"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "error"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A5ErrorV",
+      "text" : "AsyncError"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncDelegate\/asyncStateChanged(asyncState:error:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "asyncStateChanged(asyncState:error:)",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncdelegate\/asyncstatechanged(asyncstate:error:)"
+},
+"doc://Async/documentation/Async/AsyncError": {
+  "abstract" : [
+    {
+      "text" : "When an error happen in the server or in your request you will receive an error this type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerror"
+},
+"doc://Async/documentation/Async/AsyncSocketState": {
+  "abstract" : [
+    {
+      "text" : "The current state of the socket.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncSocketState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncSocketState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncSocketState",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncsocketstate"
+},
+"icon.png": {
+  "alt" : "App icon.",
+  "identifier" : "icon.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/icon.png"
+    }
+  ]
+}
+}
+}

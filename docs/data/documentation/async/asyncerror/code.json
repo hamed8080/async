@@ -1,0 +1,254 @@
+{
+  "abstract" : [
+    {
+      "text" : "Error code. it can be undifined.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async",
+        "doc:\/\/Async\/documentation\/Async\/AsyncError"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncError\/code"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A5ErrorV4codeAA0aB5CodesOvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "code"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Async0A10ErrorCodesO",
+        "text" : "AsyncErrorCodes"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "code"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "code"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Async0A10ErrorCodesO",
+              "text" : "AsyncErrorCodes"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncerror\/code"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "images" : [
+    {
+      "identifier" : "icon.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncError": {
+  "abstract" : [
+    {
+      "text" : "When an error happen in the server or in your request you will receive an error this type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerror"
+},
+"doc://Async/documentation/Async/AsyncError/code": {
+  "abstract" : [
+    {
+      "text" : "Error code. it can be undifined.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "code"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Async0A10ErrorCodesO",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncError\/code",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "code",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerror\/code"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes"
+},
+"icon.png": {
+  "alt" : "App icon.",
+  "identifier" : "icon.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/icon.png"
+    }
+  ]
+}
+}
+}

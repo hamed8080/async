@@ -1,0 +1,183 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Async\/documentation\/Async",
+        "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/errorPing"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Async0A10ErrorCodesO9errorPingyA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "errorPing"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Async"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "AsyncErrorCodes.errorPing"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "errorPing"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/async\/asyncerrorcodes\/errorping"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Async/documentation/Async": {
+  "abstract" : [
+    {
+      "text" : "With Async SDK you could connect to the async server without managing the socket state.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async",
+  "images" : [
+    {
+      "identifier" : "icon.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Async",
+  "type" : "topic",
+  "url" : "\/documentation\/async"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncErrorCodes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes"
+},
+"doc://Async/documentation/Async/AsyncErrorCodes/errorPing": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errorPing"
+    }
+  ],
+  "identifier" : "doc:\/\/Async\/documentation\/Async\/AsyncErrorCodes\/errorPing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "AsyncErrorCodes.errorPing",
+  "type" : "topic",
+  "url" : "\/documentation\/async\/asyncerrorcodes\/errorping"
+},
+"icon.png": {
+  "alt" : "App icon.",
+  "identifier" : "icon.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/icon.png"
+    }
+  ]
+}
+}
+}
