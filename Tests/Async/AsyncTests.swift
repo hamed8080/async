@@ -1,9 +1,8 @@
 //
-//  AsyncTests.swift
-//  
+// AsyncTests.swift
+// Copyright (c) 2022 Async
 //
-//  Created by hamed on 9/22/22.
-//
+// Created by Hamed Hosseini on 12/16/22
 
 import XCTest
 
