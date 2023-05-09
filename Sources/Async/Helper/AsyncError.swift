@@ -10,11 +10,12 @@ public enum AsyncErrorCodes: Int, Identifiable, CaseIterable {
     public var id: Self { self }
     case errorPing = 4000
     case socketIsNotConnected = 4001
+    case socketAddressShouldStartWithWSS = 4002
     case undefined
 }
 
 /// When an error happen in the server or in your request you will receive an error this type.
-public struct AsyncError {
+public struct AsyncError: Error {
     /// Error code. it can be undifined.
     public var code: AsyncErrorCodes = .undefined
 

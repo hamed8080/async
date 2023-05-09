@@ -15,7 +15,7 @@ public struct DeviceInfo: Codable {
     let os: String
     let osVersion: String
     let sdkVersion: String
-    let bundleIdentifire: String
+    let bundleIdentifire: String?
 
     static func getDeviceInfo() -> DeviceInfo {
         let bundle = Bundle.main.bundleIdentifier
@@ -25,7 +25,7 @@ public struct DeviceInfo: Codable {
             osVersion = UIDevice.current.systemVersion
             deviceModel = UIDevice.current.model
         #endif
-        return DeviceInfo(deviceModel: deviceModel, os: "iOS", osVersion: osVersion, sdkVersion: "1.0.0", bundleIdentifire: bundle ?? "")
+        return DeviceInfo(deviceModel: deviceModel, os: "iOS", osVersion: osVersion, sdkVersion: "1.0.0", bundleIdentifire: bundle)
     }
 }
 

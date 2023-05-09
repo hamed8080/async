@@ -4,27 +4,30 @@
 //
 // Created by Hamed Hosseini on 9/27/22.
 
+import Additive
 import Foundation
 import Logger
 
+/// iOS native websocket provider. It will be chosen automatically if the device is running iOS 13+.
 @available(iOS 13.0, *)
-
-/// iOS native websocket provider. It'll be chosen automatically if the device is running iOS 13+.
 final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDelegate, URLSessionWebSocketDelegate {
     /// A delegation provider to inform events.
     weak var delegate: WebSocketProviderDelegate?
 
     /// The socket to manage connection with the async server.
-    private weak var socket: URLSessionWebSocketTask?
+    weak var socket: URLSessionWebSocketTask?
 
     /// The timeout to disconnect or retry if the connection has any trouble.
     private var timeout: TimeInterval!
+
+    /// Send the ping every 10 seconds to keep the connection alive with the async server.
+    var pingTimer: TimerProtocol?
 
     /// The base url of the socket.
     private var url: URL!
 
     /// A value that indicates neither socket is connected or not.
-    private(set) var isConnected: Bool = false
+    var isConnected: Bool = false
 
     /// The logger class for logging events and exceptions if it's not a runtime exception.
     private weak var logger: Logger?
@@ -43,7 +46,7 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
 
     /// A method to try to connect the web socket server.
     ///
-    /// It'll be called by reconnecting or initializer.
+    /// It will be called by client .
     public func connect() {
         let configuration = URLSessionConfiguration.default
         let urlSession = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue())
@@ -61,6 +64,8 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 self?.handleError(error)
             }
             sendPing()
+        } else {
+            handleError(AsyncError(code: .socketIsNotConnected))
         }
     }
 
@@ -71,6 +76,8 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 self?.handleError(error)
             }
             sendPing()
+        } else {
+            handleError(AsyncError(code: .socketIsNotConnected))
         }
     }
 
@@ -84,9 +91,9 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
             case let .success(message):
                 switch message {
                 case let .data(data):
-                    self.delegate?.webSocketDidReciveData(self, didReceive: data)
+                    self.delegate?.onReceivedData(self, didReceive: data)
                 case let .string(string):
-                    self.delegate?.webSocketDidReciveData(self, didReceive: string.data(using: .utf8)!)
+                    self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
                 @unknown default:
                     self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
                 }
@@ -98,15 +105,16 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// It'll be called by the os whenever a connection opened successfully.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didOpenWithProtocol _: String?) {
         isConnected = true
-        delegate?.webSocketDidConnect(self)
+        delegate?.onConnected(self)
     }
 
     /// It'll be called by the os whenever a connection dropped.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didCloseWith _: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        if let reason = reason {
-            logger?.log(message: String(data: reason, encoding: .utf8) ?? "", persist: false, type: .internalLog)
+        if let reason = reason, let message = String(data: reason, encoding: .utf8) {
+            logger?.log(message: message, persist: false, type: .internalLog)
         }
         isConnected = false
+        delegate?.onDisconnected(self, nil)
     }
 
     /// trust the credential for the desired URL if it's not valid or trusted by issuers.
@@ -123,41 +131,41 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
         }
     }
 
-    var pingTimer: Timer?
     /// Send the ping every 10 seconds to keep the connection alive with the async server.
-    func sendPing() {
-        pingTimer?.invalidate()
+    func schedulePingTimer() {
+        pingTimer?.invalidateTimer()
         pingTimer = nil
+        pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
+            self?.sendPing()
+        }
+    }
+
+    func sendPing() {
         socket?.sendPing { [weak self] error in
-            if let error = error {
-                self?.logger?.log(message: "Sending ping failed: \(error)", persist: false, type: .internalLog)
-            } else {
-                self?.logger?.log(message: "Ping called successfully", persist: false, type: .internalLog)
-            }
-            self?.pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
-                if let self = self {
-                    self.sendPing()
-                }
-            }
+            let message = error == nil ? "Ping called successfully" : "Sending ping failed: \(String(describing: error))"
+            self?.logger?.log(message: message, persist: false, type: .internalLog)
+            self?.schedulePingTimer()
         }
     }
 
     /// Force to close connection by Client.
     func closeConnection() {
         socket?.cancel(with: .goingAway, reason: nil)
+        pingTimer?.invalidateTimer()
+        pingTimer = nil
     }
 
     /// An error handler to check if the connection should be marked as closed or if it's alive but an error has happened.
     ///
     /// we need to check if the error code is one of the 57, 60, 54 timeouts no network and internet offline to notify the delegate we disconnected from the internet
-    private func handleError(_ error: Error?) {
+    func handleError(_ error: Error?) {
         if let error = error as NSError? {
             if error.code == 57 || error.code == 60 || error.code == 54 {
                 isConnected = false
                 closeConnection()
-                delegate?.webSocketDidDisconnect(self, error)
+                delegate?.onDisconnected(self, error)
             } else {
-                delegate?.webSocketReceiveError(error)
+                delegate?.onReceivedError(error)
             }
         }
     }

@@ -1,24 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "additive",
-      "kind" : "remoteSourceControl",
-      "location" : "http://pubgi.fanapsoft.ir/chat/ios/additive.git",
-      "state" : {
-        "revision" : "c708de52912c7800fa9fabbaa1157c706713888e",
-        "version" : "1.0.1"
-      }
-    },
-    {
-      "identity" : "logger",
-      "kind" : "remoteSourceControl",
-      "location" : "http://pubgi.fanapsoft.ir/chat/ios/logger.git",
-      "state" : {
-        "revision" : "2ede91966eadf325268e88ba56b4dd6f448ba7c7",
-        "version" : "1.0.2"
-      }
-    },
-    {
       "identity" : "starscream",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/daltoniam/Starscream.git",

@@ -14,13 +14,13 @@ final class StarScreamWebSocketProvider: WebSocketProvider {
     weak var delegate: WebSocketProviderDelegate?
 
     /// The socket to manage connection with the async server.
-    private let socket: WebSocket
+    let socket: WebSocket
 
     /// The timeout to disconnect or retry if the connection has any trouble.
-    private var timeout: TimeInterval
+    var timeout: TimeInterval
 
     /// The logger class for logging events and exceptions if it's not a runtime exception.
-    private var logger: Logger
+    var logger: Logger
 
     /// The socket initializer.
     /// - Parameters:
@@ -62,19 +62,20 @@ final class StarScreamWebSocketProvider: WebSocketProvider {
 
 extension StarScreamWebSocketProvider: Starscream.WebSocketDelegate {
     func websocketDidConnect(socket _: WebSocketClient) {
-        delegate?.webSocketDidConnect(self)
+        delegate?.onConnected(self)
     }
 
     func websocketDidDisconnect(socket _: WebSocketClient, error: Error?) {
-        delegate?.webSocketDidDisconnect(self, error)
+        delegate?.onDisconnected(self, error)
     }
 
     func websocketDidReceiveMessage(socket _: WebSocketClient, text: String) {
-        guard let data = text.data(using: .utf8) else { return }
-        delegate?.webSocketDidReciveData(self, didReceive: data)
+        if let data = text.data(using: .utf8) {
+            delegate?.onReceivedData(self, didReceive: data)
+        }
     }
 
     func websocketDidReceiveData(socket _: WebSocketClient, data: Data) {
-        delegate?.webSocketDidReciveData(self, didReceive: data)
+        delegate?.onReceivedData(self, didReceive: data)
     }
 }

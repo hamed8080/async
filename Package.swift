@@ -13,19 +13,24 @@ let package = Package(
         .library(name: "Async", targets: ["Async"]),
     ],
     dependencies: [
-//        .package(path: "../Logger"),
-//        .package(path: "../Additive"),
+        .package(path: "../Logger"),
+        .package(path: "../Mocks"),
+        .package(path: "../Additive"),
         .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
         .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
-        .package(url: "http://pubgi.fanapsoft.ir/chat/ios/logger.git", exact: "1.0.2"),
-        .package(url: "http://pubgi.fanapsoft.ir/chat/ios/additive.git", exact: "1.0.1"),
     ],
     targets: [
         .target(name: "Async", dependencies: [
             "Starscream",
-            .product(name: "Logger", package: "logger"),
+            "Logger",
             .product(name: "Additive", package: "additive"),
         ]),
-        .testTarget(name: "AsyncTests", dependencies: ["Async"], path: "Tests"),
+        .testTarget(name: "AsyncTests",
+                    dependencies: [
+                        "Async",
+                        "Logger",
+                        "Mocks",
+                    ],
+                    path: "Tests"),
     ]
 )

@@ -5,23 +5,27 @@
 // Created by Hamed Hosseini on 9/27/22.
 
 import Foundation
+import Logger
 
 /// A delegate to raise events.
-internal protocol WebSocketProviderDelegate: AnyObject {
+public protocol WebSocketProviderDelegate: AnyObject {
     /// A delegate method that informs the connection provider connected successfully.
-    func webSocketDidConnect(_ webSocket: WebSocketProvider)
+    func onConnected(_ webSocket: WebSocketProvider)
 
     /// A delegate method that informs the connection provider disconnected successfully.
-    func webSocketDidDisconnect(_ webSocket: WebSocketProvider, _ error: Error?)
+    func onDisconnected(_ webSocket: WebSocketProvider, _ error: Error?)
 
     /// A delegate method that informs the connection has received a message.
-    func webSocketDidReciveData(_ webSocket: WebSocketProvider, didReceive data: Data)
+    func onReceivedData(_ webSocket: WebSocketProvider, didReceive data: Data)
 
     /// A delegate method that informs an error has happened.
-    func webSocketReceiveError(_ error: Error?)
+    func onReceivedError(_ error: Error?)
 }
 
-protocol WebSocketProvider: AnyObject {
+public protocol WebSocketProvider: AnyObject {
+    /// default initializer for an Async provider.
+    init(url: URL, timeout: TimeInterval, logger: Logger)
+
     /// A delegation provider to inform events.
     var delegate: WebSocketProviderDelegate? { get set }
 

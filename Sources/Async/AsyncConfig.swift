@@ -10,10 +10,6 @@ import Logger
 /// Configuration data that needs to prepare to use SDK.
 ///
 /// To work with SDK this struct must be passed to ``Async`` initializer.
-///
-/// ```swift
-///  let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "Chat")
-/// ```
 public struct AsyncConfig: Codable {
     public private(set) var socketAddress: String
     public private(set) var serverName: String
@@ -21,6 +17,7 @@ public struct AsyncConfig: Codable {
     public private(set) var appId: String = "POD-Chat"
     public private(set) var peerId: Int?
     public private(set) var messageTtl: Int = 10000
+    public private(set) var pingInterval: TimeInterval = 10
     public private(set) var connectionRetryInterval: TimeInterval = 5
     public private(set) var connectionCheckTimeout: TimeInterval = 20
     public private(set) var reconnectCount: Int = 5
@@ -47,18 +44,18 @@ public struct AsyncConfig: Codable {
                 loggerConfig: LoggerConfig = LoggerConfig(prefix: "ASYNC_SDK"),
                 peerId: Int? = nil,
                 messageTtl: Int = 10000,
+                pingInterval: TimeInterval = 10,
                 connectionRetryInterval: TimeInterval = 5,
                 connectionCheckTimeout: TimeInterval = 20,
                 reconnectCount: Int = 5,
                 reconnectOnClose: Bool = false)
+        throws
     {
-        self.socketAddress = socketAddress
-        self.serverName = serverName
+        try self.init(socketAddress: socketAddress, serverName: serverName, appId: appId, loggerConfig: loggerConfig)
         self.deviceId = deviceId
-        self.appId = appId
-        self.loggerConfig = loggerConfig
         self.peerId = peerId
         self.messageTtl = messageTtl
+        self.pingInterval = pingInterval
         self.connectionRetryInterval = connectionRetryInterval
         self.connectionCheckTimeout = connectionCheckTimeout
         self.reconnectCount = reconnectCount
@@ -72,7 +69,10 @@ public struct AsyncConfig: Codable {
     ///   - serverName: Server name of Async Server.
     ///   - appId: The id of application that registered in server.
     ///   - loggerConfig: The id of application that registered in server.
-    public init(socketAddress: String, serverName: String, appId: String, loggerConfig: LoggerConfig) {
+    public init(socketAddress: String, serverName: String, appId: String, loggerConfig: LoggerConfig) throws {
+        if !socketAddress.contains("wss://") {
+            throw AsyncError(code: .socketAddressShouldStartWithWSS, message: "Async socket address should start with wss")
+        }
         self.socketAddress = socketAddress
         self.serverName = serverName
         self.appId = appId
@@ -91,6 +91,7 @@ public final class AsyncConfigBuilder {
     private(set) var appId: String = "POD-Chat"
     private(set) var peerId: Int?
     private(set) var messageTtl: Int = 10000
+    private(set) var pingInterval: TimeInterval = 10
     private(set) var connectionRetryInterval: TimeInterval = 5
     private(set) var connectionCheckTimeout: TimeInterval = 20
     private(set) var reconnectCount: Int = 5
@@ -141,6 +142,12 @@ public final class AsyncConfigBuilder {
     }
 
     @discardableResult
+    public func pingInterval(_ pingInterval: TimeInterval) -> AsyncConfigBuilder {
+        self.pingInterval = pingInterval
+        return self
+    }
+
+    @discardableResult
     public func connectionCheckTimeout(_ connectionCheckTimeout: TimeInterval) -> AsyncConfigBuilder {
         self.connectionCheckTimeout = connectionCheckTimeout
         return self
@@ -164,17 +171,18 @@ public final class AsyncConfigBuilder {
         return self
     }
 
-    public func build() -> AsyncConfig {
-        AsyncConfig(socketAddress: socketAddress,
-                    serverName: serverName,
-                    deviceId: deviceId,
-                    appId: appId,
-                    loggerConfig: loggerConfig,
-                    peerId: peerId,
-                    messageTtl: messageTtl,
-                    connectionRetryInterval: connectionRetryInterval,
-                    connectionCheckTimeout: connectionCheckTimeout,
-                    reconnectCount: reconnectCount,
-                    reconnectOnClose: reconnectOnClose)
+    public func build() throws -> AsyncConfig {
+        try AsyncConfig(socketAddress: socketAddress,
+                        serverName: serverName,
+                        deviceId: deviceId,
+                        appId: appId,
+                        loggerConfig: loggerConfig,
+                        peerId: peerId,
+                        messageTtl: messageTtl,
+                        pingInterval: pingInterval,
+                        connectionRetryInterval: connectionRetryInterval,
+                        connectionCheckTimeout: connectionCheckTimeout,
+                        reconnectCount: reconnectCount,
+                        reconnectOnClose: reconnectOnClose)
     }
 }
