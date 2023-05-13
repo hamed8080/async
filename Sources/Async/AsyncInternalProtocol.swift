@@ -10,7 +10,7 @@ import Logger
 
 public protocol AsyncProtocol {
     var delegate: AsyncDelegate? { get }
-    init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate?, queue: DispatchQueueProtocol)
+    init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate?, logger: Logger, queue: DispatchQueueProtocol)
     func recreate()
     func connect()
     func send(message: SendAsyncMessageVO, type: AsyncMessageTypes)

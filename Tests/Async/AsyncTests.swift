@@ -41,6 +41,7 @@ final class AsyncTests: XCTestCase {
         sut = Async(socket: mockSocket,
                     config: config,
                     delegate: mockAsyncDelegate,
+                    logger: logger,
                     queue: queue
         )
     }
@@ -67,7 +68,7 @@ final class AsyncTests: XCTestCase {
 
     func test_initDelegate_delegateIsNotNil() throws {
         // When
-        let sut = Async(socket: mockSocket, config: config)
+        let sut = Async(socket: mockSocket, config: config, logger: logger)
         // Then
         XCTAssertNil(sut.delegate, "Socket delegate should be nil when init called without a delegate.")
     }
@@ -84,7 +85,7 @@ final class AsyncTests: XCTestCase {
 
     func test_init_checkConnectionTimerisNil() throws {
         // Given
-        sut = Async(socket: mockSocket, config: config)
+        sut = Async(socket: mockSocket, config: config, logger: logger)
 
         // When
         let result = sut.connectionStatusTimer
@@ -312,7 +313,7 @@ final class AsyncTests: XCTestCase {
         // Given
         let exp = expectation(description: "Expected status change to closed due to not receiving any new message or ping response.")
         config = try AsyncConfig(socketAddress: "wss://test", serverName: "", connectionCheckTimeout: 0.05)
-        sut = Async(socket: mockSocket, config: config)
+        sut = Async(socket: mockSocket, config: config, logger: logger)
         sut.connect()
         let data = encodeAsyncMSG(.init(type: .message))!
 
@@ -392,7 +393,7 @@ final class AsyncTests: XCTestCase {
 
         // When
         mockAsyncDelegate.asyncOnLogResult = { log in
-            if let decoded = self.decodeLogAsyncMSG(log, .deviceRegister) {
+            if self.decodeLogAsyncMSG(log, .deviceRegister) != nil {
                 if log.type == .sent {
                     exp.fulfill()
                 }

@@ -28,8 +28,8 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     ///   - config: Configuration of async ``AsyncConfig``.
     ///   - delegate: Delegate to notify events.
     ///   - queue: A queue in which respones back.
-    public init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate? = nil, queue: DispatchQueueProtocol = DispatchQueue.main) {
-        logger = Logger(config: config.loggerConfig)
+    public init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate? = nil, logger: Logger, queue: DispatchQueueProtocol = DispatchQueue.main) {
+        self.logger = logger
         logger.delegate = delegate
         self.config = config
         self.delegate = delegate
