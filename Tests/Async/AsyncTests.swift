@@ -140,13 +140,18 @@ final class AsyncTests: XCTestCase {
 
     func test_didConnect_stateIsConnected() throws {
         // Given
+        let exp =  expectation(description: "Expected to call on change")
         mockSocket.delegate?.onConnected(mockSocket)
 
         // When
-        let result = sut.stateModel.socketState
+        queue.async {
+            if self.sut.stateModel.socketState == .connected {
+                exp.fulfill()
+            }
+        }
 
         // Then
-        XCTAssertEqual(result, .connected, "Expexted the socketState to be not connected when onConnect called but it is \(String(describing: result))")
+        wait(for: [exp])
     }
 
     func test_didConnect_retryCountResetToZero() throws {
@@ -524,8 +529,10 @@ final class AsyncTests: XCTestCase {
         queue.async {
             self.mockSocket.delegate?.onConnected(self.mockSocket)
             self.sut.reconnectTimer?.fire()
-            if self.sut.reconnectTimer == nil {
-                exp.fulfill()
+            self.queue.async {
+                if self.sut.reconnectTimer == nil {
+                    exp.fulfill()
+                }
             }
         }
 

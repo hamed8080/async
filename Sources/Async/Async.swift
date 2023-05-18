@@ -55,23 +55,25 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func onConnected(_: WebSocketProvider) {
-        onStatusChanged(.connected)
-        socketConnected()
+        queue.async { [weak self] in
+            self?.onStatusChanged(.connected)
+            self?.socketConnected()
+        }
     }
 
     public func onDisconnected(_: WebSocketProvider, _ error: Error?) {
-        logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
-        onStatusChanged(.closed, error)
         queue.async { [weak self] in
+            self?.logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
+            self?.onStatusChanged(.closed, error)
             self?.restartReconnectTimer()
         }
     }
 
     public func onReceivedError(_ error: Error?) {
-        logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: loggerUserInfo)
-        if stateModel.lastMessageRCVDate == nil {
-            // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
-            queue.async { [weak self] in
+        queue.async { [weak self] in
+            self?.logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: self?.loggerUserInfo)
+            if self?.stateModel.lastMessageRCVDate == nil {
+                // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
                 self?.onStatusChanged(.closed, error)
                 self?.restartReconnectTimer()
             }
@@ -281,8 +283,6 @@ extension Async {
     func onStatusChanged(_ status: AsyncSocketState, _ error: Error? = nil) {
         stateModel.setSocketState(socketState: status)
         logger.log(message: "Connection State Changed to: \(status)", persist: false, type: .internalLog)
-        queue.async { [weak self] in
-            self?.delegate?.asyncStateChanged(asyncState: status, error: error == nil ? nil : .init(rawError: error))
-        }
+        delegate?.asyncStateChanged(asyncState: status, error: error == nil ? nil : .init(rawError: error))
     }
 }
