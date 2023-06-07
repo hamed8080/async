@@ -58,10 +58,6 @@ final class NativeWebSocketProviderTests: XCTestCase, WebSocketProviderDelegate,
         wait(for: [delegateOnDisconnectedExp!], timeout: 3)
     }
 
-    func test_closeConnection_pingTimerIsNil() {
-        XCTAssertNil(sut.pingTimer, "Expected that ping timer to be nil after the connection get closed.")
-    }
-
     func test_sendDataIfIsConnected_delegateGetCalled() {
         // Given
         delegateOnErrorExp = expectation(description: "Expected error delegate get called.")
@@ -82,20 +78,6 @@ final class NativeWebSocketProviderTests: XCTestCase, WebSocketProviderDelegate,
 
         // Then
         wait(for: [delegateOnErrorExp!], timeout: 1)
-    }
-
-    func test_callSendPingWhenConnected_logDelegateGetCalled() {
-        // Given
-        delegateOnLogExp = expectation(description: "Expected error delegate get called.")
-        sut.connect()
-
-        // When
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-            self.sut.sendPing()
-        }
-
-        // Then
-        wait(for: [delegateOnLogExp!], timeout: 3)
     }
 
     func test_callSendDataWhenIsConnected_logDelegateGetCalled() {
@@ -137,19 +119,6 @@ final class NativeWebSocketProviderTests: XCTestCase, WebSocketProviderDelegate,
 
         // Then
         wait(for: [delegateOnDisconnectedExp!], timeout: 1)
-    }
-
-    func test_pingTimer_scheduleProperlyAndGetCalledDelegate() {
-        // Given
-        delegateOnLogExp = expectation(description: "Expected log delegate get called when send ping which has been scheduled before.")
-        sut.connect()
-
-        // When
-        sut.schedulePingTimer()
-        sut.pingTimer?.fire()
-
-        // Then
-        wait(for: [delegateOnLogExp!], timeout: 1)
     }
 
     func onConnected(_ webSocket: WebSocketProvider) {

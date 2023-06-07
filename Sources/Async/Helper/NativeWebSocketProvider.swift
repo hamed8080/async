@@ -20,9 +20,6 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// The timeout to disconnect or retry if the connection has any trouble.
     private var timeout: TimeInterval!
 
-    /// Send the ping every 10 seconds to keep the connection alive with the async server.
-    var pingTimer: TimerProtocol?
-
     /// The base url of the socket.
     private var url: URL!
 
@@ -31,6 +28,8 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
 
     /// The logger class for logging events and exceptions if it's not a runtime exception.
     private weak var logger: Logger?
+
+    private var queue = DispatchQueue(label: "QUEUE")
 
     /// The socket initializer.
     /// - Parameters:
@@ -63,7 +62,6 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
             socket?.send(.data(data)) { [weak self] error in
                 self?.handleError(error)
             }
-            sendPing()
         } else {
             handleError(AsyncError(code: .socketIsNotConnected))
         }
@@ -75,7 +73,6 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
             socket?.send(.string(text)) { [weak self] error in
                 self?.handleError(error)
             }
-            sendPing()
         } else {
             handleError(AsyncError(code: .socketIsNotConnected))
         }
@@ -84,20 +81,22 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// A read message receiver. It'll be called again on receiving a message to stay awake for the next message.
     private func readMessage() {
         socket?.receive { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure:
-                break
-            case let .success(message):
-                switch message {
-                case let .data(data):
-                    self.delegate?.onReceivedData(self, didReceive: data)
-                case let .string(string):
-                    self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
-                @unknown default:
-                    self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
+            self?.queue.async {
+                guard let self = self else { return }
+                switch result {
+                case .failure:
+                    break
+                case let .success(message):
+                    switch message {
+                    case let .data(data):
+                        self.delegate?.onReceivedData(self, didReceive: data)
+                    case let .string(string):
+                        self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
+                    @unknown default:
+                        self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
+                    }
+                    self.readMessage()
                 }
-                self.readMessage()
             }
         }
     }
@@ -131,28 +130,9 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
         }
     }
 
-    /// Send the ping every 10 seconds to keep the connection alive with the async server.
-    func schedulePingTimer() {
-        pingTimer?.invalidateTimer()
-        pingTimer = nil
-        pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
-            self?.sendPing()
-        }
-    }
-
-    func sendPing() {
-        socket?.sendPing { [weak self] error in
-            let message = error == nil ? "Ping called successfully" : "Sending ping failed: \(String(describing: error))"
-            self?.logger?.log(message: message, persist: false, type: .internalLog)
-            self?.schedulePingTimer()
-        }
-    }
-
     /// Force to close connection by Client.
     func closeConnection() {
         socket?.cancel(with: .goingAway, reason: nil)
-        pingTimer?.invalidateTimer()
-        pingTimer = nil
     }
 
     /// An error handler to check if the connection should be marked as closed or if it's alive but an error has happened.
