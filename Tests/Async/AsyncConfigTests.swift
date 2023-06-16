@@ -12,11 +12,7 @@ import Logger
 final class AsyncConfigTests: XCTestCase {
     private var sut: AsyncConfig!
     private var socketAddress = "wss://msg.pod.ir/ws"
-    private var ssoHost = "https://accounts.pod.ir"
-    private var platformHost = "https://api.pod.ir/srv/core"
-    private var fileServer = "https://podspace.podland.ir"
     private var serverName = "chat-server"
-    private var appId = "PodChat"
     private var reconnectOnClose = true
     private var maxRetryCount = Int.max
     private var peerId: Int?
