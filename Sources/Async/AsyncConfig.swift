@@ -12,7 +12,7 @@ import Logger
 /// To work with SDK this struct must be passed to ``Async`` initializer.
 public struct AsyncConfig: Codable {
     public private(set) var socketAddress: String
-    public private(set) var serverName: String
+    public private(set) var peerName: String
     public private(set) var deviceId: String = UUID().uuidString
     public private(set) var appId: String = "POD-Chat"
     public private(set) var peerId: Int?
@@ -28,7 +28,7 @@ public struct AsyncConfig: Codable {
     ///
     /// - Parameters:
     ///   - socketAddress: The server address of socket.
-    ///   - serverName: Server name of Async Server.
+    ///   - peerName: The peer name of the destination server.
     ///   - deviceId: Device id of the current device if you don't pass an id it generates an id with UUID.
     ///   - appId: The id of application that registered in server.
     ///   - peerId: Id of peer.
@@ -38,7 +38,7 @@ public struct AsyncConfig: Codable {
     ///   - reconnectCount: The amount of times when socket fail or disconnect if reconnectOnClose is enabled
     ///   - reconnectOnClose: If it is true it tries to connect again depending on how many times you've set reconnectCount.
     public init(socketAddress: String,
-                serverName: String,
+                peerName: String,
                 deviceId: String = UUID().uuidString,
                 appId: String = "POD-Chat",
                 loggerConfig: LoggerConfig = LoggerConfig(prefix: "ASYNC_SDK"),
@@ -51,7 +51,7 @@ public struct AsyncConfig: Codable {
                 reconnectOnClose: Bool = false)
         throws
     {
-        try self.init(socketAddress: socketAddress, serverName: serverName, appId: appId, loggerConfig: loggerConfig)
+        try self.init(socketAddress: socketAddress, peerName: peerName, appId: appId, loggerConfig: loggerConfig)
         self.deviceId = deviceId
         self.peerId = peerId
         self.messageTtl = messageTtl
@@ -66,15 +66,15 @@ public struct AsyncConfig: Codable {
     ///
     /// - Parameters:
     ///   - socketAddress: The server address of socket.
-    ///   - serverName: Server name of Async Server.
+    ///   - peerName: The peer name of the destination server.
     ///   - appId: The id of application that registered in server.
     ///   - loggerConfig: The id of application that registered in server.
-    public init(socketAddress: String, serverName: String, appId: String, loggerConfig: LoggerConfig) throws {
+    public init(socketAddress: String, peerName: String, appId: String, loggerConfig: LoggerConfig) throws {
         if !socketAddress.contains("wss://") {
             throw AsyncError(code: .socketAddressShouldStartWithWSS, message: "Async socket address should start with wss")
         }
         self.socketAddress = socketAddress
-        self.serverName = serverName
+        self.peerName = peerName
         self.appId = appId
         self.loggerConfig = loggerConfig
     }
@@ -86,7 +86,7 @@ public struct AsyncConfig: Codable {
 
 public final class AsyncConfigBuilder {
     private(set) var socketAddress: String = ""
-    private(set) var serverName: String = ""
+    private(set) var peerName: String = ""
     private(set) var deviceId: String = UUID().uuidString
     private(set) var appId: String = "POD-Chat"
     private(set) var peerId: Int?
@@ -106,8 +106,8 @@ public final class AsyncConfigBuilder {
     }
 
     @discardableResult
-    public func serverName(_ serverName: String) -> AsyncConfigBuilder {
-        self.serverName = serverName
+    public func peerName(_ peerName: String) -> AsyncConfigBuilder {
+        self.peerName = peerName
         return self
     }
 
@@ -173,7 +173,7 @@ public final class AsyncConfigBuilder {
 
     public func build() throws -> AsyncConfig {
         try AsyncConfig(socketAddress: socketAddress,
-                        serverName: serverName,
+                        peerName: peerName,
                         deviceId: deviceId,
                         appId: appId,
                         loggerConfig: loggerConfig,

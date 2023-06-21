@@ -31,7 +31,7 @@ final class AsyncTests: XCTestCase {
         logger = Logger(config: asyncLoggerConfig)
         mockAsyncDelegate = MockAsyncDelegate()
         config = try AsyncConfig(socketAddress: "wss://msg.pod.ir/ws",
-                                 serverName: "chat-server",
+                                 peerName: "chat-server",
                                  appId: "PodChat",
                                  loggerConfig: asyncLoggerConfig,
                                  reconnectOnClose: true
@@ -317,7 +317,7 @@ final class AsyncTests: XCTestCase {
     func test_passedConnectionTimer_timerGetFiredAndStatusHasChangedToClosed() throws {
         // Given
         let exp = expectation(description: "Expected status change to closed due to not receiving any new message or ping response.")
-        config = try AsyncConfig(socketAddress: "wss://test", serverName: "", connectionCheckTimeout: 0.05)
+        config = try AsyncConfig(socketAddress: "wss://test", peerName: "", connectionCheckTimeout: 0.05)
         sut = Async(socket: mockSocket, config: config, logger: logger)
         sut.connect()
         let data = encodeAsyncMSG(.init(type: .message))!

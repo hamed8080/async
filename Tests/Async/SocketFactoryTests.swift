@@ -27,7 +27,7 @@ final class SocketFactoryTests: XCTestCase {
         logger = Logger(config: asyncLoggerConfig)
         mockAsyncDelegate = MockAsyncDelegate()
         config = try AsyncConfig(socketAddress: "wss://msg.pod.ir/ws",
-                                 serverName: "chat-server",
+                                 peerName: "chat-server",
                                  appId: "PodChat",
                                  loggerConfig: asyncLoggerConfig,
                                  reconnectOnClose: true

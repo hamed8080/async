@@ -12,7 +12,7 @@ With the help of the ``Async`` class, you could connect to the async server and 
 For connecting to the async server you must first of all pass a configuration to it, like the following code: 
 
 ```swift
-let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "ServerName", appId: "PodChat")
+let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", peerName: "peerName", appId: "PodChat")
 let asyncClient = Async(config: asyncConfig, delegate: self)  
 ```
 
@@ -57,6 +57,6 @@ if asyncClient.asyncSateModel == AsyncSocketState.ASYNC_READY{
 
 For debugging a problem you should pass true in the configuration initializer like this, and it will print the logs to the console:
 ```swift
-let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", serverName: "ServerName", appId: "PodChat", isDebuggingLogEnabled: isDebuggingAsyncEnable)
+let asyncConfig = AsyncConfig(socketAddress: "192.168.1.1", peerName: "peerName", appId: "PodChat", isDebuggingLogEnabled: isDebuggingAsyncEnable)
 ```
 

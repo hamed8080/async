@@ -6,11 +6,11 @@
 
 import Foundation
 struct RegisterServer: Codable {
-    /// The name of the server.
+    /// The name of the peer server.
     var name: String
 
-    /// The name of the server.
-    /// - Parameter name: The server name.
+    /// The name of the peer server.
+    /// - Parameter name: The peer server name.
     public init(name: String) {
         self.name = name
     }

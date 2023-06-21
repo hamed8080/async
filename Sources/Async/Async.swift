@@ -161,7 +161,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func registerServer() {
-        let register = RegisterServer(name: config.serverName)
+        let register = RegisterServer(name: config.peerName)
         if let data = try? JSONEncoder.instance.encode(register) {
             sendInternalData(type: .serverRegister, data: data)
         }
@@ -272,7 +272,7 @@ extension Async {
     }
 
     private func onServerRegisteredMessage(asyncMessage: AsyncMessage) {
-        if asyncMessage.senderName == config.serverName {
+        if asyncMessage.senderName == config.peerName {
             stateModel.isServerRegistered = true
             onStatusChanged(.asyncReady)
         } else {

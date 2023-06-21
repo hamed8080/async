@@ -12,7 +12,7 @@ import Logger
 final class AsyncConfigTests: XCTestCase {
     private var sut: AsyncConfig!
     private var socketAddress = "wss://msg.pod.ir/ws"
-    private var serverName = "chat-server"
+    private var peerName = "chat-server"
     private var reconnectOnClose = true
     private var maxRetryCount = Int.max
     private var peerId: Int?
@@ -49,7 +49,7 @@ final class AsyncConfigTests: XCTestCase {
             .appId(appId)
             .peerId(peerId)
             .messageTtl(messageTTL)
-            .serverName(serverName)
+            .peerName(peerName)
             .pingInterval(10)
             .loggerConfig(asyncLoggerConfig)
             .deviceId(deviceId)
