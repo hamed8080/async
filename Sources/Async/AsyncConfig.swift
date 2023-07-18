@@ -70,7 +70,7 @@ public struct AsyncConfig: Codable {
     ///   - appId: The id of application that registered in server.
     ///   - loggerConfig: The id of application that registered in server.
     public init(socketAddress: String, peerName: String, appId: String, loggerConfig: LoggerConfig) throws {
-        if !socketAddress.contains("wss://") {
+        if !(socketAddress.contains("wss://") || socketAddress.contains("ws://")) {
             throw AsyncError(code: .socketAddressShouldStartWithWSS, message: "Async socket address should start with wss")
         }
         self.socketAddress = socketAddress
