@@ -89,8 +89,10 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 case let .success(message):
                     switch message {
                     case let .data(data):
+                        self.setConnectedOnReceiveAnyData()
                         self.delegate?.onReceivedData(self, didReceive: data)
                     case let .string(string):
+                        self.setConnectedOnReceiveAnyData()
                         self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
                     @unknown default:
                         self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
@@ -99,6 +101,11 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
                 }
             }
         }
+    }
+
+    /// This is essential here because urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didOpenWithProtocol _: String?) will not call occasionally by the os so it will lead to a problem in the device register get an error.
+    func setConnectedOnReceiveAnyData() {
+        isConnected = true
     }
 
     /// It'll be called by the os whenever a connection opened successfully.
