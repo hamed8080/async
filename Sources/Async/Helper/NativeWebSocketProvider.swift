@@ -147,9 +147,10 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// we need to check if the error code is one of the 57, 60, 54 timeouts no network and internet offline to notify the delegate we disconnected from the internet
     /// 53- Softwatre caused connection abort
     /// When the app is in the backgrond mode iOS will terminate the socket and prevent it to send any further requests. We have to reconnect
+    /// 89- Operation canceled
     func handleError(_ error: Error?) {
         if let error = error as NSError? {
-            if [53, 54, 57, 60].contains(error.code) {
+            if [53, 54, 57, 60, 89].contains(error.code) {
                 isConnected = false
                 closeConnection()
                 delegate?.onDisconnected(self, error)
