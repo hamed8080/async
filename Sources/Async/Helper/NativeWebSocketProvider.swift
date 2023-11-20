@@ -29,8 +29,6 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// The logger class for logging events and exceptions if it's not a runtime exception.
     private weak var logger: Logger?
 
-    private var queue = DispatchQueue(label: "QUEUE")
-
     /// The socket initializer.
     /// - Parameters:
     ///   - url: The base socket url.
@@ -81,24 +79,22 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// A read message receiver. It'll be called again on receiving a message to stay awake for the next message.
     private func readMessage() {
         socket?.receive { [weak self] result in
-            self?.queue.async {
-                guard let self = self else { return }
-                switch result {
-                case .failure:
-                    break
-                case let .success(message):
-                    switch message {
-                    case let .data(data):
-                        self.setConnectedOnReceiveAnyData()
-                        self.delegate?.onReceivedData(self, didReceive: data)
-                    case let .string(string):
-                        self.setConnectedOnReceiveAnyData()
-                        self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
-                    @unknown default:
-                        self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
-                    }
-                    self.readMessage()
+            guard let self = self else { return }
+            switch result {
+            case .failure:
+                break
+            case let .success(message):
+                switch message {
+                case let .data(data):
+                    self.setConnectedOnReceiveAnyData()
+                    self.delegate?.onReceivedData(self, didReceive: data)
+                case let .string(string):
+                    self.setConnectedOnReceiveAnyData()
+                    self.delegate?.onReceivedData(self, didReceive: string.data(using: .utf8)!)
+                @unknown default:
+                    self.logger?.createLog(message: "An unimplemented case found in the NativeWebSocketProvider", persist: true, level: .error, type: .internalLog)
                 }
+                self.readMessage()
             }
         }
     }
@@ -115,6 +111,8 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     }
 
     /// It'll be called by the os whenever a connection dropped.
+    ///
+    /// It may be called when we don't send ping message to the ``Async Server``.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didCloseWith _: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         if let reason = reason, let message = String(data: reason, encoding: .utf8) {
             logger?.log(message: message, persist: false, type: .internalLog)

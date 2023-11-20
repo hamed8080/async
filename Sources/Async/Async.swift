@@ -28,7 +28,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     ///   - config: Configuration of async ``AsyncConfig``.
     ///   - delegate: Delegate to notify events.
     ///   - queue: A queue in which respones back.
-    public init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate? = nil, logger: Logger, queue: DispatchQueueProtocol = DispatchQueue.main) {
+    public init(socket: WebSocketProvider, config: AsyncConfig, delegate: AsyncDelegate? = nil, logger: Logger, queue: DispatchQueueProtocol = DispatchQueue(label: "ASYNC_QUEUE", attributes: .concurrent)) {
         self.logger = logger
         logger.delegate = delegate
         self.config = config
@@ -45,7 +45,6 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     /// Connect to async server.
     public func connect() {
         onStatusChanged(.connecting)
-        checkConnectionTimer()
         socket.connect()
     }
 
@@ -55,64 +54,81 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func onConnected(_: WebSocketProvider) {
-        queue.async { [weak self] in
-            self?.onStatusChanged(.connected)
-            self?.socketConnected()
-        }
+        onStatusChanged(.connected)
+        socketConnected()
+        checkConnectionTimer()
+        prepareTimerForNextPing()
     }
 
     public func onDisconnected(_: WebSocketProvider, _ error: Error?) {
-        queue.async { [weak self] in
-            self?.logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
-            self?.onStatusChanged(.closed, error)
-            self?.restartReconnectTimer()
-        }
+        logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
+        onStatusChanged(.closed, error)
+        stopCheckConnectionTimer()
+        stopPingTimer()
+        restartReconnectTimer()
     }
 
     public func onReceivedError(_ error: Error?) {
-        queue.async { [weak self] in
-            self?.logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: self?.loggerUserInfo)
-            if self?.stateModel.lastMessageRCVDate == nil {
-                // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
-                self?.onStatusChanged(.closed, error)
-                self?.restartReconnectTimer()
-            }
+        logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: loggerUserInfo)
+        if stateModel.lastMessageRCVDate == nil {
+            // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
+            onStatusChanged(.closed, error)
         }
+        stopCheckConnectionTimer()
+        stopPingTimer()
+        restartReconnectTimer()
     }
 
     public func onReceivedData(_: WebSocketProvider, didReceive data: Data) {
-        queue.async { [weak self] in
-            self?.messageReceived(data: data)
-        }
+        messageReceived(data: data)
     }
 
     private func prepareTimerForNextPing() {
-        pingTimer?.invalidateTimer()
-        pingTimer = nil
-        pingTimer = Timer.scheduledTimer(withTimeInterval: config.pingInterval, repeats: false) { [weak self] _ in
-            self?.sendPing()
+        if pingTimer == nil {
+            pingTimer = Timer.scheduledTimer(withTimeInterval: config.pingInterval, repeats: true) { [weak self] _ in
+                self?.sendPing()
+            }
+            RunLoop.current.run()
         }
     }
 
     private func socketConnected() {
         stateModel.retryCount = 0
-        reconnectTimer?.invalidateTimer()
-        reconnectTimer = nil
+        stopReconnectTimer()
     }
 
     private func restartReconnectTimer() {
-        if config.reconnectOnClose == true {
-            reconnectTimer?.invalidateTimer()
-            reconnectTimer = nil
-            reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] _ in
-                self?.tryReconnect()
+        if config.reconnectOnClose == true && reconnectTimer == nil {
+            queue.asyncWork { [weak self] in
+                guard let self = self else { return }
+                reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] _ in
+                    self?.tryReconnect()
+                }
+                RunLoop.current.run()
             }
         }
     }
 
+    public func stopPingTimer() {
+        pingTimer?.invalidateTimer()
+        pingTimer = nil
+    }
+
+    public func stopReconnectTimer() {
+        reconnectTimer?.invalidateTimer()
+        reconnectTimer = nil
+    }
+
+    public func stopCheckConnectionTimer() {
+        connectionStatusTimer?.invalidateTimer()
+        connectionStatusTimer = nil
+    }
+
     private func tryReconnect() {
         if stateModel.retryCount < config.reconnectCount {
-            stateModel.retryCount += 1
+            (queue as? DispatchQueue)?.sync { [weak self] in
+                self?.stateModel.retryCount += 1
+            }
             logger.log(message: "Try reconnect for \(stateModel.retryCount) times", persist: false, type: .internalLog)
             reconnect()
         } else {
@@ -132,10 +148,10 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         let asyncSendMessage = AsyncMessage(content: data.utf8String, type: type)
         let asyncMessageData = try? JSONEncoder.instance.encode(asyncSendMessage)
         if stateModel.socketState == .asyncReady {
-            logger.logJSON(title: "Send message", jsonString: asyncSendMessage.string ?? "", persist: false, type: .sent)
             guard let asyncMessageData = asyncMessageData, let string = String(data: asyncMessageData, encoding: .utf8) else { return }
-            socket.send(text: string)
+            logger.logJSON(title: "Send message", jsonString: asyncSendMessage.string ?? "", persist: false, type: .sent)
             delegate?.asyncMessageSent(message: asyncMessageData, error: nil)
+            socket.send(text: string)
         } else {
             delegate?.asyncMessageSent(message: nil, error: AsyncError(code: .socketIsNotConnected))
         }
@@ -189,28 +205,34 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func checkConnectionTimer() {
-        connectionStatusTimer?.invalidateTimer()
-        connectionStatusTimer = nil
-        connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true) { [weak self] _ in
-            self?.onCheckConnectionTimer()
+        if connectionStatusTimer == nil {
+            queue.asyncWork { [weak self] in
+                guard let self = self else { return }
+                connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true) { [weak self] _ in
+                    self?.onCheckConnectionTimer()
+                }
+                RunLoop.current.run()
+            }
         }
     }
 
     private func onCheckConnectionTimer() {
-        if let lastMSG = stateModel.lastMessageRCVDate, lastMSG.timeIntervalSince1970 + config.connectionCheckTimeout < Date().timeIntervalSince1970 {
+        let lastMSG = stateModel.lastMessageRCVDate?.timeIntervalSince1970 ?? (Date().timeIntervalSince1970 - config.connectionCheckTimeout)
+        if lastMSG + config.connectionCheckTimeout < Date().timeIntervalSince1970 {
+            logger.log(message: "Check connection status: Closed", persist: false, type: .internalLog)
             onStatusChanged(.closed)
+            stopCheckConnectionTimer()
             restartReconnectTimer()
+        } else {
+            logger.log(message: "Check connection status: Alive", persist: false, type: .internalLog)
         }
     }
 
     /// Dispose and try to disconnect immediately and release all related objects.
     public func disposeObject() {
-        connectionStatusTimer?.invalidateTimer()
-        pingTimer?.invalidateTimer()
-        reconnectTimer?.invalidateTimer()
-        connectionStatusTimer = nil
-        pingTimer = nil
-        reconnectTimer = nil
+        stopCheckConnectionTimer()
+        stopPingTimer()
+        stopReconnectTimer()
         delegate = nil
     }
 }
