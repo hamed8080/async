@@ -26,7 +26,6 @@ public final class Async: WebSocketProviderDelegate {
         self.config = config
         self.delegate = delegate
         logger = Logger(isDebuggingLogEnabled: config.isDebuggingLogEnabled)
-        checkConnectionTimer()
     }
 
     /// Create and connect to the socket for the first tiem and notify the connection state if delegate is setted.
@@ -52,15 +51,20 @@ public final class Async: WebSocketProviderDelegate {
     func webSocketDidConnect(_: WebSocketProvider) {
         setSocketState(socketState: .connected)
         socketConnected()
+        DispatchQueue.main.async { [weak self] in
+            self?.checkConnectionTimer()
+            self?.prepareTimerForNextPing()
+            self?.stopReconnectTimer()
+        }
     }
 
     func webSocketDidDisconnect(_: WebSocketProvider, _ error: Error?) {
         logger.log(title: "disconnected with error:\(String(describing: error))")
         setSocketState(socketState: .closed, error: error)
         DispatchQueue.main.async { [weak self] in
-            if self?.config.reconnectOnClose == true {
-                self?.tryToReconnectToSocket()
-            }
+            self?.stopCheckConnectionTimer()
+            self?.stopPingTimer()
+            self?.tryToReconnectToSocket()
         }
     }
 
@@ -70,6 +74,8 @@ public final class Async: WebSocketProviderDelegate {
             // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
             DispatchQueue.main.async { [weak self] in
                 self?.setSocketState(socketState: .closed, error: error)
+                self?.stopCheckConnectionTimer()
+                self?.stopPingTimer()
                 self?.tryToReconnectToSocket()
             }
         }
@@ -83,23 +89,35 @@ public final class Async: WebSocketProviderDelegate {
     }
 
     private func prepareTimerForNextPing() {
-        pingTimer?.invalidate()
-        pingTimer = nil
-        pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
-            guard let self = self else { return }
-            self.sendPing()
+        if pingTimer == nil {
+            pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
+                guard let self = self else { return }
+                self.sendPing()
+            }
         }
     }
 
     private func socketConnected() {
         asyncStateModel.retryCount = 0
+    }
+
+    private func stopReconnectTimer() {
+        reconnectTimer?.invalidate()
         reconnectTimer = nil
+    }
+
+    private func stopPingTimer() {
+        pingTimer?.invalidate()
+        pingTimer = nil
+    }
+
+    private func stopCheckConnectionTimer() {
+        connectionStatusTimer?.invalidate()
+        connectionStatusTimer = nil
     }
 
     private func tryToReconnectToSocket() {
         if config.reconnectOnClose == true, reconnectTimer == nil {
-            reconnectTimer?.invalidate()
-            reconnectTimer = nil
             reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] timer in
                 guard let self = self else { return }
                 if self.asyncStateModel.socketState == .connected || self.asyncStateModel.socketState == .asyncReady {
@@ -183,25 +201,22 @@ public final class Async: WebSocketProviderDelegate {
     }
 
     private func checkConnectionTimer() {
-        connectionStatusTimer?.invalidate()
-        connectionStatusTimer = nil
-        connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] _ in
-            guard let self = self else { return }
-            if let lastMSG = self.asyncStateModel.lastMessageRCVDate, lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970 {
-                self.setSocketState(socketState: .closed, error: nil)
-                self.tryToReconnectToSocket()
-            }
-        })
+        if connectionStatusTimer == nil {
+            connectionStatusTimer = Timer.scheduledTimer(withTimeInterval: config.connectionCheckTimeout, repeats: true, block: { [weak self] _ in
+                guard let self = self else { return }
+                if let lastMSG = self.asyncStateModel.lastMessageRCVDate, lastMSG.timeIntervalSince1970 + self.config.connectionCheckTimeout < Date().timeIntervalSince1970 {
+                    self.setSocketState(socketState: .closed, error: nil)
+                    self.tryToReconnectToSocket()
+                }
+            })
+        }
     }
 
     /// Dispose and try to disconnect immediately and release all related objects.
     public func disposeObject() {
-        connectionStatusTimer?.invalidate()
-        pingTimer?.invalidate()
-        reconnectTimer?.invalidate()
-        connectionStatusTimer = nil
-        pingTimer = nil
-        reconnectTimer = nil
+        stopCheckConnectionTimer()
+        stopPingTimer()
+        stopReconnectTimer()
         socket = nil
         delegate = nil
     }

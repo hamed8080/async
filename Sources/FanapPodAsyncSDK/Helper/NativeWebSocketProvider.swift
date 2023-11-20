@@ -59,7 +59,6 @@ class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDelegate, 
             socket?.send(.data(data)) { [weak self] error in
                 self?.handleError(error)
             }
-            sendPing()
         }
     }
 
@@ -69,7 +68,6 @@ class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDelegate, 
             socket?.send(.string(text)) { [weak self] error in
                 self?.handleError(error)
             }
-            sendPing()
         }
     }
 
@@ -119,25 +117,6 @@ class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDelegate, 
     func urlSession(_: URLSession, task _: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
             handleError(error)
-        }
-    }
-
-    var pingTimer: Timer?
-    /// Send the ping every 10 seconds to keep the connection alive with the async server.
-    func sendPing() {
-        pingTimer?.invalidate()
-        pingTimer = nil
-        socket?.sendPing { [weak self] error in
-            if let error = error {
-                print("Sending ping failed: \(error)")
-            } else {
-                print("Async Ping called successfully ")
-            }
-            self?.pingTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { [weak self] _ in
-                if let self = self {
-                    self.sendPing()
-                }
-            }
         }
     }
 
