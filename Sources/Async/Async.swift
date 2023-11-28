@@ -19,6 +19,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     var pingTimer: TimerProtocol?
     var connectionStatusTimer: TimerProtocol?
     var logger: Logger
+    var isDisposed: Bool = false
 
     /// The initializer of async.
     ///
@@ -40,6 +41,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
 
     public func recreate() {
         socket = type(of: socket).init(url: URL(string: config.socketAddress)!, timeout: config.connectionRetryInterval, logger: logger)
+        isDisposed = false
     }
 
     /// Connect to async server.
@@ -102,7 +104,9 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
             queue.asyncWork { [weak self] in
                 guard let self = self else { return }
                 reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] _ in
-                    self?.tryReconnect()
+                    if self?.isDisposed == false {
+                        self?.tryReconnect()
+                    }
                 }
                 RunLoop.current.run()
             }
@@ -233,7 +237,9 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         stopCheckConnectionTimer()
         stopPingTimer()
         stopReconnectTimer()
+        closeConnection()
         delegate = nil
+        isDisposed = true
     }
 }
 
