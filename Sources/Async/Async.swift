@@ -56,41 +56,57 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func onConnected(_: WebSocketProvider) {
-        onStatusChanged(.connected)
-        socketConnected()
-        checkConnectionTimer()
-        prepareTimerForNextPing()
+        queue.asyncWork { [weak self] in
+            guard let self = self else { return }
+            onStatusChanged(.connected)
+            socketConnected()
+            checkConnectionTimer()
+            prepareTimerForNextPing()
+        }
     }
 
     public func onDisconnected(_: WebSocketProvider, _ error: Error?) {
-        logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
-        onStatusChanged(.closed, error)
-        stopCheckConnectionTimer()
-        stopPingTimer()
-        restartReconnectTimer()
+        queue.asyncWork {  [weak self] in
+            guard let self = self else { return }
+            stateModel.isDeviceRegistered = false
+            logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
+            onStatusChanged(.closed, error)
+            stopCheckConnectionTimer()
+            stopPingTimer()
+            restartReconnectTimer()
+        }
     }
 
     public func onReceivedError(_ error: Error?) {
-        logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: loggerUserInfo)
-        if stateModel.lastMessageRCVDate == nil {
-            // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
-            onStatusChanged(.closed, error)
+        queue.asyncWork {  [weak self] in
+            guard let self = self else { return }
+            logger.log(message: "Received Error:\(String(describing: error))", persist: true, type: .internalLog, userInfo: loggerUserInfo)
+            if stateModel.lastMessageRCVDate == nil {
+                // This block means if the user doesn't access the internet and try to connect for the first time he must get a CLOSE state
+                onStatusChanged(.closed, error)
+            }
+            stopCheckConnectionTimer()
+            stopPingTimer()
+            restartReconnectTimer()
         }
-        stopCheckConnectionTimer()
-        stopPingTimer()
-        restartReconnectTimer()
     }
 
     public func onReceivedData(_: WebSocketProvider, didReceive data: Data) {
-        messageReceived(data: data)
+        queue.asyncWork {  [weak self] in
+            self?.messageReceived(data: data)
+        }
     }
 
     private func prepareTimerForNextPing() {
         if pingTimer == nil {
-            pingTimer = Timer.scheduledTimer(withTimeInterval: config.pingInterval, repeats: true) { [weak self] _ in
-                self?.sendPing()
+            queue.asyncWork { [weak self] in
+                guard let self = self else { return }
+                pingTimer = Timer.scheduledTimer(withTimeInterval: config.pingInterval, repeats: true) { [weak self] _ in
+                    guard let self = self else { return }
+                    sendPing()
+                }
+                RunLoop.current.run()
             }
-            RunLoop.current.run()
         }
     }
 
@@ -104,7 +120,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
             queue.asyncWork { [weak self] in
                 guard let self = self else { return }
                 reconnectTimer = Timer.scheduledTimer(withTimeInterval: config.connectionRetryInterval, repeats: true) { [weak self] _ in
-                    if self?.isDisposed == false {
+                    if self?.isDisposed == false && self?.stateModel.socketState != .connected {
                         self?.tryReconnect()
                     }
                 }
@@ -114,25 +130,32 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func stopPingTimer() {
-        pingTimer?.invalidateTimer()
-        pingTimer = nil
+        queue.asyncWork { [weak self] in
+            guard let self = self else { return }
+            pingTimer?.invalidateTimer()
+            pingTimer = nil
+        }
     }
 
     public func stopReconnectTimer() {
-        reconnectTimer?.invalidateTimer()
-        reconnectTimer = nil
+        queue.asyncWork { [weak self] in
+            guard let self = self else { return }
+            reconnectTimer?.invalidateTimer()
+            reconnectTimer = nil
+        }
     }
 
     public func stopCheckConnectionTimer() {
-        connectionStatusTimer?.invalidateTimer()
-        connectionStatusTimer = nil
+        queue.asyncWork { [weak self] in
+            guard let self = self else { return }
+            connectionStatusTimer?.invalidateTimer()
+            connectionStatusTimer = nil
+        }
     }
 
     private func tryReconnect() {
         if stateModel.retryCount < config.reconnectCount {
-            (queue as? DispatchQueue)?.sync { [weak self] in
-                self?.stateModel.retryCount += 1
-            }
+            stateModel.retryCount += 1
             logger.log(message: "Try reconnect for \(stateModel.retryCount) times", persist: false, type: .internalLog)
             reconnect()
         } else {
@@ -170,10 +193,8 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     private func registerDevice() {
         if let deviceId = stateModel.deviceId {
             let peerId = stateModel.peerId
-            let register: RegisterDevice = peerId == nil ?
-                .init(renew: true, appId: config.appId, deviceId: deviceId) :
-                .init(refresh: true, appId: config.appId, deviceId: deviceId)
-
+            let shouldRegister = peerId == nil
+            let register: RegisterDevice = shouldRegister ? .init(renew: true, appId: config.appId, deviceId: deviceId) : .init(refresh: true, appId: config.appId, deviceId: deviceId)
             if let data = try? JSONEncoder.instance.encode(register) {
                 sendInternalData(type: .deviceRegister, data: data)
             }
@@ -286,7 +307,6 @@ extension Async {
     }
 
     private func onDeviceRegisteredMessage(asyncMessage: AsyncMessage) {
-        stateModel.isDeviceRegistered = true
         let oldPeerId = stateModel.peerId
         if let peerIdString = asyncMessage.content {
             stateModel.setPeerId(peerId: Int(peerIdString))
@@ -297,6 +317,9 @@ extension Async {
         } else {
             registerServer()
         }
+
+        /// We should set this property after checking if current state is registered or not.
+        stateModel.isDeviceRegistered = true
     }
 
     private func onServerRegisteredMessage(asyncMessage: AsyncMessage) {

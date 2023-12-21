@@ -23,7 +23,7 @@ struct RegisterDevice: Codable {
     /// A boolean is set to true if the peerId has been set before and has a value, otherwise, the other initializer will be used with the refresh.
     public init(renew: Bool, appId: String, deviceId: String) {
         self.renew = renew
-        refresh = nil
+        refresh = false
         self.appId = appId
         self.deviceId = deviceId
     }
