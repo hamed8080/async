@@ -20,6 +20,8 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     var connectionStatusTimer: TimerProtocol?
     var logger: Logger
     var isDisposed: Bool = false
+    /// This queue prevents the concurrent queue from calling the onReceive method from different queues and causes a data race.
+    private let syncQueue = DispatchQueue(label: "SyncQueue")
 
     /// The initializer of async.
     ///
@@ -92,7 +94,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func onReceivedData(_: WebSocketProvider, didReceive data: Data) {
-        queue.asyncWork {  [weak self] in
+        syncQueue.async { [weak self] in
             self?.messageReceived(data: data)
         }
     }
