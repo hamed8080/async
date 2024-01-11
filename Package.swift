@@ -6,7 +6,7 @@ let package = Package(
     name: "Async",
     platforms: [
         .iOS(.v10),
-        .macOS(.v12),
+        .macOS(.v10_13),
         .macCatalyst(.v13),
     ],
     products: [
