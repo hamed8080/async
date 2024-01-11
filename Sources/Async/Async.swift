@@ -104,28 +104,28 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func scheduleFirstTimer() {
-        pingTimerFirst = SourceTimer(duration: config.pingInterval) { [weak self] in
+        pingTimerFirst = SourceTimer()
+        pingTimerFirst?.start(duration: config.pingInterval) { [weak self] in
             guard let self = self else { return }
             sendPing()
         }
-        pingTimerFirst?.start()
     }
 
     private func scheduleSecondTimer() {
-        pingTimerSecond = SourceTimer(duration: config.pingInterval + 3) { [weak self] in
+        pingTimerSecond = SourceTimer()
+        pingTimerSecond?.start(duration: config.pingInterval + 3) { [weak self] in
             guard let self = self else { return }
             sendPing()
         }
-        pingTimerSecond?.start()
     }
 
     private func scheduleThirdTimer() {
-        pingTimerThird = SourceTimer(duration: config.pingInterval + 3 + 2) { [weak self] in
+        pingTimerThird = SourceTimer()
+        pingTimerThird?.start(duration: config.pingInterval + 3 + 2){ [weak self] in
             guard let self = self else { return }
             let error = NSError(domain: "Failed to retrieve a ping from the Async server.", code: NSURLErrorCannotConnectToHost)
             self.onDisconnected(self.socket, error)
         }
-        pingTimerThird?.start()
     }
 
     private func socketConnected() {
@@ -135,13 +135,13 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
 
     private func restartReconnectTimer() {
         if config.reconnectOnClose == true && reconnectTimer == nil {
-            reconnectTimer = SourceTimer(duration: config.connectionRetryInterval) { [weak self] in
+            reconnectTimer = SourceTimer()
+            reconnectTimer?.start(duration: config.connectionRetryInterval){ [weak self] in
                 guard let self = self else { return }
                 if isDisposed == false && stateModel.socketState != .connected {
                     tryReconnect()
                 }
             }
-            reconnectTimer?.start()
         }
     }
 
