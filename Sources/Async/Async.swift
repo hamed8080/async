@@ -24,7 +24,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     var pingTimerThird: SourceTimer?
     var logger: Logger
     var isDisposed: Bool = false
-    private let networkObserver = NetworkAvailability()
+    private var networkObserver = NetworkAvailabilityFactory.create()
 
     /// The initializer of async.
     ///
