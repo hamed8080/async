@@ -83,15 +83,17 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         stateModel.isDeviceRegistered = false
         logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
         onStatusChanged(.closed, error)
-        stopPingTimers()
-        restartReconnectTimer()
+        queue.asyncWork { [weak self] in
+            self?.stopPingTimers()
+            self?.restartReconnectTimer()
+        }
     }
 
     public func onReceivedError(_ error: Error?) {}
 
     public func onReceivedData(_: WebSocketProvider, didReceive data: Data) {
-        schedulePingTimers()
         queue.asyncWork { [weak self] in
+            self?.schedulePingTimers()
             self?.messageReceived(data: data)
         }
     }
