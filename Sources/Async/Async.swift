@@ -85,6 +85,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         onStatusChanged(.closed, error)
         queue.asyncWork { [weak self] in
             self?.stopPingTimers()
+            self?.stopReconnectTimer()
             self?.restartReconnectTimer()
         }
     }
