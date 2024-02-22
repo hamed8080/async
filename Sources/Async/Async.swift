@@ -84,9 +84,10 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
         onStatusChanged(.closed, error)
         queue.asyncWork { [weak self] in
-            self?.stopPingTimers()
-            self?.stopReconnectTimer()
-            self?.restartReconnectTimer()
+            guard let self = self else { return }
+            stopPingTimers()
+            stopReconnectTimer()
+            restartReconnectTimer(duration: config.connectionRetryInterval)
         }
     }
 
@@ -136,10 +137,10 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
         stopReconnectTimer()
     }
 
-    private func restartReconnectTimer() {
+    private func restartReconnectTimer(duration: TimeInterval) {
         if config.reconnectOnClose == true && reconnectTimer == nil {
             reconnectTimer = SourceTimer()
-            reconnectTimer?.start(duration: config.connectionRetryInterval){ [weak self] in
+            reconnectTimer?.start(duration: duration){ [weak self] in
                 guard let self = self else { return }
                 if isDisposed == false && stateModel.socketState != .connected {
                     tryReconnect()
@@ -339,11 +340,11 @@ extension Async {
 
     @available(iOS 13.0, *)
     @objc func onSceneBeomeActive(_: Notification) {
-        logger.log(message: "onSceneBeomeActive called in Async", persist: false, type: .internalLog)
+        logger.log(message: "onSceneBeomeActive called in Async with deviceId:\(stateModel.deviceId ?? "nil") socketState:\(stateModel.socketState)", persist: false, type: .internalLog)
         if stateModel.deviceId != nil, stateModel.socketState == .closed {
             logger.log(message: "onSceneBeomeActive restart reconnect timer", persist: false, type: .internalLog)
             stopReconnectTimer()
-            restartReconnectTimer()
+            restartReconnectTimer(duration: 0)
         }
     }
 }
