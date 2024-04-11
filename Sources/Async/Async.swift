@@ -25,6 +25,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     var logger: Logger
     var isDisposed: Bool = false
     private var networkObserver = NetworkAvailabilityFactory.create()
+    private var debug = ProcessInfo().environment["talk.pod.ir.async.debug"] == "1"
 
     /// The initializer of async.
     ///
@@ -75,11 +76,13 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func onConnected(_: WebSocketProvider) {
+        log("onConnected called")
         onStatusChanged(.connected)
         socketConnected()
     }
 
     public func onDisconnected(_: WebSocketProvider, _ error: Error?) {
+        log("onDisconnected called")
         stateModel.isDeviceRegistered = false
         logger.log(message: "Disconnected with error:\(String(describing: error))", persist: false, type: .internalLog)
         onStatusChanged(.closed, error)
@@ -101,6 +104,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func schedulePingTimers() {
+        log("schedulePingTimers called")
         stopPingTimers()
         scheduleFirstTimer()
         scheduleSecondTimer()
@@ -108,6 +112,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func scheduleFirstTimer() {
+        log("scheduleFirstTimer called")
         pingTimerFirst = SourceTimer()
         pingTimerFirst?.start(duration: config.pingInterval) { [weak self] in
             guard let self = self else { return }
@@ -116,6 +121,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func scheduleSecondTimer() {
+        log("scheduleSecondTimer called")
         pingTimerSecond = SourceTimer()
         pingTimerSecond?.start(duration: config.pingInterval + 3) { [weak self] in
             guard let self = self else { return }
@@ -124,6 +130,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func scheduleThirdTimer() {
+        log("scheduleThirdTimer called")
         pingTimerThird = SourceTimer()
         pingTimerThird?.start(duration: config.pingInterval + 3 + 2){ [weak self] in
             guard let self = self else { return }
@@ -133,15 +140,18 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func socketConnected() {
+        log("socketConnected called")
         stateModel.retryCount = 0
         stopReconnectTimer()
     }
 
     private func restartReconnectTimer(duration: TimeInterval) {
+        log("restartReconnectTimer called")
         if config.reconnectOnClose == true && reconnectTimer == nil {
             reconnectTimer = SourceTimer()
             reconnectTimer?.start(duration: duration){ [weak self] in
                 guard let self = self else { return }
+                log("restartReconnectTimer closufre called")
                 if isDisposed == false && stateModel.socketState != .connected {
                     tryReconnect()
                 }
@@ -150,6 +160,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func stopPingTimers() {
+        log("stopPingTimers called")
         pingTimerFirst?.cancel()
         pingTimerFirst = nil
         pingTimerSecond?.cancel()
@@ -159,11 +170,13 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     public func stopReconnectTimer() {
+        log("stopReconnectTimer called")
         reconnectTimer?.cancel()
         reconnectTimer = nil
     }
 
     private func tryReconnect() {
+        log("tryReconnect called")
         if stateModel.retryCount < config.reconnectCount {
             stateModel.retryCount += 1
             logger.log(message: "Try reconnect for \(stateModel.retryCount) times", persist: false, type: .internalLog)
@@ -181,8 +194,10 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     ///   - message: A sendable async message, at end it will convert to ``AsyncMessage`` and then data.
     ///   - type: The type of async message. For most of the times it will use ``AsyncMessageTypes/message``.
     public func send(message: SendAsyncMessageVO, type: AsyncMessageTypes = .message) {
+        log("send called")
         queue.asyncWork { [weak self] in
             guard let self = self, let data = try? JSONEncoder.instance.encode(message) else { return }
+            log("send queue called")
             let asyncSendMessage = AsyncMessage(content: data.utf8String, type: type)
             let asyncMessageData = try? JSONEncoder.instance.encode(asyncSendMessage)
             if stateModel.socketState == .asyncReady {
@@ -198,12 +213,14 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
 
     /// Notify and close the current connection.
     public func closeConnection() {
+        log("closeConnection called")
         onStatusChanged(.closed)
         socket.closeConnection()
     }
 
     private func registerDevice() {
-        if let deviceId = stateModel.deviceId {
+        log("registerDevice called")
+        if let deviceId = stateModel.oldDeviceId ?? stateModel.deviceId {
             let peerId = stateModel.peerId
             let shouldRegister = peerId == nil
             let register: RegisterDevice = shouldRegister ? .init(renew: true, appId: config.appId, deviceId: deviceId) : .init(refresh: true, appId: config.appId, deviceId: deviceId)
@@ -214,6 +231,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func registerServer() {
+        log("registerServer called")
         let register = RegisterServer(name: config.peerName)
         if let data = try? JSONEncoder.instance.encode(register) {
             sendInternalData(type: .serverRegister, data: data)
@@ -221,6 +239,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     private func sendACK(asyncMessage: AsyncMessage) {
+        log("sendACK called")
         if let id = asyncMessage.id {
             let messageACK = MessageACK(messageId: id)
             if let data = try? JSONEncoder.instance.encode(messageACK) {
@@ -230,10 +249,12 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
     }
 
     func sendPing() {
+        log("sendPing called")
         sendInternalData(type: .ping, data: nil)
     }
 
     func sendInternalData(type: AsyncMessageTypes, data: Data?) {
+        log("sendInternalData called")
         queue.asyncWork { [weak self] in
             guard let self = self else { return }
             let asyncSendMessage = AsyncMessage(content: data?.utf8String, type: type)
@@ -246,11 +267,20 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
 
     /// Dispose and try to disconnect immediately and release all related objects.
     public func disposeObject() {
+        log("disposeObject called")
         stopPingTimers()
         stopReconnectTimer()
         closeConnection()
         delegate = nil
         isDisposed = true
+    }
+
+    private func log(_ message: String) {
+#if DEBUG
+        if debug {
+            logger.log(message: message, persist: false, type: .internalLog)
+        }
+#endif
     }
 
     deinit {
@@ -292,7 +322,7 @@ extension Async {
 
     private func onPingMessage(asyncMessage: AsyncMessage) {
         if asyncMessage.content != nil {
-            if stateModel.deviceId == nil {
+            if stateModel.deviceId == nil || stateModel.deviceId != asyncMessage.content {
                 stateModel.setDeviceId(deviceId: asyncMessage.content)
             }
             registerDevice()

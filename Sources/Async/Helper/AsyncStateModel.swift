@@ -26,6 +26,9 @@ struct AsyncStateModel {
     /// The device id, it'll be set after the device is registered.
     private(set) var deviceId: String?
 
+    /// Old deviceId is needed upon any recoonect because we send refresh true, ad it does need old device id unless it will disconnect us.
+    private(set) var oldDeviceId: String?
+
     /// The last message receive-date to track ping intervals.
     private(set) var lastMessageRCVDate: Date?
 
@@ -36,6 +39,7 @@ struct AsyncStateModel {
 
     /// Setter for the deviceId.
     mutating func setDeviceId(deviceId: String?) {
+        self.oldDeviceId = self.deviceId
         self.deviceId = deviceId
     }
 

@@ -146,9 +146,10 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// 53- Softwatre caused connection abort
     /// When the app is in the backgrond mode iOS will terminate the socket and prevent it to send any further requests. We have to reconnect
     /// 89- Operation canceled
+    /// -1200 and SSL error for when a VPN blcok the connection at run time.
     func handleError(_ error: Error?) {
         if let error = error as NSError? {
-            if [53, 54, 57, 60, 89].contains(error.code) || error.isInDomainError {
+            if [53, 54, 57, 60, 89, -1200].contains(error.code) || error.isInDomainError {
                 isConnected = false
                 closeConnection()
                 delegate?.onDisconnected(self, error)
