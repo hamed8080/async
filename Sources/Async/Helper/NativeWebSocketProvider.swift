@@ -29,6 +29,8 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
     /// The logger class for logging events and exceptions if it's not a runtime exception.
     private weak var logger: Logger?
 
+    private let queue = DispatchQueue(label: "NativeWebSocketProviderSerailQueue")
+
     /// The socket initializer.
     /// - Parameters:
     ///   - url: The base socket url.
@@ -56,23 +58,27 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
 
     /// Send a message to the async server with a type of stream data.
     func send(data: Data) {
-        if isConnected {
-            socket?.send(.data(data)) { [weak self] error in
-                self?.handleError(error)
+        queue.sync {
+            if isConnected {
+                socket?.send(.data(data)) { [weak self] error in
+                    self?.handleError(error)
+                }
+            } else {
+                handleError(AsyncError(code: .socketIsNotConnected))
             }
-        } else {
-            handleError(AsyncError(code: .socketIsNotConnected))
         }
     }
 
     /// Send a message to the async server with a type of text.
     func send(text: String) {
-        if isConnected {
-            socket?.send(.string(text)) { [weak self] error in
-                self?.handleError(error)
+        queue.sync {
+            if isConnected {
+                socket?.send(.string(text)) { [weak self] error in
+                    self?.handleError(error)
+                }
+            } else {
+                handleError(AsyncError(code: .socketIsNotConnected))
             }
-        } else {
-            handleError(AsyncError(code: .socketIsNotConnected))
         }
     }
 
@@ -101,37 +107,47 @@ final class NativeWebSocketProvider: NSObject, WebSocketProvider, URLSessionDele
 
     /// This is essential here because urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didOpenWithProtocol _: String?) will not call occasionally by the os so it will lead to a problem in the device register get an error.
     func setConnectedOnReceiveAnyData() {
-        isConnected = true
+        queue.sync {
+            isConnected = true
+        }
     }
 
     /// It'll be called by the os whenever a connection opened successfully.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didOpenWithProtocol _: String?) {
-        isConnected = true
-        delegate?.onConnected(self)
+        queue.sync {
+            isConnected = true
+            delegate?.onConnected(self)
+        }
     }
 
     /// It'll be called by the os whenever a connection dropped.
     ///
     /// It may be called when we don't send ping message to the ``Async Server``.
     func urlSession(_: URLSession, webSocketTask _: URLSessionWebSocketTask, didCloseWith _: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        if let reason = reason, let message = String(data: reason, encoding: .utf8) {
-            logger?.log(message: message, persist: false, type: .internalLog)
+        queue.sync {
+            if let reason = reason, let message = String(data: reason, encoding: .utf8) {
+                logger?.log(message: message, persist: false, type: .internalLog)
+            }
+            isConnected = false
+            delegate?.onDisconnected(self, nil)
         }
-        isConnected = false
-        delegate?.onDisconnected(self, nil)
     }
 
     /// trust the credential for the desired URL if it's not valid or trusted by issuers.
     ///
     /// Never call delegate?.webSocketDidDisconnect in this method it leads to close next connection
     func urlSession(_: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        queue.sync {
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
     }
 
     ///  Whenever an error has happened the error will be raised and passed to the event.
     func urlSession(_: URLSession, task _: URLSessionTask, didCompleteWithError error: Error?) {
-        if let error = error {
-            handleError(error)
+        queue.sync {
+            if let error = error {
+                handleError(error)
+            }
         }
     }
 
