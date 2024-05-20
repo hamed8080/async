@@ -3,28 +3,28 @@
     {
       "identity" : "additive",
       "kind" : "remoteSourceControl",
-      "location" : "https://pubgi.fanapsoft.ir/chat/ios/additive",
+      "location" : "https://pubgi.sandpod.ir/chat/ios/additive",
       "state" : {
-        "revision" : "6228d527cabc4191e5925a833d01204b05ad1ae9",
-        "version" : "1.2.0"
+        "revision" : "04df7590997b00829cf825715e81e5b9cb9a92d3",
+        "version" : "1.2.1"
       }
     },
     {
       "identity" : "logger",
       "kind" : "remoteSourceControl",
-      "location" : "https://pubgi.fanapsoft.ir/chat/ios/logger",
+      "location" : "https://pubgi.sandpod.ir/chat/ios/logger",
       "state" : {
-        "revision" : "18e454d237113db025bc6b590dca0d26a85b4832",
-        "version" : "1.2.0"
+        "revision" : "07e0b32e7c54acc017156955ed0bcbff528c1524",
+        "version" : "1.2.1"
       }
     },
     {
       "identity" : "mocks",
       "kind" : "remoteSourceControl",
-      "location" : "https://pubgi.fanapsoft.ir/chat/ios/mocks",
+      "location" : "https://pubgi.sandpod.ir/chat/ios/mocks",
       "state" : {
-        "revision" : "67d91e506a39807c6929c532bb48898a286314bb",
-        "version" : "1.2.0"
+        "revision" : "723121790e3646283713bde625dfddd5e3065ede",
+        "version" : "1.2.1"
       }
     },
     {
