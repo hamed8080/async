@@ -90,7 +90,11 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
             guard let self = self else { return }
             stopPingTimers()
             stopReconnectTimer()
-            restartReconnectTimer(duration: config.connectionRetryInterval)
+            let connectImmediately = (error as? NSError)?.code == 53
+            if connectImmediately {
+                logger.log(message: "Connect immediately", persist: false, type: .internalLog)
+            }
+            restartReconnectTimer(duration: connectImmediately ? 0 : config.connectionRetryInterval)
         }
     }
 
