@@ -1,8 +1,6 @@
 {
   "pins" : [
     {
-<<<<<<< HEAD
-=======
       "identity" : "additive",
       "kind" : "remoteSourceControl",
       "location" : "https://pubgi.sandpod.ir/chat/ios/additive",
@@ -30,7 +28,6 @@
       }
     },
     {
->>>>>>> main
       "identity" : "starscream",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/daltoniam/Starscream.git",
