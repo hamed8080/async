@@ -2,6 +2,24 @@
 
 import PackageDescription
 
+let useLocalDependency = false
+
+let local: [Package.Dependency] = [
+    .package(path: "../Logger"),
+    .package(path: "../Mocks"),
+    .package(path: "../Additive"),
+    .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
+    .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
+]
+
+let remote: [Package.Dependency] = [
+    .package(url: "https://pubgi.sandpod.ir/chat/ios/logger", from: "1.2.3"),
+    .package(url: "https://pubgi.sandpod.ir/chat/ios/mocks", from: "1.2.4"),
+    .package(url: "https://pubgi.sandpod.ir/chat/ios/additive", from: "1.2.3"),
+    .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
+    .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
+]
+
 let package = Package(
     name: "Async",
     platforms: [
@@ -12,32 +30,19 @@ let package = Package(
     products: [
         .library(name: "Async", targets: ["Async"]),
     ],
-    dependencies: [
-//        .package(url: "https://pubgi.sandpod.ir/chat/ios/logger", from: "1.2.2"),
-//        .package(url: "https://pubgi.sandpod.ir/chat/ios/mocks", from: "1.2.3"),
-//        .package(url: "https://pubgi.sandpod.ir/chat/ios/additive", from: "1.2.2"),
-        .package(path: "../Logger"),
-        .package(path: "../Mocks"),
-        .package(path: "../Additive"),
-        .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.1")),
-        .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
-    ],
+    dependencies: useLocalDependency ? local : remote,
     targets: [
-        .target(name: "Async", dependencies: [
-            "Starscream",
-//            .product(name: "Additive", package: "additive"),
-//            .product(name: "Logger", package: "logger"),
-            .product(name: "Additive", package: "Additive"),
-            .product(name: "Logger", package: "Logger"),
-        ]),
+        .target(name: "Async",
+                dependencies: [
+                    "Starscream",
+                    .product(name: "Additive", package: useLocalDependency ? "Additive" : "additive"),
+                    .product(name: "Logger", package: useLocalDependency ? "Logger" : "logger"),
+                ]),
         .testTarget(name: "AsyncTests",
                     dependencies: [
-//                        .product(name: "Additive", package: "additive"),
-//                        .product(name: "Mocks", package: "mocks"),
-//                        .product(name: "Logger", package: "logger"),
-                        .product(name: "Additive", package: "Additive"),
-                        .product(name: "Mocks", package: "Mocks"),
-                        .product(name: "Logger", package: "Logger"),
+                        .product(name: "Additive", package: useLocalDependency ? "Additive" : "additive"),
+                        .product(name: "Logger", package: useLocalDependency ? "Logger" : "logger"),
+                        .product(name: "Mocks", package: useLocalDependency ? "Mocks" : "mocks"),
                     ],
                     path: "Tests"),
     ]
