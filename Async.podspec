@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Async"
-  s.version      = "2.2.0"
+  s.version      = "2.2.1"
   s.summary      = "Async"
   s.description  = "Async SDk manage all communication with Chat Server."
   s.homepage     = "https://pubgi.sandpod.ir/chat/ios/async"
@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/Async/**/*.{h,swift,m}"
   s.framework  = "Foundation"
   s.dependency "Starscream"  , '~> 3.1.1'
-  s.dependency "Additive" , '~> 1.2.2'
-  s.dependency "Logger" , '~> 1.2.2'
+  s.dependency "Additive" , '~> 1.2.4'
+  s.dependency "Logger" , '~> 1.2.4'
+  s.dependency "Mocks" , '~> 1.2.5'
 end

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://pubgi.sandpod.ir/chat/ios/additive",
       "state" : {
-        "revision" : "b720028de3dcc7eef166471154aeefae47e64ba5",
-        "version" : "1.2.3"
+        "revision" : "08eb3964a0b6b76e1ebe76c2fe2910c88c0c9005",
+        "version" : "1.2.4"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://pubgi.sandpod.ir/chat/ios/logger",
       "state" : {
-        "revision" : "abd73d1cedcbc70a2cd66e997376ea036eee69c9",
-        "version" : "1.2.3"
+        "revision" : "1fe5c0a2083b1c5ebbb515a717ed6be76a387b7f",
+        "version" : "1.2.4"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://pubgi.sandpod.ir/chat/ios/mocks",
       "state" : {
-        "revision" : "7ae7a47e5962b02b3c6e64207d6f8a6c0400700f",
-        "version" : "1.2.4"
+        "revision" : "c3e8ea900b99f91891d3df28fa5b71f1d884639d",
+        "version" : "1.2.5"
       }
     },
     {

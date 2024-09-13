@@ -29,7 +29,7 @@ public final class Async: AsyncInternalProtocol, WebSocketProviderDelegate {
 
     /// The initializer of async.
     ///
-    /// After creating this object you should call ``Async/createSocket()`` to start connecting to the server unless it's not connected automatically.
+    /// After creating this object you should call ``Async/Async/connect()`` to start connecting to the server unless it's not connected automatically.
     /// - Parameters:
     ///   - socket: A socket provider.
     ///   - config: Configuration of async ``AsyncConfig``.
